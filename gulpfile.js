@@ -326,7 +326,7 @@ gulp.task('test', function (def) {
 
 // 发布
 gulp.task('release', function (def) {
-    return runSequence('lib', 'js', 'css', 'img', 'rev', 'html', 'docs', def);
+    return runSequence('lib', 'js', 'css', 'img', 'rev', 'html', def);
 });
 
 //时间格式化函数
