@@ -1,0 +1,208 @@
+/*
+ * PluginPage CSS
+ */
+
+@import "../core/color.scss";
+@import "../core/function.scss";
+
+/* Base/TextWithCountPage
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.text-with-count-page {
+  .col-sm-8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Date/AppCalendarPage
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.app-calendar-page {
+  .dateArea {
+    border: 1px solid $e5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    color: $blue;
+  }
+}
+
+/* Date/CalendarPage
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.calendar-page {
+  .calendar {
+    max-width: 300px;
+  }
+}
+
+/* Welcome
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.content {
+  .welcome {
+    blockquote {
+      border-left: 4px solid $border;
+      font: inherit;
+      margin: 20px 0;
+      padding: 0 0 0 20px;
+      span {
+        color: rgba($black,.45);
+        margin-left: 10px;
+      }
+    }
+    pre {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* About
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.about {
+  .banner {
+    height: 300px;
+    background: url(../../images/about.jpg) no-repeat center center;
+    background-size: 100%;
+    .font {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: $white;
+      text-align: center;
+      //line-height: 300px;
+      font-size: 30px;
+      padding: 90px;
+      //vertical-align:middle;
+      //display:table-cell;
+      .small {
+        font-size: 16px;
+      }
+    }
+  }
+  .team {
+    margin: 20px 0;
+    text-align: center;
+    .des {
+      h3 {
+        display: inline;
+      }
+      text-align: left;
+      border-bottom: 1px solid $e5;
+      padding: 5px 0;
+    }
+    .info {
+      margin: 20px 0;
+      display: block;
+      dl {
+        width: 20%;
+        height: 200px;
+        float: left;
+        text-align: center;
+        &:hover {
+          dt img {
+            @include rotate;
+          }
+          dd b {
+            color: $green;
+            @include transi(color);
+          }
+        }
+        dt {
+          img {
+            border-radius: 50%;
+            height: 140px;
+            cursor: pointer;
+          }
+        }
+        dd {
+          padding: 10px 15px;
+          p {
+            text-align: left;
+            //text-indent: 20px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .banner {
+      background-size: auto;
+      .font {
+        padding: 90px 10px;
+        font-size: 24px;
+        .small {
+          font-size: 12px;
+        }
+      }
+    }
+    .team {
+      .info {
+        dl {
+          width: 100%;
+          float: none;
+          margin: 40px 0;
+        }
+      }
+    }
+  }
+}
+
+/* ECharts Welcome
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.echarts-welcome-page {
+  .echartsDemo {
+    margin-left: -1%;
+    margin-right: -1%;
+    .chart {
+      float: left;
+      background: #fff;
+      border: 1px solid $e5;
+      border-top: 0;
+      box-shadow: 0 -5px 0 $blue;
+      width: 31.33333%;
+      height: 267px;
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-bottom: 30px;
+      a {
+        display: block;
+        position: relative;
+        color: $black;
+        text-decoration: none;
+        .chart-title {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .chartDemoB {
+    .chart {
+      width: 48%;
+      height: 420px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .echartsDemo{
+      .chart{
+        width:48%;
+      }
+    }
+    .chartDemoB {
+      margin-left: 0;
+      margin-right: 0;
+      .chart {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .echartsDemo {
+      margin-left: 0;
+      margin-right: 0;
+      .chart{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}

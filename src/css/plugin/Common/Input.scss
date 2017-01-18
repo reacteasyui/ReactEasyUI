@@ -1,0 +1,11 @@
+@import "../../core/color.scss";
+
+input[type='text'] {
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px $border;
+  &:focus {
+    box-shadow: 0 0 0 1px $border;
+  }
+}

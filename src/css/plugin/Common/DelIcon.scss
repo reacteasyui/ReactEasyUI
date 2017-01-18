@@ -1,0 +1,22 @@
+@import "../../core/color.scss";
+
+.delIcon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: $ccc;
+  border-radius: 50%;
+  color: $white;
+  font-size: 1.6rem;
+  line-height: 18px;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+  margin-right: 9px;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(360deg);
+    transition: linear .3s;
+  }
+}

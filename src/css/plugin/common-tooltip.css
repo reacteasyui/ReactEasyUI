@@ -1,0 +1,272 @@
+[class$="rc-tooltip"] {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    visibility: visible;
+    font-size: 12px;
+    line-height: 1.5;
+    /*width:300px;*/
+    min-width: 200px;
+    max-width:450px;
+    /*max-height: 270px;*/
+}
+[class$="rc-tooltip-hidden"] {
+    display: none;
+}
+[class$="rc-tooltip-placement-top"],
+[class$="rc-tooltip-placement-topLeft"],
+[class$="rc-tooltip-placement-topRight"]
+{
+    padding: 5px 0 9px 0;
+}
+[class$="rc-tooltip-placement-right"],
+[class$="rc-tooltip-placement-rightTop"],
+[class$="rc-tooltip-placement-rightBottom"]
+{
+    padding: 0 5px 0 9px;
+}
+[class$="rc-tooltip-placement-bottom"],
+[class$="rc-tooltip-placement-bottomLeft"],
+[class$="rc-tooltip-placement-bottomRight"]
+{
+    padding: 9px 0 5px 0;
+}
+[class$="rc-tooltip-placement-left"],
+[class$="rc-tooltip-placement-leftTop"],
+[class$="rc-tooltip-placement-leftBottom"]
+{
+    padding: 0 9px 0 5px;
+}
+[class$="rc-tooltip-inner"]
+{
+    text-align: left;
+    text-decoration: none;
+    background-color: #fff;
+    border: 2px solid #efefef;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+    min-height: 34px;
+    padding-bottom: 20px;
+
+}
+[class$="rc-tooltip-arrow"]
+{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+[class$="rc-tooltip-placement-top"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-topLeft"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-topRight"] [class$="rc-tooltip-arrow"]
+{
+    bottom: 4px;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #efefef;
+}
+[class$="rc-tooltip-placement-top"] [class$="rc-tooltip-arrow"]
+{
+    left: 50%;
+}
+[class$="rc-tooltip-placement-topLeft"] [class$="rc-tooltip-arrow"]
+{
+    left: 15%;
+}
+[class$="rc-tooltip-placement-topRight"] [class$="rc-tooltip-arrow"]
+{
+    right: 15%;
+}
+[class$="rc-tooltip-placement-right"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-rightTop"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-rightBottom"] [class$="rc-tooltip-arrow"]
+{
+    left: 4px;
+    margin-top: -5px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: #efefef;
+}
+[class$="rc-tooltip-placement-right"] [class$="rc-tooltip-arrow"]{
+    top: 50%;
+}
+[class$="rc-tooltip-placement-rightTop"] [class$="rc-tooltip-arrow"] {
+    top: 15%;
+    margin-top: 0;
+}
+[class$="rc-tooltip-placement-rightBottom"] [class$="rc-tooltip-arrow"] {
+    bottom: 15%;
+}
+[class$="rc-tooltip-placement-left"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-leftTop"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-leftBottom"] [class$="rc-tooltip-arrow"]
+{
+    right: 4px;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #efefef;
+}
+[class$="rc-tooltip-placement-left"] [class$="rc-tooltip-arrow"]
+{
+    top: 50%;
+}
+[class$="rc-tooltip-placement-leftTop"] [class$="rc-tooltip-arrow"]
+{
+    top: 15%;
+    margin-top: 0;
+}
+[class$="rc-tooltip-placement-leftBottom"] [class$="rc-tooltip-arrow"]
+{
+    bottom: 15%;
+}
+[class$="rc-tooltip-placement-bottom"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-bottomLeft"] [class$="rc-tooltip-arrow"],
+[class$="rc-tooltip-placement-bottomRight"] [class$="rc-tooltip-arrow"]
+{
+    top: 4px;
+    margin-left: -5px;
+    border-width: 0 5px 5px;
+    border-bottom-color: #efefef;
+}
+[class$="rc-tooltip-placement-bottom"] [class$="rc-tooltip-arrow"]
+{
+    left: 50%;
+}
+[class$="rc-tooltip-placement-bottomLeft"] [class$="rc-tooltip-arrow"]
+{
+    left: 15%;
+}
+[class$="rc-tooltip-placement-bottomRight"] [class$="rc-tooltip-arrow"]
+{
+    right: 15%;
+}
+[class$="rc-tooltip-zoom-enter"][class$="rc-tooltip"],
+[class$="rc-tooltip-zoom-leave"][class$="rc-tooltip"],
+[class$="rc-tooltip-fade-enter"][class$="rc-tooltip"],
+[class$="rc-tooltip-fade-leave"][class$="rc-tooltip"]
+{
+    display: block;
+}
+[class*="rc-tooltip-zoom-enter"],
+[class*="rc-tooltip-zoom-appear"],
+[class*="rc-tooltip-fade-enter"],
+[class*="rc-tooltip-fade-appear"]
+{
+    opacity: 0;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+[class*="rc-tooltip-zoom-leave"],
+[class*="rc-tooltip-fade-leave"]
+{
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+    animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+[class*="rc-tooltip-zoom-enter"][class*="rc-tooltip-zoom-enter-active"],
+[class*="rc-tooltip-zoom-appear"][class*="rc-tooltip-zoom-appear-active"]
+{
+    -webkit-animation-name: rcToolTipZoomIn;
+    animation-name: rcToolTipZoomIn;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+[class*="rc-tooltip-zoom-leave"][class*="rc-tooltip-zoom-leave-active"]
+{
+    -webkit-animation-name: rcToolTipZoomOut;
+    animation-name: rcToolTipZoomOut;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+@-webkit-keyframes rcToolTipZoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@keyframes rcToolTipZoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+@-webkit-keyframes rcToolTipZoomOut {
+    0% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+    }
+}
+@keyframes rcToolTipZoomOut {
+    0% {
+        opacity: 1;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+    }
+}
+
+
+[class*="rc-tooltip-fade-enter"][class*="rc-tooltip-fade-enter-active"],
+[class*="rc-tooltip-fade-appear"][class*="rc-tooltip-fade-appear-active"]
+{
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+[class*="rc-tooltip-fade-leave"][class*="rc-tooltip-fade-leave-active"]
+{
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}

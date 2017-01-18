@@ -1,0 +1,31 @@
+/*
+ * Base CSS
+ */
+
+/* core */
+@import "../core/function.scss";
+@import "../core/color.scss";
+
+/* prism.scss */
+@import '../lib/prism.css';
+
+/* PluginPage.scss */
+@import '../component/PluginPage.scss';
+
+/* font */
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot?t=1460704905');
+  /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  /* chrome, firefox */
+  /* IE6-IE8 */
+  /* IE9*/
+  src: url('../font/iconfont.eot?t=1460704905#iefix') format('embedded-opentype'), url('../font/iconfont.woff?t=1460704905') format('woff'), url('../font/iconfont.ttf?t=1460704905') format('truetype'), url('../font/iconfont.svg?t=1460704905#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+@import '../font/iconfont.css';
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../font/glyphicons-halflings-regular.eot');
+  src: url('../font/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/glyphicons-halflings-regular.woff2') format('woff2'), url('../font/glyphicons-halflings-regular.woff') format('woff'), url('../font/glyphicons-halflings-regular.ttf') format('truetype'), url('../font/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}

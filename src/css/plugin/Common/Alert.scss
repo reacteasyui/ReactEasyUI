@@ -1,0 +1,16 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.alert {
+  @include pos(fixed);
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  font-size: 1.4rem;
+  text-align:center;
+  padding: 8px 30px;
+  transform: translate(-50%,-50%);
+  .close {
+    transform-origin: 50% 55%;
+  }
+}

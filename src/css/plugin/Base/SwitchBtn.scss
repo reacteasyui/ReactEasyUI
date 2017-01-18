@@ -1,0 +1,42 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.flowBtn {
+  display: inline-block;
+  a {
+    position: relative;
+    display: inline-block;
+    border: 1px solid $border;
+    color: rgba($black,.45);
+    font-size: 14px;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+    height: 34px;
+    margin-right: 10px;
+    &:hover {
+      color: $blue;
+      border-color: $blue;
+    }
+    i {
+      display: none;
+      &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 18px;
+        line-height: 18px;
+        width: 17px;
+        height: 18px;
+      }
+    }
+    &.active {
+      color: $blue;
+      border-color: $blue;
+      i {
+        display: block;
+      }
+    }
+  }
+}

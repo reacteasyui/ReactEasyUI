@@ -1,0 +1,11 @@
+{
+    "name": "Documenting JavaScript with YUIDoc",
+    "description": "A tutorial about YUIDoc, for Nettuts+",
+    "version": "1.0.0",
+    "url": "http://cig.com.cn",
+    "options": {
+        "linkNatives": "true",
+        "outdir": "./docs",
+        "paths": "."
+    }
+}

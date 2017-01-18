@@ -1,0 +1,26 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.compare {
+  padding: 10px;
+  font-size: 14px;
+  div {
+    padding: 0;
+  }
+  .progress {
+    height: 12px;
+    padding: 0;
+    margin: 12px 0 0 0;
+    border-radius: 0;
+    .progress-bar {
+      width: 0;
+      @include transi(width);
+    }
+    .progress-bar-first {
+      background: $blue;
+    }
+    .progress-bar-second {
+      background: $yellow;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.month_select {
+  margin-bottom: 5px;
+  .dateChooserWrap {
+    text-align: center;
+    .dateChooser {
+      display: inline-block;
+    }
+  }
+}
+
+.chinese_week,
+.day_list {
+  li {
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    width: 14.2857143%;
+    height: 30px;
+    > * {
+      display: inherit;
+      width: 30px;
+    }
+  }
+}
+
+.day_list {
+  li {
+    position: relative;
+    .div2 {
+      .day_grey {
+        color: #ddd;
+        cursor: not-allowed;
+      }
+      .day_red {
+        color: red;
+        cursor: pointer;
+        &.day_white {
+          background: red;
+          border-radius: 50%;
+          color: white;
+        }
+      }
+    }
+    .div3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0;
+      &:before {
+        content: '';
+        display: block;
+        background: red;
+        border-radius: 50%;
+        width: 4px;
+        height: 4px;
+      }
+    }
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

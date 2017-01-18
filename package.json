@@ -1,0 +1,29 @@
+{
+  "name": "reacteasyui",
+  "version": "1.0.2",
+  "description": "ReactEasyUI是基于React的常用组件库",
+  "main": "build/js/index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "react": "^0.14.7",
+    "react-bootstrap": "^0.28.5",
+    "react-dom": "^0.14.7"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "react-easyui",
+    "easyui"
+  ],
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/babyisun/ReactEasyUI.git"
+  },
+  "author": "The Dynamic Lab,CIG,yiche",
+  "license": "ISC"
+}

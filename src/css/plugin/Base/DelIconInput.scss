@@ -1,0 +1,9 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.delIconInput {
+  @include pos;
+  input {
+    width: 100%;
+  }
+}

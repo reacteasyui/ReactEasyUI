@@ -1,0 +1,90 @@
+@import "../../core/color.scss";
+
+.linePopWrapper{
+  position:relative;
+  .popWrapper{
+    position:absolute;
+    width:316px;
+    right:25px;
+    top:25px;
+    border: 1px solid $border;
+    z-index:10;
+    background:$white;
+    opacity:0.9;
+    .popTitle{
+      width:100%;
+      height:36px;
+      background:#EDF0F7;
+      line-height:34px;
+      border:1px solid $white;
+      span{
+        padding-left:15px;
+        color:#474f64;
+        font-size:12px;
+      }
+      i{
+        float:right;
+        margin-right:15px;
+        cursor:pointer;
+        font-style:normal;
+        font-size:20px;
+      }
+    }
+    .popContent{
+      width:310px;
+      height:140px;
+      &.scroll {
+        overflow: auto;
+        &::-webkit-scrollbar-track {
+          background: $white;
+        }
+        &::-webkit-scrollbar-track-piece {
+
+        }
+        &::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+          width: 1px;
+          height: 1px;
+          background: #EFF1F3;
+          border-radius: 4px;
+        }
+        &::-webkit-scrollbar-corner {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-button {
+
+        }
+        scrollbar-track-color: $white;
+        scrollbar-base-color: #EFF1F3;
+      }
+      div{
+        width:100%;
+        padding-top:5px;
+        a{
+          display:inline-block;
+          box-sizing:border-box;
+          padding:0 15px;
+          line-height:16px;
+          margin:5px 0;
+          font-size:12px;
+          color:#768099;
+          &:link,&:visited,&:hover,&:active{
+            text-decoration:none;
+          }
+          &:hover{
+            color:$blue;
+          }
+        }
+      }
+      .popNull{
+        text-align:center;
+        line-height:100px;
+        font-size:20px;
+        color:#768099;
+      }
+    }
+  }
+}

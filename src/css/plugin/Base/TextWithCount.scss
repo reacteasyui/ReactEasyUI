@@ -1,0 +1,13 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.form-control {
+  display: inline-block;
+  width: 90%;
+}
+.inputCountor {
+  margin-left: 15px;
+  .textCount {
+    color: $red;
+  }
+}

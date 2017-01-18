@@ -1,0 +1,39 @@
+$blue: #38f;
+
+.daterangepicker_dma {
+  > .form-control {
+    display: inline-block;
+    width: auto;
+  }
+  > i {
+    margin-left: -22px;
+    opacity: .8;
+  }
+}
+
+.dateChooser {
+  .dateBtn,
+  > div {
+    display: inline-block;
+  }
+  .dateBtn {
+    text-align: center;
+    text-decoration: none;
+    width: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .dateShow,
+  > div input {
+    font-weight: 700;
+  }
+  > div input {
+    color: $blue;
+    text-align: center;
+  }
+}
+
+.progressBar {
+  top: 35px;
+  padding-bottom: 55px;
+}

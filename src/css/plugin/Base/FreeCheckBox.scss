@@ -1,0 +1,33 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.checkList {
+  padding-left: 0;
+  padding-right: 0;
+}
+._radio, ._check {
+  @include pos;
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-left: 25px;
+  cursor: pointer;
+  i {
+    display: none;
+    @include pos(absolute);
+    top: -2px;
+    left: 0;
+    &.icon-iconfontdanxuankuangweixuanzhong {
+      color: $bbb;
+    }
+    &.icon-btndanxuankuangxuanzhong {
+      color: $blue;
+    }
+    &.active {
+      display: block;
+    }
+    &.disabled {
+      color: $eee;
+    }
+  }
+}

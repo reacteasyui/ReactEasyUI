@@ -1,0 +1,55 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+/* ProgressBar */
+.progressBar {
+  margin: 14px 0;
+  width: 100%;
+  @include pos;
+  .allProgress {
+    width: 80%;
+    height: 12px;
+    border-radius: 10px;
+    background: $fa;
+  }
+  .doneProgress {
+    @include pos(absolute);
+    left: 0;
+    top: 1px;
+    height: 10px;
+    border-radius: 10px;
+    width: 0;
+    @include transi(width);
+  }
+  .showNum {
+    @include pos(absolute);
+    white-space: nowrap;
+    left: 82%;
+    top: -7px;
+    font-size: 16px;
+    i {
+      margin-right: 6px;
+      color: $ccc;
+    }
+    .none {
+      font-style: inherit;
+    }
+  }
+  .goalNum {
+    @include pos(absolute);
+    left: 45%;
+    top: -36px;
+    color: $green;
+    text-align: center;
+    i {
+      display: block;
+      margin-top: -8px;
+    }
+  }
+  .nomalBg {
+    background: $green!important;
+  }
+  .goalBg {
+    background: $yellow!important;
+  }
+}

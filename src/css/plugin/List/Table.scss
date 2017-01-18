@@ -1,0 +1,480 @@
+@import "bourbon";
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.tableWrapper {
+  padding-top: 40px;
+  @include pos;
+  z-index: 0;
+  .table {
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid $border;
+    &.moreCols {
+      overflow-x: auto;
+      display: block;
+      thead {
+        th {
+          min-width: 115px;
+        }
+      }
+      &::-webkit-scrollbar-track {
+        background: $fa;
+      }
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $blue;
+        border-radius: 4px;
+      }
+      scrollbar-track-color: $fa;
+      scrollbar-base-color: $blue;
+    }
+    .customCols {
+      @include fl(right);
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      color: $blue;
+    }
+    thead {
+      border: 1px solid $f2;
+      th {
+        text-align: center;
+        border-bottom: 0;
+        font-weight: 400;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        background: $fa;
+        span {
+          font-size: 14px;
+        }
+        //排序
+        .sortIcon {
+          @include position(relative);
+          left: 5px;
+          top: -3px;
+          margin-right: 15px;
+          .icon-down, .icon-sanjiao-copy {
+            font-size: 12px;
+            @include position(absolute);
+            //color: #768099;
+            cursor: pointer;
+            &.active {
+              color: $blue;
+            }
+          }
+          .icon-sanjiao-copy {
+            top: -1px;
+            left: 0;
+          }
+          .icon-down {
+            top: 7px;
+            left: 0;
+          }
+        }
+      }
+      .colid_follow_times {
+        border-right: 0;
+      }
+    }
+    tbody {
+      border: 1px solid $f2;
+      tr {
+        text-align: center;
+        td {
+          font-size: 14px;
+          border-top: 1px solid $f2;
+          padding: 12px 8px;
+        }
+        .colid_follow_times {
+          border-right: 0;
+        }
+        //定制需求不要写在组件内
+        //.colid_product_name{
+        //  color: $blue;
+        //}
+        .colid_names {
+          a {
+            &:hover {
+              span {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .subitem {
+        td {
+          background: lighten($fa, 2%);
+          span {
+            color: $blue;
+          }
+        }
+      }
+      .first_step_tr {
+        @include transi;
+        &:hover {
+          background-color: $fa;
+        }
+      }
+    }
+    .table-loading, .loadingImg {
+      @include position(absolute);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      tr {
+        @include position(absolute);
+        text-align: center;
+        width: 114px;
+        height: 30px;
+        left: 50%;
+        &.top {
+          top: 20%;
+        }
+        &.center {
+          top: 50%;
+        }
+        &.bottom {
+          bottom: 20%;
+        }
+        margin-left: -57px;
+        margin-top: -15px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      tr > td {
+        border: none;
+        text-align: center;
+        img {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+    .table-loading-bg {
+      background: $fa;
+      opacity: 0.3;
+      filter: Alpha(Opacity=30);
+    }
+  }
+  @media (min-width: 1400px) {
+    .table {
+      &.moreCols {
+        overflow-x: auto;
+        display: table;
+        thead {
+          th {
+            min-width: inherit;
+          }
+        }
+      }
+    }
+  }
+  .table-bar {
+    @include position(absolute);
+    right: 0;
+    top: 0;
+    a {
+      display: inline-block;
+      background: $blue;
+      color: $white;
+      font-size: 13px;
+      text-decoration: none !important;
+      padding: 3px 12px;
+    }
+    span {
+      margin: 0 22px;
+    }
+  }
+  .page {
+    width: 100%;
+    margin-top: 28px;
+    min-height: 35px;
+    @include position(relative);
+    .itemsPer {
+      @include position(absolute);
+      left: 0;
+      top: 0;
+      z-index: 10;
+      select {
+        width: 50px;
+        height: 30px;
+        border-radius: 2px;
+        margin: 0 5px;
+        cursor: pointer;
+        border: 1px solid $blue;
+        color: $blue;
+      }
+      span {
+        position: relative;
+        top: 2px;
+      }
+    }
+    .page-fl-r {
+      width: 100%;
+      text-align: center;
+      min-height: 35px;
+      @include position(relative);
+      .pageMain {
+        height: 40px;
+        .pagination {
+          margin: 0;
+          li {
+            display: inline-block;
+            line-height: 34px;
+            text-align: center;
+            margin: 0 8px;
+            &.disabled a,&.disabled a:hover{
+              color: $border;
+              border: 1px solid $border;
+            }
+            a {
+              display: block;
+              padding: 0;
+              width: 34px;
+              height: 34px;
+              line-height: 34px;
+              border: 1px solid $border;
+              border-radius: 2px;
+              color: $blue;
+              span {
+                font-size: 24px;
+              }
+              span[aria-label="Previous"] {
+                position: relative;
+                top: -2px;
+              }
+              span[aria-label="Next"] {
+                position: relative;
+                top: -2px;
+              }
+              span[aria-label="More"] {
+                position: relative;
+                top: -7px;
+              }
+            }
+            a:hover {
+              color: $blue;
+              border: 1px solid $blue;
+              background: $white;
+            }
+          }
+          @media screen and (max-width: 768px) {
+            li {
+              display: none;
+              &:first-child, &:last-child {
+                display: inline-block;
+              }
+            }
+          }
+          .active a {
+            display: block;
+            background: $blue;
+            line-height: 34px;
+            width: 34px;
+            height: 34px;
+            color: $white;
+            border: 0;
+            border-radius: 2px;
+            cursor: pointer;
+          }
+          .active a:hover {
+            color: $white;
+            border: 0;
+            background: $blue;
+          }
+        }
+
+      }
+      .goTopage {
+        @include position(absolute, 0 0 null null);
+        span {
+          display: block;
+          float: left;
+          position: relative;
+          top: 5px;
+        }
+        input {
+          display: block;
+          float: left;
+          height: 32px;
+          width: 40px;
+          border: 1px solid $border;
+          border-radius: 2px;
+          margin: 0 5px;
+          text-align: center;
+        }
+        button {
+          width: 60px;
+          height: 32px;
+          background: $blue;
+          border: 0;
+          border-radius: 2px;
+          color: $white;
+          margin-left: 6px;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .itemsPer, .goTopage, .ensure {
+        display: none;
+      }
+    }
+  }
+}
+
+.filterBox {
+  margin-top: 15px;
+  width: 100%;
+  min-height: 32px;
+  _height: 32px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  z-index: 10;
+  .btn-toolbar {
+    float: left;
+    margin-right: 10px;
+    .filterSel {
+      display: block;
+      border: 0;
+      cursor: pointer;
+      .dropdown-btn {
+        height: 32px;
+        color: $blue;
+        font-size: 14px;
+        border: 1px solid $blue;
+        border-radius: 2px;
+      }
+      .dropdown-menu {
+        border: 1px solid $blue;
+        li {
+          line-height: 28px;
+          a {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  .filterSearch {
+    float: left;
+    .searchInput1 {
+      display: block;
+      float: left;
+      width: 180px;
+      height: 32px;
+      text-indent: 10px;
+      font-size: 14px;
+      color: $blue;
+      border-radius: 2px;
+      border: 1px solid $border;
+      border-right: 0;
+    }
+    .searchInput1:focus {
+      border: 1px solid $blue;
+      color: $blue;
+    }
+    .searchInput1:focus + .searchInput2 {
+      background: $blue;
+      border: 1px solid $blue;
+      color: $white;
+    }
+    .searchInput2 {
+      display: block;
+      float: left;
+      width: 58px;
+      height: 32px;
+      background: $fa;
+      text-align: center;
+      font-size: 14px;
+      color: $blue;
+      border-radius: 2px;
+      border: 1px solid $border;
+      margin-left: -2px;
+    }
+  }
+}
+
+/*定制滚动条*/
+.scroll {
+  overflow: auto;
+  margin: 20px 16px;
+  max-height: 140px;
+  &::-webkit-scrollbar-track {
+    background: $fa;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $blue;
+    border-radius: 4px;
+  }
+  scrollbar-track-color: $fa;
+  scrollbar-base-color: $blue;
+}
+
+.popList {
+  padding: 0 10px;
+  font-size: 14px;
+  color: $blue;
+  li {
+    line-height: 30px;
+    label {
+      max-width: 100%;
+      margin-bottom: 5px;
+      padding-left: 28px;
+      font-weight: 400;
+      text-align: left;
+      @include position(relative);
+      input[type="checkbox"] {
+        left: 0;
+        top: 4px;
+        width: 18px;
+        height: 18px;
+        z-index: 999;
+        opacity: 0;
+        @include position(absolute);
+      }
+      i {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        display: none;
+        color: $blue;
+      }
+      .active {
+        display: block;
+      }
+      span {
+        font-size: 14px;
+        color: $blue;
+      }
+    }
+  }
+}
+
+.popBtn {
+  input {
+    display: block;
+    width: 70px;
+    border: 0;
+    color: $white;
+    line-height: 30px;
+    font-size: 14px;
+    background: $blue;
+    margin: 10px auto 0;
+    &:hover {
+      background: $blue;
+    }
+  }
+}

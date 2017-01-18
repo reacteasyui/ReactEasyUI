@@ -1,0 +1,50 @@
+/* 公共函数 */
+@mixin fl($val:left) {
+  float: $val;
+}
+@mixin cb {
+  clear: both;
+}
+@mixin pos($val:relative) {
+  position: $val;
+}
+@mixin tc($val:center) {
+  text-align: $val;
+}
+
+/* 文字溢出省略 */
+// 单行溢出省略号
+@mixin text-over {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+// 多行溢出省略号
+@mixin multi-text-over {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; // 几行后显示省略号
+}
+
+/* 过渡动画 */
+@mixin transi($val:background-color,$time:0.5) {
+  -moz-transition: $val #{$time}s linear !important;
+  -o-transition: $val #{$time}s linear !important;
+  -webkit-transition: $val #{$time}s linear !important;
+  transition: $val #{$time}s linear !important;
+}
+
+/* 旋转动画 */
+@mixin rotate($val:360) {
+  transform: rotate(#{$val}deg);
+  -webkit-transform: rotate(#{$val}deg);
+  -moz-transform: rotate(#{$val}deg);
+  -o-transform: rotate(#{$val}deg);
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+}

@@ -1,0 +1,298 @@
+$calendarBg: #fff;
+$blue-skin: #171D2D;
+$font-black: #333;
+$week-bg: #F7F7F7;
+
+.dateArea {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.app-calendar {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 9999;
+  background: $calendarBg;
+  width: 100%;
+  em {
+    font-style: normal;
+  }
+  .pd-r{
+    padding-right:4px;
+  }
+  .header-box.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    border-bottom: #d4d4d4 0px solid;
+    background: #22ca92;
+    color: $font-black;
+    i {
+      color: #fff !important;
+    }
+  }
+  .header-box {
+    .header-back {
+      position: absolute;
+      font-size: 16px;
+    }
+    .header-action {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      font-size: 16px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 16px
+    }
+  }
+  .headerWeek {
+    position: fixed;
+    top: 44px;
+    z-index: 50;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #dce1e6;
+    color: $font-black;
+    table {
+      width: 100%;
+      th {
+        text-align: center;
+        height: 24px;
+        vertical-align: middle;
+        font-size: 12px;
+        color: $font-black;
+        /*font-weight: medium*/
+      }
+      .weekend {
+        color: #ff8205;
+      }
+    }
+  }
+  .calendar-list {
+    padding-top: 24px
+  }
+  .tn-calendar {
+    width: 100%;
+    overflow: hidden;
+  }
+  .tn-item-container {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+
+    .tn-c-header {
+      text-align: center;
+      font-size: 18px;
+      /*font-weight: medium;*/
+      color: $font-black;
+      padding: 15px 0 11.5px 0;
+
+      .icon-arrow-right {
+        float: right;
+        padding: 24px;
+        color: #ff6000;
+      }
+      .icon-arrow-left {
+        float: left;
+        padding: 24px;
+        color: #ff6000;
+      }
+    }
+    .tn-c-body {
+      clear: both;
+      .tn-c-week {
+        display: none;
+      }
+      tbody {
+        width: 100%;
+      }
+      table {
+        width: 100%;
+      }
+      th {
+        text-align: center;
+        height: 24px;
+        line-height: 24px;
+        vertical-align: middle;
+        background: #dfdfdf;
+        font-size: 12px;
+        color: #666;
+      }
+      td {
+        text-align: center;
+        height: 60px;
+        vertical-align: middle;
+        line-height: 60px;
+        margin-bottom: 5px;
+        font-size: 18px;
+        display: inline-block;
+        color: $font-black;
+        width: 14.27%;
+        background-color: #fff;
+        position: relative;
+        border-radius: 40px;
+        em.top-center {
+          color: #666;
+          font-size: 10px;
+          position: absolute;
+          top: -18px;
+          left: 50%;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          color: #999;
+          width: 24px;
+          height: 14px;
+        }
+        em.top-center.special {
+          color: #ff6010;
+        }
+        em.bottom-center {
+          color: #666;
+          font-size: 10px;
+          position: absolute;
+          top: 18px;
+          left: 50%;
+          height: 14px;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          color: #999;
+          width: 45px
+        }
+        em.bottom-center.special {
+          color: #ff6010
+        }
+        p {
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+      td.weekend {
+        color: #ff8205;
+        p {
+          color: #ff8205;
+        }
+      }
+      td.selected {
+        color: #fff;
+        background: $blue-skin;
+        border-radius: 3px;
+        -webkit-transition: all .3s ease-in-out;
+        p {
+          color: #fff;
+          font-size: 18px;
+        }
+        em {
+          color: #fff !important;
+        }
+
+      }
+      td.disabled {
+        color: #999;
+        text-decoration: line-through;
+      }
+      td.normal {
+        color: #ff6000;
+      }
+      td.beselected {
+        background-color: #f5f5f5;
+        color: $blue-skin;
+        border-radius: 0px;
+      }
+    }
+
+  }
+  .tn-calendar-head {
+    position: fixed;
+    top: 44px;
+    z-index: 50;
+    width: 100%;
+    background: rgba(0, 0, 0, .25);
+    color: $font-black;
+    table {
+      width: 100%;
+      th {
+        text-align: center;
+        height: 24px;
+        vertical-align: middle;
+        font-size: 12px;
+        line-height: 24px;
+        font-weight: normal;
+        background: $week-bg;
+      }
+    }
+    .theme {
+      height: 44px;
+      line-height: 44px;
+      width: 100%;
+      color: #FFFFFF;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: $blue-skin;
+      z-index: 2;
+      h1 {
+        text-align: center;
+        font-family: 微软雅黑;
+        font-size: 100%;
+        margin-top: 10px;
+        line-height: 44px;
+        margin: 0;
+        padding: 0;
+      }
+      i {
+        position: fixed;
+        top: 0px;
+        left: 10px;
+      }
+      .ic-back {
+        position: absolute;
+        left: 12px;
+        top: 0;
+        display: inline-block;
+        width: 24px;
+        font-size: 20px;
+        height: 44px;
+        cursor: pointer;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.calendar-depTips, .calendar-arrTips {
+  font-family: 微软雅黑;
+  position: fixed;
+  font-size: 18px;
+  left: 50%;
+  margin-left: -2000px;
+  bottom: 50px;
+  padding: 10px 30px;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
+  z-index: 10000;
+}
+.fade-in {
+  margin-left: -100px;
+}
+.fade-out {
+  margin-left: 2000px;
+}

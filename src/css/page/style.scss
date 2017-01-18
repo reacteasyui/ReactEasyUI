@@ -1,0 +1,431 @@
+/*
+ * Style for ReactEasyUI site v2.0
+ */
+
+
+@import 'base.scss';
+
+
+/* Reset
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  font-size: 10px;
+}
+body {
+  color: rgba($black,.8);
+  font-family: Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8;
+}
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-style: normal;
+}
+a {
+  color: $blue;
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+
+/* Style
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: $white;
+  box-shadow: 0 0 0 1px rgba($black,.1), 0 2px 6px rgba($black,.2);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  &:before {
+    content: '\27a4';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: rgba($black,.6);
+    font-size: 1.8rem;
+    transform: rotate(-90deg);
+  }
+}
+
+
+/* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.navbar {
+  background: $white;
+  border: 0;
+  box-shadow: 0 1px 0 rgba($black,.05), 0 1px 8px rgba($black,.1);
+  margin-bottom: 0;
+}
+.navbar-brand {
+  color: $black;
+  font-size: 2rem;
+  line-height: 50px;
+  padding: 0 20px;
+  &:hover,
+  &:focus {
+    color: rgba($black,.8);
+  }
+}
+.navbar-collapse {
+  border-top: 0;
+}
+.nav > li > a {
+  color: rgba($black,.8);
+  &:hover,
+  &:focus,
+  &.active {
+    background: transparent;
+    color: rgba($black,.45);
+  }
+}
+.navbar-toggle {
+  margin-right: 10px;
+  .icon-bar {
+    background: rgba($black,.8);
+    width: 20px;
+  }
+}
+.navbar-right {
+  padding-right: 20px;
+}
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background: $fa;
+    box-shadow: 0 -1px 0 rgba($black,.05);
+    padding-left: 20px;
+    padding-right: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  .navbar-nav {
+    display: inline-block;
+    margin: 0;
+    > li {
+      display: inherit;
+      > a {
+        margin-right: 20px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+
+/* Main
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.main {
+  margin-top: 50px;
+}
+.sider {
+  position: fixed;
+  bottom: 0;
+}
+/* ScrollBar CSS Begin */
+.scroll-wrapper {
+  &:hover > .scroll-element .scroll-bar,
+  > .scroll-element.scroll-draggable .scroll-bar {
+    opacity: .1;
+  }
+  .scroll-bar {
+    background: $black;
+    transition: opacity .1s linear;
+    opacity: 0;
+  }
+  > .scroll-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+    }
+  }
+  > .scroll-element {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    &.scroll-x.scroll-scrollx-visible,
+    &.scroll-y.scroll-scrolly-visible {
+      display: block;
+    }
+    &.scroll-x {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      &.scroll-scrolly-visible .scroll-element_size { left: -11px; }
+      .scroll-bar { top: -6px; min-width: 10px; height: 5px; }
+      .scroll-element_outer { left: 2px; }
+      .scroll-element_size { left: -4px; }
+    }
+    &.scroll-y {
+      top: 0;
+      right: 0;
+      height: 100%;
+      &.scroll-scrollx-visible .scroll-element_size { top: -11px; }
+      .scroll-bar { left: -6px; min-height: 10px; width: 5px; }
+      .scroll-element_outer { top: 2px; }
+      .scroll-element_size { top: -4px; }
+    }
+    div {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+/* ScrollBar CSS End */
+.docs {
+  padding-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .sider,
+  .docs {
+    min-height: calc(100vh - 50px);
+  }
+  .sider {
+    top: 50px;
+    width: 22%;
+  }
+  .scroll-wrapper .scroll-content {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+  .docs {
+    float: right;
+    width: 78%;
+  }
+}
+@media (max-width: 767px) {
+  .sider {
+    display: none;
+    z-index: 10;
+    top: 90px;
+    background: $white;
+    width: 100%;
+  }
+}
+
+/* Sider */
+.primary,
+.navlist a {
+  position: relative;
+  display: block;
+  color: rgba($black,.8) !important;
+  text-decoration: none !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.primary {
+  font-size: 1.5rem;
+  padding-left: 40px !important;
+}
+.btn-toggle {
+  &:before {
+    content: '\25b8';
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    color: rgba($black,.3);
+    font-size: 2.6rem;
+    line-height: 1;
+    transform: translateY(-50%);
+  }
+  &.active {
+    &:before {
+      content: '\25be';
+      margin-top: -1px;
+    }
+    & + .navlist {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+.navlist {
+  display: none;
+  a {
+    padding-left: 50px !important;
+    &.active {
+      &,
+      &:hover,
+      &:active {
+        background: transparent;
+        box-shadow: none;
+        color: $blue !important;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .sider,
+  .primary:hover,
+  .primary.active,
+  .navlist a:hover {
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .05);
+  }
+  .primary.active {
+    background: $f5;
+  }
+  .primary,
+  .navlist a {
+    line-height: 30px;
+    padding: 4px 20px;
+    &:hover,
+    &:active {
+      background: $f5;
+    }
+  }
+  .primary {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 767px) {
+  .primary,
+  .navlist a {
+    padding: 12px 20px;
+  }
+  .primary {
+    box-shadow: 0 1px 0 rgba($black,.06);
+  }
+  .navlist a {
+    box-shadow: 0 1px 0 rgba($black,.03);
+  }
+  .btn-toggle.active + .navlist {
+    background: $fa;
+    box-shadow: 0 1px 0 rgba($black,.06);
+  }
+}
+
+/* Docs */
+.content {
+  h1, h2 {
+    margin-top: 40px;
+  }
+  h2, h3 {
+    margin-bottom: 15px;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    color: rgba($black,.45);
+    font-size: 2rem;
+    margin-top: 25px;
+  }
+  iframe {
+    border: 0;
+  }
+  pre, code {
+    background: $f8;
+  }
+  pre {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 20px;
+  }
+  .demo {
+    margin-bottom: 40px;
+    > .demo-des {
+      margin-bottom: 10px;
+    }
+    > .demo-show {
+      border: 1px solid $eee;
+      border-radius: 2px;
+      margin-bottom: 15px;
+      padding: 20px;
+      &:before,
+      &:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+    > pre[class*="language-"] {
+      position: relative;
+      .code-tip {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        color: rgba($black,.3);
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .table-params {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    .table {
+      margin-bottom: 0;
+      > thead > tr > th,
+      > tbody > tr > td {
+        > .label {
+          margin-left: 6px;
+          padding: 2px 5px;
+        }
+      }
+      > thead > tr > th {
+        border-bottom: 2px solid $eee;
+        font-weight: 400;
+        padding: 10px 10px;
+      }
+      > tbody > tr > td {
+        border: 0;
+        border-bottom: 1px solid $eee;
+        padding: 15px 10px;
+        &:nth-child(4) {
+          width: 55%;
+        }
+      }
+    }
+  }
+  .method-des {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 768px) {
+  .content {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
