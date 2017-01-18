@@ -14,7 +14,7 @@ export default class PieChartPage extends React.Component {
         return (
             <div className="pie-page">
                 <h1>PieChart</h1>
-                <p>简单的圆形占比图</p>
+                <p>简单的圆形占比图，依赖与echarts.js</p>
                 <Demo title="实例" component={<PieChart
                     num={34}
                 />}>

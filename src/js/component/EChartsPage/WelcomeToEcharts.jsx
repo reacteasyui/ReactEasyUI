@@ -54,12 +54,12 @@ export default class WelcomeToEcharts extends React.Component {
             <div className="echarts-welcome-page">
                 <h1>Echarts</h1>
                 <h4>ReactEasyUI 组件中的图表依赖于 Echarts</h4>
-                <p>请注意，<strong>ReactEasyUI 的组件依赖 echarts.js 3.0+，</strong>请在 ReactEasyUI 前引入echarts.js <a
+                <p>注意，<strong>ReactEasyUI 的组件依赖 echarts.js 3.0+，</strong>请在 ReactEasyUI 前引入echarts.js <a
                     href="http://echarts.baidu.com/" target="_blank">Echarts官网地址</a></p>
                 <pre><code className="language-markup">
                     &lt;script href="../js/lib/echarts.js"&gt;&lt;script&gt;
                 </code></pre>
-                <h2>Echart 示例</h2>
+                <h2>部分示例</h2>
                 <div className="echartsDemo">
                     <div className="chart">
                         <Link className="chart-link" to="/echarts/pie">
@@ -73,17 +73,6 @@ export default class WelcomeToEcharts extends React.Component {
                             <h4 className="chart-title">饼图</h4>
                             <PieWithLabel name="金额（元）" height="200"
                                           data={[{"name":"一线城市","id":"1","value":"3967"},{"name":"二线城市","id":"2","value":"12238"}]}/>
-                        </Link>
-                    </div>
-                    <div className="chart">
-                        <Link className="chart-link" to="/echarts/scatter">
-                            <h4 className="chart-title">散点图</h4>
-                            <Scatter data={{
-                                avaData:[{yAxis: 40, name: "平均阅读量"},{xAxis: 150, name: "平均阅读时间"}],
-                                data:[{name:"女性",data: [[164.4, 55.5]],click:300000}]}}
-                                     x={{name:"阅读时间",measure:"秒"}}
-                                     y={{name:"阅读页数",measure:"页"}}
-                                     toolboxPosition={[0,0,null,null]} height="300"/>
                         </Link>
                     </div>
                     <div className="chart">

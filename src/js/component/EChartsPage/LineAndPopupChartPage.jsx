@@ -43,7 +43,7 @@ export default class LineAndPopupChartPage extends React.Component {
         let _this = this;
         return(<div className="plugin-page">
             <h1>LineAndPopupChart</h1>
-            <p>折线图与弹出框的混合，当点击折线图不同部位时，弹出框显示出相应的内容</p>
+            <p>带有提示框的线图组件，当点击折线图X轴日期或数据点时，弹出框显示出相应的内容</p>
             <h2>实例</h2>
             <Demo component={<LineAndPopupChart
                     name="销量"
@@ -56,7 +56,19 @@ export default class LineAndPopupChartPage extends React.Component {
                     clickCallback={this.clickCallback.bind(this)}
                     format={this.formatData.bind(this)}
                 />}>
-                {`<LineAndPopupChart
+                {`formatData() {
+    if(this.state.num == 1){
+        return <a href="http://baidu.com" target="_blank">百度</a>;
+    }else if(this.state.num == 2){
+        return <a href="http://www.sina.com.cn/" target="_blank">新浪</a>;
+    }else if(this.state.num == 3){
+        return <a href="http://www.qq.com/" target="_blank">腾讯</a>;
+    }else{
+        return <span>空</span>;
+    }
+}
+
+<LineAndPopupChart
     name="销量"
     isShowMax = {true}
     colorIndex={1}

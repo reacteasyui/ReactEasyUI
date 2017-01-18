@@ -7,8 +7,8 @@ ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表�
 
 **ReactEasyUI 依赖于 React**，若未安装 React，须先 [安装 React](http://reactjs.cn/react/docs/getting-started-zh-CN.html)。
 
-> 接着安装 ReactEasyUI。
-> 
+接着安装 ReactEasyUI。
+
 > `$ npm install reacteasyui --save-dev` // 安装
 > 
 > `$ cd ReactEasyUI` // 切换目录

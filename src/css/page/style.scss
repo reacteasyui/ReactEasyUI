@@ -170,7 +170,7 @@ a {
   > .scroll-element {
     display: none;
     position: absolute;
-    z-index: 10;
+    z-index: 9999;
     &.scroll-x.scroll-scrollx-visible,
     &.scroll-y.scroll-scrolly-visible {
       display: block;
@@ -225,7 +225,7 @@ a {
 @media (max-width: 767px) {
   .sider {
     display: none;
-    z-index: 10;
+    z-index: 9999;
     top: 90px;
     background: $white;
     width: 100%;

@@ -14,7 +14,7 @@ export default class ProgressChartPage extends React.Component {
         return (
             <div className="progressChart-page">
                 <h1>ProgressChart</h1>
-                <p>简单的环形进度条</p>
+                <p>简单的环形进度条，依赖与echarts.js</p>
                 <Demo title="实例" component={<ProgressChart
                     num={34}
                     width="100%"
