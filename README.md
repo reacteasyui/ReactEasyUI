@@ -13,6 +13,13 @@ ReactEasyUI=>[https://reacteasyui.github.io](https://reacteasyui.github.io)
 接着安装 ReactEasyUI。
 
 > `$ npm install reacteasyui --save-dev` // 安装
+> 
+> `$ cd ReactEasyUI` // 切换目录
+> 
+> `$ npm start` // 启动
+> 
+> `http://127.0.0.1:3000/` // 浏览器访问
+
 
 ## 文件引入
 
