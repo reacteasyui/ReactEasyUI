@@ -45,4 +45,12 @@ export default class AudioPlayPage extends React.Component {
                 ]}/>
         </div>);
     }
+    componentDidMount(){
+        $.getJSON('http://127.0.0.1:3000/liuchen?callback=?',{name:'liuchen'},function(data){
+            console.log(data);
+        });
+        $.post('http://127.0.0.1:3000/liuchen',{id:1,name:'liuchen',age:18},function(data){
+            alert(data)
+        })
+    }
 }
