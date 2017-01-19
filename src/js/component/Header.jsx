@@ -25,7 +25,7 @@ export default class Header extends React.Component {
                         </li>
                         <li><a href="https://react-bootstrap.github.io/components.html" target="_blank">Bootstrap</a>
                         </li>
-                        <li><a href="https://github.com/babyisun/ReactEasyUI" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/reacteasyui/ReactEasyUI" target="_blank">GitHub</a></li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
                         <li><Link to="about" activeClassName="active">About Us</Link></li>

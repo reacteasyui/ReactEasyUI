@@ -3,60 +3,45 @@
 .audio {
   .buttonWrapper {
     display: inline-block;
-    vertical-align: middle;
-    .pause, .play {
-      position: relative;
-      box-shadow: 0 0 0 1px rgba($black,.6);
-      border-radius: 50%;
-      color: rgba($black,.6);
-      width: 30px;
-      height: 30px;
-      overflow: hidden;
-      cursor: pointer;
-      &:hover  {
-        box-shadow: 0 0 0 1px $blue;
-        color: $blue;
+    width:30px;
+    height:30px;
+    border:1px solid rgba($black,0.6);
+    border-radius:50%;
+    position:relative;
+    &:hover  {
+      border:1px solid $blue;
+      .pause{
+        border-left-color:$blue;
+      }
+      .play{
+        background:$blue;
       }
     }
-    .pause:before,
-    .play:before {
+    .pause{
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      font-size: 2.4rem;
-      text-align: center;
-      line-height: 30px;
+      top:8px;
+      left:12px;
+      width: 0px;
+      height: 0px;
+      border: 6px solid transparent;
+      border-left-color:rgba($black,0.6);
     }
-    .pause:before {
-      content: '\25b6';
-      transform: translate(.5px,.5px);
-    }
-    .play:before {
-      content: '\25A0';
-      transform: translateY(-2px) scale(.85);
+    .play{
+      position:absolute;
+      top:10.5px;
+      left:10px;
+      width:8px;
+      height:8px;
+      background:rgba($black,0.6);
     }
   }
   & > span {
-    display: inline-block;
-    color: rgba($black,.45);
-    margin-left: 10px;
-    vertical-align: middle;
+    color:rgba($black,0.6);
+    position:relative;
+    top:-9px;
     span {
       &:first-child {
         margin-right: 1px;
-      }
-    }
-  }
-}
-@-moz-document url-prefix()  {
-  .audio {
-    .buttonWrapper {
-      .pause {
-        &:before {
-          font-size: 12px;
-        }
       }
     }
   }

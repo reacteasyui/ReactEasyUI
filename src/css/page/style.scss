@@ -248,20 +248,22 @@ a {
   padding-left: 40px !important;
 }
 .btn-toggle {
+
   &:before {
-    content: '\25b8';
+    content: '\e072';
+    display: inline-block;
     position: absolute;
     top: 50%;
     left: 18px;
     color: rgba($black,.3);
-    font-size: 2.6rem;
+    font-family: 'Glyphicons Halflings';
     line-height: 1;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(.65);
   }
   &.active {
     &:before {
-      content: '\25be';
       margin-top: -1px;
+      transform: translateY(-50%) rotateZ(90deg) scale(.65);
     }
     & + .navlist {
       display: block;
@@ -358,6 +360,9 @@ a {
     border-radius: 0;
     margin: 0;
     padding: 20px;
+  }
+  code {
+    font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
   }
   .demo {
     margin-bottom: 40px;

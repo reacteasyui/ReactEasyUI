@@ -68,6 +68,7 @@ export default class Sider extends React.Component {
                     {name: "PieChart", url: "/pie-chart"},
                     {name: "Loading", url: "/loading"},
                     {name: "Progress", url: "/progress"},
+                    //{name: "Venn", url: "/venn"},
 
                 ]
             },

@@ -251,8 +251,6 @@ gulp.task('html', ['rev'], function () {
 
 // 生成 docs 文件夹
 gulp.task("docs",function () {
-    // plugin
-    gulp.src("./plugin/echarts/*.*").pipe(gulp.dest("./docs/plugin/echarts/"));
     // font
     gulp.src([
         build.font + "*.*",
@@ -293,6 +291,7 @@ gulp.task("github", function () {
         "./" + character,
         "!" + build.root + character,
         "!" + dev.root + character,
+        "!docs/" + character,
         "!node_modules/" + character,
         "!rev/" + character,
     ]).pipe(gulp.dest(build.githubRoot + "ReactEasyUI"));

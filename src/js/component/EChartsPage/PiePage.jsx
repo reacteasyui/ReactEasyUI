@@ -1,7 +1,6 @@
 import React from 'react';
 import Demo from "../Demo.jsx";
 import Section from "../Section.jsx";
-import Pie from "../../plugin/ECharts/Pie.jsx";
 
 export default class PiePage extends React.Component {
 

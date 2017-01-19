@@ -68,8 +68,8 @@ export default class AudioPlay extends React.Component {
             WebkitTransform:'scale('+size+','+size+')',
         };
         return(<div className="audio">
-            <div className="buttonWrapper" onClick={_this.switchState.bind(this)}>
-                <div className={`${_state?'play':'pause'}`} style={style}></div>
+            <div className="buttonWrapper" style={style} onClick={_this.switchState.bind(this)}>
+                <div className={`${_state?'play':'pause'}`}></div>
             </div>
             <span>{_this.state.secNum}"</span>
             <audio src={_this.state.url} id={_this.audioID}>

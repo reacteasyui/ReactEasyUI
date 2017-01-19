@@ -1,6 +1,6 @@
 {
   "name": "reacteasyui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ReactEasyUI是基于React的常用组件库",
   "main": "build/js/index.js",
   "dependencies": {
@@ -22,7 +22,7 @@
   ],
   "repository" :
   { "type" : "git"
-  , "url" : "https://github.com/babyisun/ReactEasyUI.git"
+  , "url" : "https://github.com/reacteasyui/ReactEasyUI.git"
   },
   "author": "The Dynamic Lab,CIG,yiche",
   "license": "ISC"

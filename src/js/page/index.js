@@ -42,6 +42,7 @@ import PieChartPage from "../component/ProgressPage/PieChartPage";
 import ProgressChartPage from "../component/ProgressPage/ProgressChartPage";
 import LoadingPage from "../component/ProgressPage/LoadingPage";
 import ProgressPage from "../component/ProgressPage/ProgressPage";
+import VennPage from "../component/ProgressPage/VennPage.jsx";
 
 import AudioPlayPage from "../component/OthersPage/AudioPlayPage";
 import IframeLoadPage from "../component/OthersPage/IframeLoadPage";
@@ -124,6 +125,7 @@ ReactDOM.render(
                 <Route path="pie-chart" component={PieChartPage}/>
                 <Route path="loading" component={LoadingPage}/>
                 <Route path="progress" component={ProgressPage}/>
+                <Route path="venn" component={VennPage}/>
             </Route>
             <Route path="others">
                 <IndexRedirect to={"audio-play"}/>

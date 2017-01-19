@@ -24,15 +24,15 @@ export default class AudioPlayPage extends React.Component {
             <p>带时长的音频组件。注：多个音频组件同时存在时，可将clickCallback获得的参数赋给playID，实现点击播放时其他音频文件暂停</p>
             <h2>实例</h2>
             <Demo component={<AudioPlay
-                url="http://www.w3school.com.cn/i/horse.mp3"
+                url="http://www.w3school.com.cn/i/song.mp3"
                 playID={_this.state.playID}
-                size={1}
+                size={0.8}
                 clickCallback={_this.clickCallback.bind(this)}
             />}>
                 {`<AudioPlay
-    url="http://www.w3school.com.cn/i/horse.mp3"
+    url="http://www.w3school.com.cn/i/song.mp3"
     playID={_this.state.playID}
-    size={1}
+    size={0.8}
     clickCallback={_this.clickCallback.bind(this)}
 />`}</Demo>
             <Section data={[
