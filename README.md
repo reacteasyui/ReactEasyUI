@@ -12,7 +12,7 @@ ReactEasyUI=>[https://reacteasyui.github.io](https://reacteasyui.github.io)
 
 接着安装 ReactEasyUI。
 
-> `$ npm install reacteasyui --save-dev` // 安装
+> `$ npm install reacteasyui --save-dev`
 
 ## 文件引入
 
