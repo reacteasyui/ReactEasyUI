@@ -16,9 +16,9 @@ export default class Content extends React.Component {
                 <p>接着安装 ReactEasyUI。</p>
                 <blockquote>
                     <p><code>$ npm install reacteasyui --save-dev</code><span>// 安装</span></p>
-                    <p><code>$ cd ReactEasyUI</code><span>// 切换目录</span></p>
+                    {/*<p><code>$ cd ReactEasyUI</code><span>// 切换目录</span></p>
                     <p><code>$ npm start</code><span>// 启动</span></p>
-                    <p><code>http://127.0.0.1:3000/</code><span>// 浏览器访问</span></p>
+                    <p><code>http://127.0.0.1:3000/</code><span>// 浏览器访问</span></p>*/}
                 </blockquote>
                 <h2>文件引入</h2>
                 <h3>CSS 引入</h3>

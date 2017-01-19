@@ -305,10 +305,10 @@ gulp.task("removeCon", function () {
         .pipe(uglify(uglify_config))
         .pipe(gulp.dest(build.server + "js/page/"));
 
-    gulp.src(build.html + "index.html")
-        .pipe(replace("../", "./build/"))
-        .pipe(gulp.dest("."))
-        .pipe(gulp.dest(build.serverRoot));
+    // gulp.src(build.html + "index.html")
+    //     .pipe(replace("../", "./build/"))
+    //     .pipe(gulp.dest("."))
+    //     .pipe(gulp.dest(build.serverRoot));
 
     console.log("已经更新到Git下的build目录,合并代码后请登录Jenkins进行构建");
 });
