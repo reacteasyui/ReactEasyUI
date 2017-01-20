@@ -272,6 +272,7 @@ gulp.task("docs",function () {
         build.js + "lib/echarts.js",
         build.js + "lib/prism.js",
         build.js + "lib/scrollbar.js",
+        build.js + "lib/fastclick.min.js",
     ]).pipe(gulp.dest("./docs/js/"));
     gulp.src(build.pagejs + "*.js")
         .pipe(replace('"../"', '"./"'))
