@@ -24,7 +24,7 @@ ReactEasyUI 组件样式依赖 Bootstrap 与 ReactEasyUI.css。
 	<link src="../css/lib/bootstrap/3.3.5/bootstrap.min.css" rel="stylesheet">
 	<link src="../css/lib/ReactEasyUI.css" rel="stylesheet">
 
-## Javascript 引入
+### Javascript 引入
 
 `lib.js` 集成了 ReactEasyUI 需要的 jQuery.js(1.12.2+)、bootstrap.js(3.3.5+)、[jsfunction.js] 三个文件，echarts.js 在图表组件中需要。
 

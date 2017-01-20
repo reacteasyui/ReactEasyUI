@@ -69,9 +69,10 @@ a {
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .navbar {
+  z-index: 10000;
   background: $white;
   border: 0;
-  box-shadow: 0 1px 0 rgba($black,.05), 0 1px 8px rgba($black,.1);
+  box-shadow: 0 1px 0 rgba($black,.05), 0 1px 3px rgba($black,.1);
   margin-bottom: 0;
 }
 .navbar-brand {
@@ -165,7 +166,6 @@ a {
   > .scroll-element {
     display: none;
     position: absolute;
-    z-index: 9999;
     &.scroll-x.scroll-scrollx-visible,
     &.scroll-y.scroll-scrolly-visible {
       display: block;
@@ -175,8 +175,8 @@ a {
       left: 0;
       width: 100%;
       &.scroll-scrolly-visible .scroll-element_size { left: -11px; }
-      .scroll-bar { top: -6px; min-width: 10px; height: 5px; }
-      .scroll-element_outer { left: 2px; }
+      .scroll-bar { top: -5px; min-width: 10px; height: 5px; }
+      .scroll-element_outer { left: 1px; }
       .scroll-element_size { left: -4px; }
     }
     &.scroll-y {
@@ -184,8 +184,8 @@ a {
       right: 0;
       height: 100%;
       &.scroll-scrollx-visible .scroll-element_size { top: -11px; }
-      .scroll-bar { left: -6px; min-height: 10px; width: 5px; }
-      .scroll-element_outer { top: 2px; }
+      .scroll-bar { left: -5px; min-height: 10px; width: 5px; }
+      .scroll-element_outer { top: 1px; }
       .scroll-element_size { top: -4px; }
     }
     div {
@@ -200,6 +200,13 @@ a {
   padding-bottom: 40px;
 }
 @media (min-width: 768px) {
+  .scroll-wrapper {
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    .scroll-content {
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+  }
   .sider,
   .docs {
     min-height: calc(100vh - 50px);
@@ -208,19 +215,19 @@ a {
     top: 50px;
     width: 22%;
   }
-  .scroll-wrapper .scroll-content {
-    padding-top: 25px;
-    padding-bottom: 30px;
-  }
+
   .docs {
     float: right;
     width: 78%;
   }
 }
 @media (max-width: 767px) {
+  .scroll-wrapper,
+  .scroll-element {
+    z-index: 9999;
+  }
   .sider {
     display: none;
-    z-index: 9999;
     top: 90px;
     background: $white;
     width: 100%;
@@ -272,19 +279,12 @@ a {
       &:hover,
       &:active {
         background: transparent;
-        box-shadow: none;
         color: $blue !important;
       }
     }
   }
 }
 @media (min-width: 768px) {
-  .sider,
-  .primary:hover,
-  .primary.active,
-  .navlist a:hover {
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .05);
-  }
   .primary.active {
     background: $f5;
   }
@@ -310,7 +310,8 @@ a {
   .navlist a {
     padding: 12px 20px;
   }
-  .primary {
+  .primary,
+  .btn-toggle.active + .navlist {
     box-shadow: 0 1px 0 rgba($black,.06);
   }
   .navlist a {
@@ -318,7 +319,6 @@ a {
   }
   .btn-toggle.active + .navlist {
     background: $fa;
-    box-shadow: 0 1px 0 rgba($black,.06);
   }
 }
 

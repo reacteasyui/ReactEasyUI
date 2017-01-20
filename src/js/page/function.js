@@ -3,6 +3,9 @@
  */
 
 $(function() {
+    // FastClick
+    FastClick.attach(document.body);
+
     // Sider 滚动条
     $('.sider').scrollbar();
 
