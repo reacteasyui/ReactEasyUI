@@ -1,48 +1,41 @@
 @import "../../core/color.scss";
 
 .audio {
-  .buttonWrapper {
+  .buttonWrapper,
+  & > span {
     display: inline-block;
-    width:30px;
-    height:30px;
-    border:1px solid rgba($black,0.6);
-    border-radius:50%;
-    position:relative;
-    &:hover  {
-      border:1px solid $blue;
-      .pause{
-        border-left-color:$blue;
-      }
-      .play{
-        background:$blue;
-      }
-    }
-    .pause{
+    vertical-align: middle;
+  }
+  .buttonWrapper {
+    position: relative;
+    border: 1px solid rgba($black,.6);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+    cursor: pointer;
+    .pause,
+    .play {
       position: absolute;
-      top:8px;
-      left:12px;
-      width: 0px;
-      height: 0px;
-      border: 6px solid transparent;
-      border-left-color:rgba($black,0.6);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
     }
-    .play{
-      position:absolute;
-      top:10.5px;
-      left:10px;
-      width:8px;
-      height:8px;
-      background:rgba($black,0.6);
+    .pause {
+      border-left: 11px solid rgba($black,.6);
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      width: 0;
+      height: 0;
+      margin-left: 1px;
+    }
+    .play {
+      background:rgba($black,.6);
+      width: 10px;
+      height: 10px;
     }
   }
-  & > span {
-    color:rgba($black,0.6);
-    position:relative;
-    top:-9px;
-    span {
-      &:first-child {
-        margin-right: 1px;
-      }
-    }
+  & > span > span:first-child {
+    margin-right: 1px;
   }
 }

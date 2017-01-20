@@ -1,0 +1,15 @@
+@import "../../core/color.scss";
+@import "../../core/function.scss";
+
+.iconfont {
+  &.icon-unchecked,
+  &.icon-checked {
+    font-size: 2rem;
+  }
+  &.icon-unchecked {
+    color: $bbb;
+  }
+  &.icon-checked {
+    color: $blue;
+  }
+}

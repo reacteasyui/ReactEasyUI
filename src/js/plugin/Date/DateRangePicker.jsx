@@ -33,7 +33,7 @@ export default class DateRangePicker extends React.Component {
         this.$picker = null;
         this.del = false;
         this.iconStyle = [(<i className={"glyphicon  glyphicon-calendar fa fa-calendar"}></i>),
-            (<i className={"iconfont  icon-down"}></i>)];
+            (<i className={"iconfont  icon-triangle-down"}></i>)];
         this.pickerID = "datepicker_" + ~~(Math.random() * 100000);
         //console.log(props.startTime)
     }

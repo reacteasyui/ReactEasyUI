@@ -48,12 +48,9 @@ export default class Table extends React.Component {
      @return {Component} 返回排序图标组件
      */
     orderBy(sort) {
-        // return (<span className="sortIcon">
-        //     <i className={`iconfont icon-${sort&&sort=="asc"?"jiantoushang":"jiantoushang-copy"}`}></i>
-        // </span>);
         return (<span className="sortIcon">
-            <i className={`iconfont icon-sanjiao-copy ${sort&&sort=="asc"?"active":""}`}></i>
-            <i className={`iconfont icon-down ${sort&&sort=="desc"?"active":""}`}></i>
+            <i className={`iconfont icon-triangle-up ${sort&&sort == 'asc' ? 'active' : ''}`}></i>
+            <i className={`iconfont icon-triangle-down ${sort&&sort == 'desc' ? 'active' : ''}`}></i>
         </span>);
     }
 

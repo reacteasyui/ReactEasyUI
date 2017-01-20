@@ -84,7 +84,7 @@ export default class AutoComplete extends React.Component{
                          onClick={this.onDel.bind(this)}>×
                     </div>
                     <div className="search-btn" onClick={this.getDataFn.bind(this)}>
-                        <i className="iconfont icon-sousuo"></i>
+                        <i className="iconfont icon-search"></i>
                     </div>
                 </div>
                 <div className={`searchDate ${this.state.searchData && this.state.searchData.length && this.state.searchShow ? '':'hide'}`}>

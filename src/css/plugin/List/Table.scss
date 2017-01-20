@@ -57,7 +57,7 @@
           left: 5px;
           top: -3px;
           margin-right: 15px;
-          .icon-down, .icon-sanjiao-copy {
+          .icon-triangle-down, .icon-triangle-up {
             font-size: 12px;
             @include position(absolute);
             //color: #768099;
@@ -66,11 +66,11 @@
               color: $blue;
             }
           }
-          .icon-sanjiao-copy {
+          .icon-triangle-up {
             top: -1px;
             left: 0;
           }
-          .icon-down {
+          .icon-triangle-down {
             top: 7px;
             left: 0;
           }
@@ -432,7 +432,7 @@
     label {
       max-width: 100%;
       margin-bottom: 5px;
-      padding-left: 28px;
+      padding-left: 30px;
       font-weight: 400;
       text-align: left;
       @include position(relative);
@@ -448,7 +448,7 @@
       i {
         position: absolute;
         left: 0;
-        top: 1px;
+        top: 0;
         display: none;
         color: $blue;
       }
@@ -457,7 +457,7 @@
       }
       span {
         font-size: 14px;
-        color: $blue;
+        color: rgba($black,.8);
       }
     }
   }

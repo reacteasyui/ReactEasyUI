@@ -7,22 +7,16 @@
 }
 ._radio, ._check {
   @include pos;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: normal;
   margin-bottom: 0;
-  padding-left: 25px;
+  padding-left: 30px;
   cursor: pointer;
   i {
     display: none;
     @include pos(absolute);
-    top: -2px;
+    top: -5px;
     left: 0;
-    &.icon-iconfontdanxuankuangweixuanzhong {
-      color: $bbb;
-    }
-    &.icon-btndanxuankuangxuanzhong {
-      color: $blue;
-    }
     &.active {
       display: block;
     }

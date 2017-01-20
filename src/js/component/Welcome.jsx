@@ -12,13 +12,10 @@ export default class Content extends React.Component {
                 <h1>ReactEasyUI</h1>
                 <p>ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由 <Link to="about">易车前端团队</Link> 打造。 </p>
                 <h2>安装</h2>
-                <p><strong>ReactEasyUI 依赖于 React</strong>，若未安装 React，须先 <a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank">安装 React</a>。</p>
-                <p>接着安装 ReactEasyUI。</p>
+                <p>ReactEasyUI 依赖于 React，若未安装 React，须先 <a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank">安装 React</a>。</p>
+                <p>然后安装 ReactEasyUI。</p>
                 <blockquote>
-                    <p><code>$ npm install reacteasyui --save-dev</code><span>// 安装</span></p>
-                    <p><code>$ cd ReactEasyUI</code><span>// 切换目录</span></p>
-                    <p><code>$ npm start</code><span>// 启动</span></p>
-                    <p><code>http://127.0.0.1:3000/</code><span>// 浏览器访问</span></p>
+                    <p><code>npm install reacteasyui --save-dev</code></p>
                 </blockquote>
                 <h2>文件引入</h2>
                 <h3>CSS 引入</h3>

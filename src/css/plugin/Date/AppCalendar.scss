@@ -252,23 +252,21 @@ $week-bg: #F7F7F7;
         top: 0px;
         left: 10px;
       }
-      .ic-back {
+      .icon-point-left {
         position: absolute;
-        left: 12px;
+        left: 0;
         top: 0;
-        display: inline-block;
-        width: 24px;
-        font-size: 20px;
+        width: 44px;
+        font-size: 1.8rem;
+        text-align: center;
         height: 44px;
         cursor: pointer;
-        transform: rotate(180deg);
       }
     }
   }
 }
 
 .calendar-depTips, .calendar-arrTips {
-  font-family: 微软雅黑;
   position: fixed;
   font-size: 18px;
   left: 50%;

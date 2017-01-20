@@ -1,6 +1,6 @@
 {
   "name": "reacteasyui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ReactEasyUI是基于React的常用组件库",
   "main": "src/js/index.js",
   "dependencies": {
@@ -11,7 +11,7 @@
     "react-dom": "^0.14.7"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "echo \"reacteasyui已经安装成功\" && exit 1"
   },
   "keywords": [
     "react",

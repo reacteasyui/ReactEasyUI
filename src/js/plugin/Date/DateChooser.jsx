@@ -129,12 +129,8 @@ export class DateChooser extends React.Component {
         const {mode, todayIsMaxDay, todayIsMinDay, datelimit, opens, format}=this.props;
         const {date, endDate}=this.state;
         const now = moment();
-        let dateBtnL = (<a className={`dateBtn ${todayIsMinDay&&date<this.minDay?"disabled":""}`}
-                           onClick={this.onSubtract.bind(this)}>
-                <i className="iconfont icon-xiangzuo"></i></a>),
-            dateBtnR = (<a className={`dateBtn ${todayIsMaxDay&&date>this.maxDay?"disabled":""}`}
-                           onClick={this.onAdd.bind(this)}>
-                <i className="iconfont icon-xiangyou"></i></a>);
+        let dateBtnL = (<a className={`dateBtn ${todayIsMinDay&&date<this.minDay?"disabled":""}`} onClick={this.onSubtract.bind(this)}><i className="iconfont icon-point-left"></i></a>),
+            dateBtnR = (<a className={`dateBtn ${todayIsMaxDay&&date>this.maxDay?"disabled":""}`} onClick={this.onAdd.bind(this)}><i className="iconfont icon-point-right"></i></a>);
         if (mode == "day") {
             this.text = (
                 <div className="dateChooser">

@@ -1,24 +1,18 @@
-# ReactEasyUI
+ReactEasyUI
+===============
 
-ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由 [易车前端团队](http://reacteasyui.github.io/#/about) 打造。
+ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由 [易车前端团队] 打造。
 
-##Demo
+官方网站：[https://reacteasyui.github.io]
 
-ReactEasyUI=>[https://reacteasyui.github.io](https://reacteasyui.github.io)
 
 ## 安装
 
-**ReactEasyUI 依赖于 React**，若未安装 React，须先 [安装 React](http://reactjs.cn/react/docs/getting-started-zh-CN.html)。
+ReactEasyUI 依赖于 React，若未安装 React，须先 [安装 React]。
 
-接着安装 ReactEasyUI。
+然后安装 ReactEasyUI。
 
-> `$ npm install reacteasyui --save-dev` // 安装
-> 
-> `$ cd ReactEasyUI` // 切换目录
-> 
-> `$ npm start` // 启动
-> 
-> `http://127.0.0.1:3000/` // 浏览器访问
+> `npm install reacteasyui --save-dev`
 
 
 ## 文件引入
@@ -30,9 +24,9 @@ ReactEasyUI 组件样式依赖 Bootstrap 与 ReactEasyUI.css。
 	<link src="../css/lib/bootstrap/3.3.5/bootstrap.min.css" rel="stylesheet">
 	<link src="../css/lib/ReactEasyUI.css" rel="stylesheet">
 
-### Javascript 引入
+## Javascript 引入
 
-`lib.js` 集成了 ReactEasyUI 需要的 jQuery.js(1.12.2+)、bootstrap.js(3.3.5+)、[jsfunction.js](http://www.itbbb.com/jsfunction/jsfunction.html) 三个文件，echarts.js 在图表组件中需要。
+`lib.js` 集成了 ReactEasyUI 需要的 jQuery.js(1.12.2+)、bootstrap.js(3.3.5+)、[jsfunction.js] 三个文件，echarts.js 在图表组件中需要。
 
 	<script href="../js/lib/lib.js"><script>
 	<script href="../js/lib/echarts.js"><script>
@@ -123,3 +117,9 @@ ReactEasyUI 源码包含有预先编译的 CSS、JavaScript 和图标字体文�
 	└── css/font/
 
 `css/`、`js/` 和 `font/` 目录分别包含了 CSS、JS 和字体图标的源码。`dev/` 目录包含了预编译 ReactEasyUI 包内的所有文件。`js/plugin/` 包含了所有文档的源码文件，`js/component/` 目录是 ReactEasyUI 提供的实例工程。
+
+
+[易车前端团队]: http://reacteasyui.github.io/#/about
+[https://reacteasyui.github.io]: https://reacteasyui.github.io
+[安装 React]: http://reactjs.cn/react/docs/getting-started-zh-CN.html
+[jsfunction.js]: http://www.itbbb.com/jsfunction/jsfunction.html

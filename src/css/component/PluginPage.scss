@@ -18,10 +18,9 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .app-calendar-page {
   .dateArea {
-    border: 1px solid $e5;
-    border-radius: 4px;
-    padding: 4px 12px;
-    color: $blue;
+    border: 1px solid $border;
+    border-radius: 2px;
+    padding: 5px 15px;
   }
 }
 
@@ -42,10 +41,6 @@
       font: inherit;
       margin: 20px 0;
       padding: 0 0 0 20px;
-      span {
-        color: rgba($black,.45);
-        margin-left: 10px;
-      }
     }
     pre {
       margin-bottom: 15px;
