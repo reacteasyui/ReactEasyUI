@@ -53,7 +53,7 @@ export default class WelcomeToEcharts extends React.Component {
         return (
             <div className="echarts-welcome-page">
                 <h1>Echarts</h1>
-                <p>请注意，ReactEasyUI 的组件依赖于 echarts.js 3.0+，请在 ReactEasyUI 前引入 <a href="http://echarts.baidu.com/" target="_blank">echarts.js</a></p>
+                <p>请注意，ReactEasyUI 的组件依赖于 echarts.js 3.0+，请在 ReactEasyUI 前引入 <a href="http://echarts.baidu.com/" target="_blank">echarts.js</a>。</p>
                 <pre><code className="language-markup">
                     &lt;script href="../js/lib/echarts.js"&gt;&lt;script&gt;
                 </code></pre>

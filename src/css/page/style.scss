@@ -79,10 +79,20 @@ a {
   color: $black;
   font-size: 2rem;
   line-height: 50px;
-  padding: 0 20px;
+  margin: 0 20px;
+  padding: 0;
   &:hover,
   &:focus {
     color: rgba($black,.8);
+  }
+  .logo {
+    float: left;
+    background: url(../../assets/logo.svg) center center / 30px 30px no-repeat;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
   }
 }
 .navbar-collapse {
@@ -361,7 +371,7 @@ a {
   }
   code {
     font-family: 'Roboto Mono', Monaco, courier, monospace;
-    font-size: .8em;
+    font-size: .8rem;
     line-height: 1.8;
     padding: 3px 5px;
   }
@@ -429,11 +439,22 @@ a {
   .content {
     padding-left: 80px;
     padding-right: 80px;
+    .about {
+      margin-left: -80px;
+      margin-right: -80px;
+    }
   }
 }
 @media (max-width: 767px) {
   .content {
     padding-left: 20px;
     padding-right: 20px;
+    .about {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    .table-params {
+      border: 0;
+    }
   }
 }

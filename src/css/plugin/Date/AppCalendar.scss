@@ -13,7 +13,7 @@ $week-bg: #F7F7F7;
   position: absolute;
   top: 70px;
   left: 0;
-  z-index: 9999;
+  z-index: 10000;
   background: $calendarBg;
   width: 100%;
   em {
@@ -28,7 +28,7 @@ $week-bg: #F7F7F7;
     left: 0;
     z-index: 50;
     width: 100%;
-    border-bottom: #d4d4d4 0px solid;
+    border-bottom: #d4d4d4 0 solid;
     background: #22ca92;
     color: $font-black;
     i {

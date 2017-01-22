@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1484899637700'); /* IE9*/
-  src: url('iconfont.eot?t=1484899637700#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1484899637700') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1484899637700') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1484899637700#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1485077340346'); /* IE9*/
+  src: url('iconfont.eot?t=1485077340346#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1485077340346') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1485077340346') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1485077340346#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -15,7 +15,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-shouji1:before { content: "\e737"; }
+.icon-pc:before { content: "\e63e"; }
+
+.icon-mobile:before { content: "\e737"; }
 
 .icon-search:before { content: "\e606"; }
 

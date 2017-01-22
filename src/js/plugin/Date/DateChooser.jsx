@@ -22,6 +22,7 @@ export const MODE = ["day", "week", "month", "range", "year"];
 export class DateChooser extends React.Component {
     constructor(props) {
         super(props);
+        console.log(moment(props.startTime));
         this.state = {
             date: !props.empty ? (props.startTime ? moment(props.startTime) : moment()) : null,
             endDate: !props.empty ? (props.endTime ? moment(props.endTime) : moment()) : null,
@@ -210,12 +211,6 @@ export class DateChooser extends React.Component {
                     }
                 </div>);
         } else if (mode == "year") {
-            if (this.props.dateLimit) {
-                let nowYear = now.format("YYYY");
-                // if (date.format() == now.startOf("year").format() && nowYear < 8) {
-                //     // date.add(-1, "month")
-                // }
-            }
             this.text = (
                 <div className="dateChooser">
                     {dateBtnL}

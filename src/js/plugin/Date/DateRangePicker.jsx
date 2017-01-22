@@ -26,9 +26,9 @@ export default class DateRangePicker extends React.Component {
             startTime: props.startTime,
             endTime: props.endTime,
             isButtonHide: props.isButtonHide || false,
-            minDate:props.minDate || null,
-            maxDate:props.maxDate || null,
-            val: ""
+            minDate: props.minDate || null,
+            maxDate: props.maxDate || null,
+            val: props.startTime ? (!props.range ? this.formatAllKindOfDate(props.startTime) : this.formatAllKindOfDate(props.startTime) + "~" + this.formatAllKindOfDate(props.endTime)) : ""
         };
         this.$picker = null;
         this.del = false;
@@ -36,6 +36,21 @@ export default class DateRangePicker extends React.Component {
             (<i className={"iconfont  icon-triangle-down"}></i>)];
         this.pickerID = "datepicker_" + ~~(Math.random() * 100000);
         //console.log(props.startTime)
+    }
+
+    //很蛋疼的整合，应该只支持字符串，然后在组件内进行统一转换
+    formatAllKindOfDate(date) {
+        if (typeof date == "string") {
+            return date;
+        }
+        let format = this.props.format;
+        if (!format)
+            return "";
+        if (typeof date == "object" && date instanceof Date) {
+            return date.format(format.replace("Y", "y").replace("D", "d"));
+        } else {
+            return date.format(format.replace("y", "Y").replace("d", "D"));
+        }
     }
 
     static defaultProps = {
@@ -203,12 +218,12 @@ export default class DateRangePicker extends React.Component {
             startTime: props.startTime,
             endTime: props.endTime,
             maxDate: props.maxDate || null,
-            minDate:props.minDate || null,
-            isButtonHide:props.isButtonHide || false,
+            minDate: props.minDate || null,
+            isButtonHide: props.isButtonHide || false,
             val: val
         }, ()=> {
             let _datepicker = _this.$picker.data('daterangepicker');
-            if ( _datepicker && props.maxDate) {
+            if (_datepicker && props.maxDate) {
                 _datepicker.maxDate = props.maxDate;
             }
             if (_datepicker && props.minDate) {

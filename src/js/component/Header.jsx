@@ -10,7 +10,9 @@ export default class Header extends React.Component {
         return (
             <header className="navbar navbar-fixed-top" id="top" role="banner">
                 <div className="navbar-header">
-                    <a href="#" className="navbar-brand">ReactEasyUI</a>
+                    <a href="#" className="navbar-brand">
+                        <span className="logo"></span>ReactEasyUI
+                    </a>
                     <button className="navbar-toggle collapsed" type="button">
                         <span className="sr-only">导航</span>
                         <span className="icon-bar"></span>

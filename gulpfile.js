@@ -41,7 +41,8 @@ src.pagejs = src.root + "js/page/*.js";
 src.css = src.root + "css/**/*.css";
 src.sass = src.root + "css/**/*.scss";
 src.font = src.root + "css/font/**/*.*";
-src.img = src.root + "images/**/*.{png,jpg,gif,ico}";
+src.img = src.root + "images/**/*.{jpg,png,gif}";
+src.assets = src.root + "assets/**/*.{ico,png,svg,ai}";
 src.html = src.root + "page/**/*.html";
 //编译版路径
 var dev = {};
@@ -51,6 +52,7 @@ dev.pagejs = dev.root + "js/page/";
 dev.css = dev.root + "css/";
 dev.font = dev.root + "css/font/";
 dev.img = dev.root + "images/";
+dev.assets = dev.root + "assets/";
 dev.html = dev.root + "page/";
 //发布版路径
 var build = {};
@@ -60,6 +62,7 @@ build.pagejs = build.root + "js/page/";
 build.css = build.root + "css/";
 build.font = build.root + "css/font/";
 build.img = build.root + "images/";
+build.assets = build.root + "assets/";
 build.html = build.root + "page/";
 
 build.serverRoot = "../../dma_static_release/ReactEasyUI/";
@@ -189,7 +192,16 @@ gulp.task('img', function () {
     }))
         .pipe(gulp.dest(dev.img))
         .pipe(gulp.dest(build.img));
-    console.log("图片构建完毕");
+    console.log("images 文件夹构建完毕");
+    gulp.src(src.assets).pipe(minifyImg({
+        optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+        progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+        interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+        multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
+    }))
+        .pipe(gulp.dest(dev.assets))
+        .pipe(gulp.dest(build.assets));
+    console.log("assets 文件夹构建完毕");
 });
 
 //清理
@@ -249,23 +261,30 @@ gulp.task('html', ['rev'], function () {
     console.log("html时间戳更新完毕");
 });
 
-// 生成 docs 文件夹
-gulp.task("docs",function () {
+// 生成 GitHub/reacteasyui.github.io 文件夹
+gulp.task("site",function () {
     // font
     gulp.src([
-        build.font + "*.*",
-        "!" + build.font + "*.css*",
-    ]).pipe(gulp.dest("./docs/font/"));
+        build.font + "**/*.*",
+        "!" + build.font + "**/*.css*",
+    ]).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/font/"));
     // images
-    gulp.src(build.img + "*.*").pipe(gulp.dest("./docs/images/"));
+    gulp.src(build.img + "*.*").pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/images/"));
+    // assets
+    gulp.src([
+        build.assets + "*.*",
+        "!" + build.assets + "favicon.ico",
+    ]).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/assets/"));
+    gulp.src(build.assets + "favicon.ico").pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/"));
     // css
     gulp.src([
         build.css + "lib/bootstrap/3.3.5/bootstrap.min.css",
         build.css + "lib/ReactEasyUI.css",
-    ]).pipe(gulp.dest("./docs/css/"));
+    ]).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/css/"));
     gulp.src(build.css + "page/style.css")
         .pipe(replace("../../images/", "../images/"))
-        .pipe(gulp.dest("./docs/css/"));
+        .pipe(replace("../../assets/", "../assets/"))
+        .pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/css/"));
     // js
     gulp.src([
         build.js + "lib/lib.js",
@@ -273,31 +292,33 @@ gulp.task("docs",function () {
         build.js + "lib/prism.js",
         build.js + "lib/scrollbar.js",
         build.js + "lib/fastclick.min.js",
-    ]).pipe(gulp.dest("./docs/js/"));
+    ]).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/js/"));
     gulp.src(build.pagejs + "*.js")
         .pipe(replace('"../"', '"./"'))
-        .pipe(gulp.dest("./docs/js/"));
+        .pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/js/"));
     // html
     gulp.src(build.html + "index.html")
+        .pipe(replace("../assets/", ""))
         .pipe(replace("../css/lib/bootstrap/3.3.5", "./css"))
         .pipe(replace("../css/lib", "./css"))
         .pipe(replace("../css/page", "./css"))
         .pipe(replace("../js/lib", "./js"))
         .pipe(replace("../js/page", "./js"))
-        .pipe(gulp.dest("./docs/"));
+        .pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/"));
+    console.log("去 GitHub/reacteasyui.github.io 目录进行提交");
 });
 
-gulp.task("github", function () {
+// 生成 GitHub/ReactEasyUI 文件夹
+gulp.task("reui", function () {
     gulp.src([
         "./" + character,
         "!" + build.root + character,
         "!" + dev.root + character,
-        "!docs/" + character,
+        "!docs/" + character, // 暂时保留
         "!node_modules/" + character,
         "!rev/" + character,
     ]).pipe(gulp.dest(build.githubRoot + "ReactEasyUI"));
-    gulp.src("./docs/" + character).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io"));
-    console.log("去 GitHub 目录进行提交");
+    console.log("去 GitHub/ReactEasyUI 目录进行提交");
 });
 
 gulp.task("removeCon", function () {
