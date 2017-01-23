@@ -330,17 +330,12 @@ a {
       &:active {
         background: transparent;
         color: $blue !important;
-        .iconfont {
-          color: inherit;
-        }
       }
     }
     .iconfont {
-      display: inline-block;
-      color: rgba($black,.6);
+      color: inherit;
       font-size: 1.4rem;
       margin-left: 8px;
-      vertical-align: middle;
     }
   }
 }
