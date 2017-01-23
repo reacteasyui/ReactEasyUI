@@ -18,6 +18,7 @@ import DateRangePickerPage from "../component/DatePage/DateRangePickerPage";
 import DateChooserPage from "../component/DatePage/DateChooserPage";
 import CalenderPage from "../component/DatePage/CalendarPage";
 import AppCalenderPage from "../component/DatePage/AppCalendarPage";
+import SchedulePage from "../component/DatePage/SchedulePage";
 
 import TablePage from "../component/ListPage/TablePage";
 
@@ -95,6 +96,7 @@ ReactDOM.render(
                 <Route path="date-chooser" component={DateChooserPage}/>
                 <Route path="calender" component={CalenderPage}/>
                 <Route path="app-calender" component={AppCalenderPage}/>
+                <Route path="schedule" component={SchedulePage}/>
             </Route>
             <Route path="list">
                 <IndexRedirect to={"table"}/>
