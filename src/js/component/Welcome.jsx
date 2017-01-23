@@ -53,7 +53,8 @@ export default class Content extends React.Component {
                 </p>
                 <p>ReactEasyUI 源码包含有预先编译的 CSS、JavaScript 和图标字体文件，以及 SASS、JavaScript 和文档的源码，主要文件结构如下：</p>
                 <pre><code>
-                    ReactEasyUI/src/<br/>
+                    ReactEasyUI/<br/>
+                    ├─ src/<br/>
                     ├── css/plugin/<br/>
                     │   ├── Base<br/>
                     │   │   ├── AutoComplete.scss<br/>
@@ -109,9 +110,9 @@ export default class Content extends React.Component {
                     │   │   ├── ProgressBar.jsx<br/>
                     │   │   ├── ProgressChart.jsx<br/>
                     │   │   └── Ring.jsx<br/>
-                    ├── js/dev/<br/>
-                    ├── js/component/<br/>
-                    └── css/font/<br/>
+                    ├── images/<br/>
+                    ├─ dev/<br/>
+                    └─ build/<br/>
                 </code></pre>
                 <p><code>css/</code>、<code>js/</code> 和 <code>font/</code> 目录分别包含了 CSS、JS 和字体图标的源码。<code>dev/</code> 目录包含了预编译 ReactEasyUI 包内的所有文件。<code>js/plugin/</code> 包含了所有文档的源码文件，<code>js/component/</code> 目录是 ReactEasyUI 提供的实例工程。</p>
             </div>

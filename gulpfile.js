@@ -314,10 +314,9 @@ gulp.task("reui", function () {
         "./" + character,
         "!" + build.root + character,
         "!" + dev.root + character,
-        "!docs/" + character, // 暂时保留
         "!node_modules/" + character,
         "!rev/" + character,
-    ]).pipe(gulp.dest(build.githubRoot + "ReactEasyUI"));
+    ]).pipe(gulp.dest(build.githubRoot + "ReactEasyUI/"));
     console.log("去 GitHub/ReactEasyUI 目录进行提交");
 });
 

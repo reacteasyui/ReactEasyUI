@@ -56,7 +56,8 @@ ReactEasyUI 组件库包含多种常用组件，如 `基础组件`、`日期组�
 
 ReactEasyUI 源码包含有预先编译的 CSS、JavaScript 和图标字体文件，以及 SASS、JavaScript 和文档的源码，主要文件结构如下：
 	
-	ReactEasyUI/src/
+	ReactEasyUI/
+    ├─ src/
 	├── css/plugin/
 	│   ├── Base
 	│   │   ├── AutoComplete.scss
@@ -112,9 +113,9 @@ ReactEasyUI 源码包含有预先编译的 CSS、JavaScript 和图标字体文�
 	│   │   ├── ProgressBar.jsx
 	│   │   ├── ProgressChart.jsx
 	│   │   └── Ring.jsx
-	├── js/dev/
-	├── js/component/
-	└── css/font/
+	├── images/
+    ├─ dev/
+    └─ build/
 
 `css/`、`js/` 和 `font/` 目录分别包含了 CSS、JS 和字体图标的源码。`dev/` 目录包含了预编译 ReactEasyUI 包内的所有文件。`js/plugin/` 包含了所有文档的源码文件，`js/component/` 目录是 ReactEasyUI 提供的实例工程。
 
