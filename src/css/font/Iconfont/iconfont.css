@@ -1,0 +1,39 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1485156107261'); /* IE9*/
+  src: url('iconfont.eot?t=1485156107261#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1485156107261') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1485156107261') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1485156107261#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pc:before { content: "\e63e"; }
+
+.icon-mobile:before { content: "\e737"; }
+
+.icon-search:before { content: "\e606"; }
+
+.icon-towards-up:before { content: "\e634"; }
+
+.icon-point-left:before { content: "\e62e"; }
+
+.icon-point-right:before { content: "\e61f"; }
+
+.icon-triangle-down:before { content: "\e616"; }
+
+.icon-checked:before { content: "\e641"; }
+
+.icon-triangle-up:before { content: "\e617"; }
+
+.icon-unchecked:before { content: "\e638"; }
+
+.icon-corner-checked:before { content: "\e632"; }
+
