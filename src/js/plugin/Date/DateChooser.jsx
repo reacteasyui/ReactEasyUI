@@ -22,6 +22,7 @@ export const MODE = ["day", "week", "month", "range", "year"];
 export class DateChooser extends React.Component {
     constructor(props) {
         super(props);
+        console.log(moment(props.startTime));
         this.state = {
             date: !props.empty ? (props.startTime ? moment(props.startTime) : moment()) : null,
             endDate: !props.empty ? (props.endTime ? moment(props.endTime) : moment()) : null,
@@ -129,12 +130,8 @@ export class DateChooser extends React.Component {
         const {mode, todayIsMaxDay, todayIsMinDay, datelimit, opens, format}=this.props;
         const {date, endDate}=this.state;
         const now = moment();
-        let dateBtnL = (<a className={`dateBtn ${todayIsMinDay&&date<this.minDay?"disabled":""}`}
-                           onClick={this.onSubtract.bind(this)}>
-                <i className="iconfont icon-xiangzuo"></i></a>),
-            dateBtnR = (<a className={`dateBtn ${todayIsMaxDay&&date>this.maxDay?"disabled":""}`}
-                           onClick={this.onAdd.bind(this)}>
-                <i className="iconfont icon-xiangyou"></i></a>);
+        let dateBtnL = (<a className={`dateBtn ${todayIsMinDay&&date<this.minDay?"disabled":""}`} onClick={this.onSubtract.bind(this)}><i className="iconfont icon-point-left"></i></a>),
+            dateBtnR = (<a className={`dateBtn ${todayIsMaxDay&&date>this.maxDay?"disabled":""}`} onClick={this.onAdd.bind(this)}><i className="iconfont icon-point-right"></i></a>);
         if (mode == "day") {
             this.text = (
                 <div className="dateChooser">
@@ -214,12 +211,6 @@ export class DateChooser extends React.Component {
                     }
                 </div>);
         } else if (mode == "year") {
-            if (this.props.dateLimit) {
-                let nowYear = now.format("YYYY");
-                // if (date.format() == now.startOf("year").format() && nowYear < 8) {
-                //     // date.add(-1, "month")
-                // }
-            }
             this.text = (
                 <div className="dateChooser">
                     {dateBtnL}

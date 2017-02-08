@@ -1,5 +1,5 @@
 /*
- * Style for ReactEasyUI site v2.0
+ * Style for ReactEasyUI site v2.2
  */
 
 
@@ -13,8 +13,8 @@ html {
 }
 body {
   color: rgba($black,.8);
-  font-family: Helvetica, Arial, 'Microsoft YaHei', sans-serif;
-  font-size: 1.4rem;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+  font-size: 1.5rem;
   line-height: 1.8;
 }
 h1, h2, h3 {
@@ -35,11 +35,6 @@ a {
     color: $blue;
   }
 }
-@media (max-width: 767px) {
-  html {
-    font-size: 11px;
-  }
-}
 
 
 /* Style
@@ -58,61 +53,107 @@ a {
   height: 40px;
   cursor: pointer;
   &:before {
-    content: '\27a4';
+    content: '\e634';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     color: rgba($black,.6);
+    font-family: 'iconfont';
     font-size: 1.8rem;
-    transform: rotate(-90deg);
   }
 }
 
 
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.navbar {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
   background: $white;
-  border: 0;
-  box-shadow: 0 1px 0 rgba($black,.05), 0 1px 8px rgba($black,.1);
-  margin-bottom: 0;
+  box-shadow: 0 1px 0 rgba($black,.05), 0 1px 3px rgba($black,.1);
+  width: 100%;
+  a {
+    display: block;
+    color: inherit;
+    line-height: 50px;
+    text-decoration: none;
+  }
 }
-.navbar-brand {
-  color: $black;
+.logo {
+  float: left;
+  background: url(../../assets/logo.svg) left center / 30px 30px no-repeat;
   font-size: 2rem;
-  line-height: 50px;
-  padding: 0 20px;
-  &:hover,
-  &:focus {
-    color: rgba($black,.8);
+  margin: 0 20px;
+  padding-left: 40px;
+  &:hover {
+    color: inherit;
   }
 }
-.navbar-collapse {
-  border-top: 0;
-}
-.nav > li > a {
-  color: rgba($black,.8);
-  &:hover,
-  &:focus,
-  &.active {
-    background: transparent;
-    color: rgba($black,.45);
+.btn-menu {
+  display: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 50px;
+  .menu-icon {
+    top: 50%;
+    transform: translate(-50%,-50%);
+    &,
+    &:before,
+    &:after {
+      position: absolute;
+      left: 50%;
+      background: rgba($black,.8);
+      width: 20px;
+      height: 2px;
+    }
+    &:before,
+    &:after {
+      content: '';
+      transform: translateX(-50%);
+    }
+    &:before {
+      top: -6px;
+    }
+    &:after {
+      top: 6px;
+    }
   }
 }
-.navbar-toggle {
-  margin-right: 10px;
-  .icon-bar {
-    background: rgba($black,.8);
-    width: 20px;
+.navlist {
+  float: left;
+  > li {
+    float: inherit;
+    list-style: none;
+    > a {
+      padding: 0 15px;
+      &:hover,
+      &.active {
+        color: rgba($black,.3);
+      }
+    }
   }
-}
-.navbar-right {
-  padding-right: 20px;
+  &.navlist-right {
+    float: right;
+    padding-right: 5px;
+  }
 }
 @media (max-width: 767px) {
-  .navbar-collapse {
+  .btn-menu {
+    display: block;
+  }
+  .nav {
+    clear: left;
+    display: none;
     background: $fa;
     box-shadow: 0 -1px 0 rgba($black,.05);
     padding-left: 20px;
@@ -120,16 +161,21 @@ a {
     white-space: nowrap;
     overflow-x: auto;
   }
-  .navbar-nav {
+  .navlist  {
+    float: none;
     display: inline-block;
-    margin: 0;
     > li {
       display: inherit;
       > a {
+        line-height: 40px;
         margin-right: 20px;
         padding-left: 0;
         padding-right: 0;
       }
+    }
+    &.navlist-right {
+      float: none;
+      padding-right: 0;
     }
   }
 }
@@ -170,7 +216,6 @@ a {
   > .scroll-element {
     display: none;
     position: absolute;
-    z-index: 9999;
     &.scroll-x.scroll-scrollx-visible,
     &.scroll-y.scroll-scrolly-visible {
       display: block;
@@ -180,8 +225,8 @@ a {
       left: 0;
       width: 100%;
       &.scroll-scrolly-visible .scroll-element_size { left: -11px; }
-      .scroll-bar { top: -6px; min-width: 10px; height: 5px; }
-      .scroll-element_outer { left: 2px; }
+      .scroll-bar { top: -5px; min-width: 10px; height: 5px; }
+      .scroll-element_outer { left: 1px; }
       .scroll-element_size { left: -4px; }
     }
     &.scroll-y {
@@ -189,8 +234,8 @@ a {
       right: 0;
       height: 100%;
       &.scroll-scrollx-visible .scroll-element_size { top: -11px; }
-      .scroll-bar { left: -6px; min-height: 10px; width: 5px; }
-      .scroll-element_outer { top: 2px; }
+      .scroll-bar { left: -5px; min-height: 10px; width: 5px; }
+      .scroll-element_outer { top: 1px; }
       .scroll-element_size { top: -4px; }
     }
     div {
@@ -205,6 +250,13 @@ a {
   padding-bottom: 40px;
 }
 @media (min-width: 768px) {
+  .scroll-wrapper {
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    .scroll-content {
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+  }
   .sider,
   .docs {
     min-height: calc(100vh - 50px);
@@ -213,19 +265,18 @@ a {
     top: 50px;
     width: 22%;
   }
-  .scroll-wrapper .scroll-content {
-    padding-top: 25px;
-    padding-bottom: 30px;
-  }
   .docs {
     float: right;
     width: 78%;
   }
 }
 @media (max-width: 767px) {
+  .scroll-wrapper,
+  .scroll-element {
+    z-index: 9999;
+  }
   .sider {
     display: none;
-    z-index: 9999;
     top: 90px;
     background: $white;
     width: 100%;
@@ -234,7 +285,7 @@ a {
 
 /* Sider */
 .primary,
-.navlist a {
+.toggle-list a {
   position: relative;
   display: block;
   color: rgba($black,.8) !important;
@@ -244,33 +295,32 @@ a {
   text-overflow: ellipsis;
 }
 .primary {
-  font-size: 1.5rem;
   padding-left: 40px !important;
 }
 .btn-toggle {
-
   &:before {
-    content: '\e072';
+    content: '\e61f';
     display: inline-block;
     position: absolute;
     top: 50%;
     left: 18px;
-    color: rgba($black,.3);
-    font-family: 'Glyphicons Halflings';
+    color: rgba($black,.6);
+    font-family: 'iconfont';
+    font-size: 1.2rem;
     line-height: 1;
-    transform: translateY(-50%) scale(.65);
+    transform: translateY(-50%);
   }
   &.active {
     &:before {
       margin-top: -1px;
-      transform: translateY(-50%) rotateZ(90deg) scale(.65);
+      transform: translateY(-50%) rotateZ(90deg);
     }
-    & + .navlist {
+    & + .toggle-list {
       display: block;
     }
   }
 }
-.navlist {
+.toggle-list {
   display: none;
   a {
     padding-left: 50px !important;
@@ -279,24 +329,22 @@ a {
       &:hover,
       &:active {
         background: transparent;
-        box-shadow: none;
         color: $blue !important;
       }
+    }
+    .iconfont {
+      color: inherit;
+      font-size: 1.4rem;
+      margin-left: 8px;
     }
   }
 }
 @media (min-width: 768px) {
-  .sider,
-  .primary:hover,
-  .primary.active,
-  .navlist a:hover {
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .05);
-  }
   .primary.active {
     background: $f5;
   }
   .primary,
-  .navlist a {
+  .toggle-list a {
     line-height: 30px;
     padding: 4px 20px;
     &:hover,
@@ -307,25 +355,25 @@ a {
   .primary {
     margin-top: 5px;
   }
-  .btn-toggle.active + .navlist {
+  .btn-toggle.active + .toggle-list {
     margin-top: 5px;
     margin-bottom: 5px;
   }
 }
 @media (max-width: 767px) {
   .primary,
-  .navlist a {
+  .toggle-list a {
     padding: 12px 20px;
   }
-  .primary {
+  .primary,
+  .btn-toggle.active + .toggle-list {
     box-shadow: 0 1px 0 rgba($black,.06);
   }
-  .navlist a {
+  .toggle-list a {
     box-shadow: 0 1px 0 rgba($black,.03);
   }
-  .btn-toggle.active + .navlist {
+  .btn-toggle.active + .toggle-list {
     background: $fa;
-    box-shadow: 0 1px 0 rgba($black,.06);
   }
 }
 
@@ -334,12 +382,11 @@ a {
   h1, h2 {
     margin-top: 40px;
   }
-  h2, h3 {
+  h1, h2, h3 {
     margin-bottom: 15px;
   }
   h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
   }
   h2 {
     font-size: 2.5rem;
@@ -354,15 +401,24 @@ a {
   }
   pre, code {
     background: $f8;
+    border-radius: 2px;
   }
   pre {
     border: 0;
     border-radius: 0;
     margin: 0;
     padding: 20px;
+    code {
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+    }
   }
   code {
-    font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+    font-family: 'Roboto Mono', Monaco, courier, monospace;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding: 3px 5px;
   }
   .demo {
     margin-bottom: 40px;
@@ -428,11 +484,22 @@ a {
   .content {
     padding-left: 80px;
     padding-right: 80px;
+    .about {
+      margin-left: -80px;
+      margin-right: -80px;
+    }
   }
 }
 @media (max-width: 767px) {
   .content {
     padding-left: 20px;
     padding-right: 20px;
+    .about {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    .table-params {
+      border: 0;
+    }
   }
 }

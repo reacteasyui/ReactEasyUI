@@ -100,9 +100,7 @@ export default class AppCalendar extends React.Component {
 					</span>
                     {
                         type == 'single' ? null : (
-                                <span className="endDate" rel={endDate?endDate.format("yyyy-MM-dd"):""}> -
-                                    {endDate && endDate.format(format)}
-					</span>)
+                                <span className="endDate" rel={endDate?endDate.format("yyyy-MM-dd"):""}> - {endDate && endDate.format(format)}</span>)
                     }
                 </div>
             </div>

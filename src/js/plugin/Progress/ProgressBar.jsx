@@ -63,7 +63,7 @@ export default class ProgressBar extends React.Component {
                 <div className={`doneProgress ${this.props.singleBar ? "nomalBg" : (this.state.goal ? "goalBg" : "nomalBg")}`} style={styles}></div>
 
                 <div className={`goalNum ${this.props.goalShow?"":"hide"}`}>目标值{goalNum}<i
-                    className="iconfont icon-down"></i></div>
+                    className="iconfont icon-triangle-down"></i></div>
             </div>
         )
     }

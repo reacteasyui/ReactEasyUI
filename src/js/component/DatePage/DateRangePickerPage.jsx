@@ -16,12 +16,14 @@ export default class DateRangePickerPage extends React.Component {
                 <Demo title="实例" component={<DateRangePicker
                     todayIsMinDay
                     format="YYYY-MM-DD"
-                    name="follow_time"
+                    name="time"
+                    startTime={$.date().format("yyyy-MM-dd")}
                 />}>
                     {`<DateRangePicker
     todayIsMinDay
     format="YYYY-MM-DD"
-    name="follow_time"
+    name="time"
+    startTime={$.date().format("yyyy-MM-dd")}
 />`}
                 </Demo>
                 <Section title="参数" data={[

@@ -17,8 +17,8 @@ export default class About extends React.Component {
                     </div>
                 </div>
                 <div className="team">
-                    <div className="des"><h3>团队成员</h3> <span>动感实验室的小伙伴们</span></div>
-                    <div className="info">
+                    <div className="des"><h3>团队成员</h3><span>动感实验室的小伙伴们</span></div>
+                    <div className="info clearfix">
                         <dl>
                             <dt><img src={_url+"images/photo1.png"} alt=""/></dt>
                             <dd><b>北北 North</b>

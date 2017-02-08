@@ -13,7 +13,7 @@ $week-bg: #F7F7F7;
   position: absolute;
   top: 70px;
   left: 0;
-  z-index: 9999;
+  z-index: 10000;
   background: $calendarBg;
   width: 100%;
   em {
@@ -28,7 +28,7 @@ $week-bg: #F7F7F7;
     left: 0;
     z-index: 50;
     width: 100%;
-    border-bottom: #d4d4d4 0px solid;
+    border-bottom: #d4d4d4 0 solid;
     background: #22ca92;
     color: $font-black;
     i {
@@ -252,23 +252,21 @@ $week-bg: #F7F7F7;
         top: 0px;
         left: 10px;
       }
-      .ic-back {
+      .icon-point-left {
         position: absolute;
-        left: 12px;
+        left: 0;
         top: 0;
-        display: inline-block;
-        width: 24px;
-        font-size: 20px;
+        width: 44px;
+        font-size: 1.8rem;
+        text-align: center;
         height: 44px;
         cursor: pointer;
-        transform: rotate(180deg);
       }
     }
   }
 }
 
 .calendar-depTips, .calendar-arrTips {
-  font-family: 微软雅黑;
   position: fixed;
   font-size: 18px;
   left: 50%;

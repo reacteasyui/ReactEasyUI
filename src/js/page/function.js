@@ -3,6 +3,9 @@
  */
 
 $(function() {
+    // FastClick
+    FastClick.attach(document.body);
+
     // Sider 滚动条
     $('.sider').scrollbar();
 
@@ -27,21 +30,21 @@ $(function() {
 
     // 移动端 Sider 菜单切换
     (function() {
-        let btn_toggle = $('.navbar-toggle'),
-            collapse_menu = $('.navbar-collapse, .sider'),
-            menu_link = $('.navbar-nav > li > a, .btn-hide, .navlist a');
-        if (btn_toggle.is(':hidden')) {
+        let btn_menu = $('.btn-menu'),
+            toggle_menu = $('.nav, .sider'),
+            menu_link = $('.navlist > li > a, .btn-hide, .toggle-list a');
+        if (btn_menu.is(':hidden')) {
             return;
         }
-        btn_toggle.on('click', function() {
-            collapse_menu.toggle();
+        btn_menu.on('click', function() {
+            toggle_menu.toggle();
         });
         menu_link.on('click', function() {
-            collapse_menu.hide();
+            toggle_menu.hide();
         });
         $(document).on('click', function(e) {
-            if (! $( e.target ).closest('.navbar-toggle, .navbar-collapse, .sider').length) {
-                collapse_menu.hide();
+            if (! $( e.target ).closest('.btn-menu, .nav, .sider').length) {
+                toggle_menu.hide();
             }
         });
     })();

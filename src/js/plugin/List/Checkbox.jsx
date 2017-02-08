@@ -36,8 +36,8 @@ export default class Checkbox extends React.Component {
                    id={this.checkboxID}
             />
             <input type="hidden" name={name} value={this.state.checked}/>
-            <i className={`iconfont icon-fuxuankuang ${this.state.checked?"":"active"} ${disabled?"disabled":""}`}></i>
-            <i className={`iconfont icon-fuxuan01 ${this.state.checked?"active":""} ${disabled?"disabled":""}`}></i>
+            <i className={`iconfont icon-unchecked ${this.state.checked ? '' : 'active'} ${disabled ? 'disabled' : ''}`}></i>
+            <i className={`iconfont icon-checked ${this.state.checked ? 'active' : ''} ${disabled ? 'disabled' : ''}`}></i>
             <label htmlFor={this.checkboxID} className={`labelText ${this.props.labelText?"":"hide"}`}>{labelText}</label>
             {children}
         </label>)

@@ -2,10 +2,6 @@
  * Base CSS
  */
 
-/* core */
-@import "../core/function.scss";
-@import "../core/color.scss";
-
 /* prism.scss */
 @import '../lib/prism.css';
 
@@ -13,19 +9,61 @@
 @import '../component/PluginPage.scss';
 
 /* font */
+// Source Sans Pro
 @font-face {
-  font-family: 'iconfont';
-  src: url('../font/iconfont.eot?t=1460704905');
-  /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  /* chrome, firefox */
-  /* IE6-IE8 */
-  /* IE9*/
-  src: url('../font/iconfont.eot?t=1460704905#iefix') format('embedded-opentype'), url('../font/iconfont.woff?t=1460704905') format('woff'), url('../font/iconfont.ttf?t=1460704905') format('truetype'), url('../font/iconfont.svg?t=1460704905#iconfont') format('svg');
-  /* iOS 4.1- */
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/SourceSansPro/SourceSansPro-Regular.eot'); /* IE9 Compat Modes */
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'),
+  url('../font/SourceSansPro/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/SourceSansPro/SourceSansPro-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../font/SourceSansPro/SourceSansPro-Regular.woff') format('woff'), /* Modern Browsers */
+  url('../font/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../font/SourceSansPro/SourceSansPro-Regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
 }
-@import '../font/iconfont.css';
+// Roboto Mono
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/RobotoMono/RobotoMono-Regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Mono'), local('RobotoMono-Regular'),
+  url('../font/RobotoMono/RobotoMono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/RobotoMono/RobotoMono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../font/RobotoMono/RobotoMono-Regular.woff') format('woff'), /* Modern Browsers */
+  url('../font/RobotoMono/RobotoMono-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../font/RobotoMono/RobotoMono-Regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
+}
+// iconfont
+@font-face {font-family: "iconfont";
+  src: url('../font/Iconfont/iconfont.eot?t=1484899637700'); /* IE9*/
+  src: url('../font/Iconfont/iconfont.eot?t=1484899637700#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/Iconfont/iconfont.woff?t=1484899637700') format('woff'), /* chrome, firefox */
+  url('../font/Iconfont/iconfont.ttf?t=1484899637700') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/Iconfont/iconfont.svg?t=1484899637700#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-pc:before { content: "\e63e"; }
+.icon-mobile:before { content: "\e737"; }
+.icon-search:before { content: "\e606"; }
+.icon-towards-up:before { content: "\e634"; }
+.icon-point-left:before { content: "\e62e"; }
+.icon-point-right:before { content: "\e61f"; }
+.icon-triangle-down:before { content: "\e616"; }
+.icon-checked:before { content: "\e641"; }
+.icon-triangle-up:before { content: "\e617"; }
+.icon-unchecked:before { content: "\e638"; }
+.icon-corner-checked:before { content: "\e632"; }
+// Glyphicons Halflings
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../font/glyphicons-halflings-regular.eot');
-  src: url('../font/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/glyphicons-halflings-regular.woff2') format('woff2'), url('../font/glyphicons-halflings-regular.woff') format('woff'), url('../font/glyphicons-halflings-regular.ttf') format('truetype'), url('../font/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.eot');
+  src: url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.woff2') format('woff2'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.woff') format('woff'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.ttf') format('truetype'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }

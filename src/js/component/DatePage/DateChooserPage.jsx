@@ -1,6 +1,7 @@
 import React from 'react';
 import Demo from '../Demo.jsx';
 import Section from '../Section.jsx';
+import moment from '../../plugin/Date/moment';
 import {DateChooser, MODE} from '../../plugin/Date/DateChooser.jsx';
 
 export default class DateChooserPage extends React.Component {
@@ -16,10 +17,12 @@ export default class DateChooserPage extends React.Component {
                 <Demo title="实例" des='模式为「天」的日期选择组件实例' component={<DateChooser
                     mode="day"
                     opens="right"
+                    startTime={$.date().format("yyyy-MM-dd")}
                 />}>
                     {`<DateChooser
     mode="day"
     opens="right"
+    startTime={$.date().format("yyyy-MM-dd")}
 />`}
                 </Demo>
                 <Demo des='模式为「星期」的日期选择组件实例' component={<DateChooser

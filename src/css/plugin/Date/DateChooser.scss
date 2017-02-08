@@ -1,11 +1,15 @@
-$blue: #38f;
+@import "../../core/color.scss";
+@import "../../core/function.scss";
 
 .daterangepicker_dma {
   > .form-control {
     display: inline-block;
     width: auto;
+    padding-top: 5px;
+    padding-bottom: 6px;
   }
   > i {
+    top: 2px;
     margin-left: -22px;
     opacity: .8;
   }
@@ -15,20 +19,20 @@ $blue: #38f;
   .dateBtn,
   > div {
     display: inline-block;
+    vertical-align: middle;
   }
   .dateBtn {
+    color: rgba($black,.8);
     text-align: center;
     text-decoration: none;
     width: 30px;
-    vertical-align: middle;
     cursor: pointer;
   }
   .dateShow,
   > div input {
-    font-weight: 700;
+
   }
   > div input {
-    color: $blue;
     text-align: center;
   }
 }

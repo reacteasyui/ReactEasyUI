@@ -25,17 +25,17 @@ export default class Sider extends React.Component {
                 name: "日期组件",
                 url: "/date",
                 son: [
-                    {name: "DateRangePicker", url: "/date-range-picker"},
-                    {name: "DateChooser", url: "/date-chooser"},
+                    {name: "DateRangePicker", url: "/date-range-picker", icon: "pc"},
+                    {name: "DateChooser", url: "/date-chooser", icon: "pc"},
                     {name: "Calender", url: "/calender"},
-                    {name: "AppCalender", url: "/app-calender"}
+                    {name: "AppCalender", url: "/app-calender", icon: "mobile"}
                 ]
             },
             {
                 name: "列表组件",
                 url: "/list",
                 son: [
-                    {name: "Table", url: "/table"}
+                    {name: "Table", url: "/table", icon: "pc"}
                 ]
             },
             {
@@ -92,13 +92,16 @@ export default class Sider extends React.Component {
                             <div key={i}>
                                 <Link to={item.url}
                                       className={`primary ${item.son ? 'btn-toggle' : ''} ${item.class ? item.class : ''}`}
-                                      activeClassName="active">{item.name}</Link>
-                                <div className={`navlist`}>
+                                      activeClassName="active"
+                                >{item.name}</Link>
+                                <div className={`toggle-list`}>
                                     {
                                         item.son && item.son.map((r, j)=> {
                                             return (
-                                                <Link key={j} to={item.url+r.url}
-                                                      activeClassName="active">{r.name}</Link>);
+                                                <Link key={j} to={item.url+r.url} activeClassName="active">
+                                                    {r.name}
+                                                    {r.icon ? <i className={`iconfont icon-${r.icon}`}></i> : ''}
+                                                </Link>);
                                         })
                                     }
                                 </div>

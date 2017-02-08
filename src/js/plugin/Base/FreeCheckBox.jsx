@@ -55,8 +55,8 @@ export default class FreeCheckBox extends React.Component {
                     let valIndex = i + 1;
                     return (<div className={className} key={i}>
                         <label className="_check" onClick={()=>this.changeValue(valIndex,boolArr[i])}>
-                            <i className={`iconfont icon-iconfontdanxuankuangweixuanzhong ${boolArr[i]?"":"active"}`}></i>
-                            <i className={`iconfont icon-btndanxuankuangxuanzhong ${boolArr[i]?"active":""}`}></i>
+                            <i className={`iconfont icon-unchecked ${boolArr[i] ? '' : 'active'}`}></i>
+                            <i className={`iconfont icon-checked ${boolArr[i] ? 'active' : ''}`}></i>
                             {r}
                         </label>
                     </div>);

@@ -12,13 +12,10 @@ export default class Content extends React.Component {
                 <h1>ReactEasyUI</h1>
                 <p>ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由 <Link to="about">易车前端团队</Link> 打造。 </p>
                 <h2>安装</h2>
-                <p><strong>ReactEasyUI 依赖于 React</strong>，若未安装 React，须先 <a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank">安装 React</a>。</p>
-                <p>接着安装 ReactEasyUI。</p>
+                <p>ReactEasyUI 依赖于 React，若未安装 React，须先 <a href="http://reactjs.cn/react/docs/getting-started-zh-CN.html" target="_blank">安装 React</a>。</p>
+                <p>然后安装 ReactEasyUI。</p>
                 <blockquote>
-                    <p><code>$ npm install reacteasyui --save-dev</code><span>// 安装</span></p>
-                    {/*<p><code>$ cd ReactEasyUI</code><span>// 切换目录</span></p>
-                    <p><code>$ npm start</code><span>// 启动</span></p>
-                    <p><code>http://127.0.0.1:3000/</code><span>// 浏览器访问</span></p>*/}
+                    <p><code>npm install reacteasyui --save-dev</code></p>
                 </blockquote>
                 <h2>文件引入</h2>
                 <h3>CSS 引入</h3>
@@ -56,7 +53,8 @@ export default class Content extends React.Component {
                 </p>
                 <p>ReactEasyUI 源码包含有预先编译的 CSS、JavaScript 和图标字体文件，以及 SASS、JavaScript 和文档的源码，主要文件结构如下：</p>
                 <pre><code>
-                    ReactEasyUI/src/<br/>
+                    ReactEasyUI/<br/>
+                    ├─ src/<br/>
                     ├── css/plugin/<br/>
                     │   ├── Base<br/>
                     │   │   ├── AutoComplete.scss<br/>
@@ -112,9 +110,9 @@ export default class Content extends React.Component {
                     │   │   ├── ProgressBar.jsx<br/>
                     │   │   ├── ProgressChart.jsx<br/>
                     │   │   └── Ring.jsx<br/>
-                    ├── js/dev/<br/>
-                    ├── js/component/<br/>
-                    └── css/font/<br/>
+                    ├── images/<br/>
+                    ├─ dev/<br/>
+                    └─ build/<br/>
                 </code></pre>
                 <p><code>css/</code>、<code>js/</code> 和 <code>font/</code> 目录分别包含了 CSS、JS 和字体图标的源码。<code>dev/</code> 目录包含了预编译 ReactEasyUI 包内的所有文件。<code>js/plugin/</code> 包含了所有文档的源码文件，<code>js/component/</code> 目录是 ReactEasyUI 提供的实例工程。</p>
             </div>
