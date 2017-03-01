@@ -3,12 +3,16 @@
   "version": "1.0.4",
   "description": "ReactEasyUI是基于React的常用组件库",
   "main": "src/js/index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "react": "^0.14.7",
-    "react-bootstrap": "^0.28.5",
-    "react-dom": "^0.14.7"
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^0.14.7",
+    "sass": "^0.5.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1"
   },
   "scripts": {
     "start": "echo \"reacteasyui已经安装成功\" && exit 1"
@@ -20,9 +24,9 @@
     "react-easyui",
     "easyui"
   ],
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/reacteasyui/ReactEasyUI.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reacteasyui/ReactEasyUI.git"
   },
   "author": "The Dynamic Lab,CIG,yiche",
   "license": "ISC"

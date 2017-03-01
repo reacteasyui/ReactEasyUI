@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRedirect, hashHistory} from 'react-router';
+import {Router, Route, IndexRedirect, hashHistory, Link} from 'react-router';
 
 import Prism from "../lib/prism"; // 代码高亮插件
 import Header from "../component/Header";
 import Sider from "../component/Sider";
-import Welcome from "../component/Welcome";
+import GettingStarted from "../component/GettingStarted";
 import About from "../component/About";
 
 import AutoCompletePage from "../component/BasePage/AutoCompletePage";
@@ -44,11 +44,39 @@ import ProgressChartPage from "../component/ProgressPage/ProgressChartPage";
 import LoadingPage from "../component/ProgressPage/LoadingPage";
 import ProgressPage from "../component/ProgressPage/ProgressPage";
 import VennPage from "../component/ProgressPage/VennPage.jsx";
+import OverlapPage from "../component/ProgressPage/OverlapPage.jsx";
 
 import AudioPlayPage from "../component/OthersPage/AudioPlayPage";
 import IframeLoadPage from "../component/OthersPage/IframeLoadPage";
+import TimerPage from "../component/OthersPage/TimerPage";
+
+class Home extends React.Component {
+    componentDidMount() {
+        $.handleMenuToggle();
+    }
+
+    render() {
+        return (
+            <div>
+                <Header/>
+                <div className="main home">
+                    <h1 className="home-title">ReactEasyUI</h1>
+                    <p className="home-desc">ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由<Link to="about">易车前端团队</Link>倾力打造。</p>
+                    <div className="home-btns">
+                        <Link className="btn btn-start" to="getting-started">快速开始</Link>
+                        <a className="btn btn-github" href="https://github.com/reacteasyui/ReactEasyUI" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 
 class App extends React.Component {
+    componentDidMount() {
+        $('.sider').scrollbar();
+        $.handleMenuToggle();
+    }
 
     componentDidUpdate() {
         let _code = $('[class*="language-"]');
@@ -78,9 +106,9 @@ class App extends React.Component {
 
 ReactDOM.render(
     <Router history={hashHistory}>
+        <Route path="/" component={Home}/>
         <Route path="/" component={App}>
-            <IndexRedirect to={"welcome"}/>
-            <Route path="welcome" component={Welcome}/>
+            <Route path="getting-started" component={GettingStarted}/>
             <Route path="about" component={About}/>
             <Route path="base">
                 <IndexRedirect to={"auto-complete"}/>
@@ -128,11 +156,13 @@ ReactDOM.render(
                 <Route path="loading" component={LoadingPage}/>
                 <Route path="progress" component={ProgressPage}/>
                 <Route path="venn" component={VennPage}/>
+                <Route path="overlap" component={OverlapPage}/>
             </Route>
             <Route path="others">
                 <IndexRedirect to={"audio-play"}/>
                 <Route path="audio-play" component={AudioPlayPage}/>
                 <Route path="iframe-load" component={IframeLoadPage}/>
+                <Route path="timer" component={TimerPage}/>
             </Route>
         </Route>
     </Router>,

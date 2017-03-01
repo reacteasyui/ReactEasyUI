@@ -165,7 +165,7 @@ define(function (require, exports, module) {
             /*if ($("#" + this.settings.calendarID).find('calendar-depTips').length == 0) {
              $("#" + this.settings.calendarID).append("");
              }*/
-            var weekstr = '<div class="headerWeek tn-calendar-head"><div class="theme"><h1>选择日期</h1><i class="iconfont icon-point-left"></i></div><table><tbody><tr><th class="weekend">日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th class="weekend">六</th></tr></tbody></table></div>';
+            var weekstr = '<div class="headerWeek tn-calendar-head"><div class="theme"><h1>选择日期</h1><i class="re-icon re-icon-point-left"></i></div><table><tbody><tr><th class="weekend">日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th class="weekend">六</th></tr></tbody></table></div>';
             var tips = "<div class='calendar-depTips'>请选择开始日期</div><div class='calendar-arrTips'>请选择结束日期</div>";
             var render = [];
             // 计算当前年月日
@@ -304,7 +304,7 @@ define(function (require, exports, module) {
             // 当天往返
             _this.daytoday = false;
             //返回按钮
-            $(".icon-point-left").on("click", function () {
+            $(".re-icon-point-left").on("click", function () {
                 $(this).parents(".app-calendar").fadeOut();
                 //console.log('length:'+container.find("td.selected").length);
                 if (container.find("td.selected").length == 1) {

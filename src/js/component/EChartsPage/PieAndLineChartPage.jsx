@@ -4,7 +4,6 @@ import Section from "../Section.jsx";
 import PieAndLineChart from "../../plugin/ECharts/PieAndLineChart.jsx";
 
 export default class PieAndLineChartPage extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +22,7 @@ export default class PieAndLineChartPage extends React.Component {
 
     render() {
         return (
-            <div className="pie-page">
+            <div className="pie-and-line-chart-page">
                 <h1>PieAndLineChart</h1>
                 <p>饼图与折线图混合，点击饼图区域块可快速切换对应的折线图</p>
                 <Demo title="实例" component={<PieAndLineChart

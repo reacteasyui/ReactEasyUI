@@ -4,23 +4,33 @@ import Section from "../Section.jsx";
 import Scatter from "../../plugin/ECharts/Scatter.jsx";
 
 export default class ScatterPage extends React.Component {
-
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="scatter-page">
                 <h1>Scatter</h1>
                 <p>散点图</p>
-                <Demo title="实例" component={<Scatter data={{click_add:6000000,
-                                                                avaData:[{yAxis: 40, name: "平均阅读量"},{xAxis: 150, name: "平均阅读时间"}],
-                                                                data:[{name:"女性",data: [[164.4, 55.5]],click:300000}]}}
-                                                                x={{name:"阅读时间",measure:"秒"}}
-                                                                y={{name:"阅读页数",measure:"页"}}
-                                                                changeSize={true}
-                                                                toolboxPosition={[0,0,null,null]}/>}>
+                <Demo title="实例" component={<Scatter
+                    data={{
+                        click_add:6000000,
+                        avaData:[
+                            {yAxis: 40, name: "平均阅读量"},
+                            {xAxis: 150, name: "平均阅读时间"}
+                        ],
+                        data:[{
+                            name:"女性",
+                            data: [[164.4, 55.5]],
+                            click:300000
+                        }]
+                    }}
+                    x={{name:"阅读时间", measure:"秒"}}
+                    y={{name:"阅读页数", measure:"页"}}
+                    changeSize={true}
+                    toolboxPosition={[0,0,null,null]}
+                />}>
                     {`<Scatter
     data={{
         click_add:6000000,

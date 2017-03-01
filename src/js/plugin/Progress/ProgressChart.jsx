@@ -66,7 +66,7 @@ export default class ProgressChart extends React.Component {
         index: 0,
         fontSize: 24,
         radius: ['90%', '100%']
-    }
+    };
 
 
     render() {
@@ -74,11 +74,13 @@ export default class ProgressChart extends React.Component {
             width: this.props.width,
             height: this.props.height
         };
-        return (<div className={`${this.props.className} pr`}>
-            <div id={this.chartID} style={divStyle}></div>
-            {this.props.children}
-            <div className="progressgChartModel"></div>
-        </div>);
+        return (
+            <div className={`${this.props.className}`}>
+                <div id={this.chartID} style={divStyle}></div>
+                {this.props.children}
+                <div className="re-progressg-chart-model"></div>
+            </div>
+        );
     }
 
     componentDidMount() {

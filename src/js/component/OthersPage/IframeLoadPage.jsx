@@ -10,25 +10,25 @@ export default class IframeLoadPage extends React.Component {
     }
 
     render() {
-        let _this = this;
-        return(<div className="plugin-page">
-            <h1>IframeLoad</h1>
-            <p>iframe加载页面的组件</p>
-            <h2>实例</h2>
-            <Demo component={<IframeLoad
-                url="https://react-bootstrap.github.io/components.html"
-                height="200px"
-            />}>
-                {`<IframeLoad
-    url="https://react-bootstrap.github.io/components.html"
-    height="200px"
-/>`}</Demo>
-            <Section data={[
+        return (
+            <div className="iframe-load-page">
+                <h1>IframeLoad</h1>
+                <p>iframe 加载页面的组件</p>
+                <Demo title="实例" component={<IframeLoad
+                    url="http://www.itbbb.com/jsfunction/jsfunction.html?reacteasyui"
+                    height="300px"
+                />}>
+                    {`<IframeLoad
+    url="http://www.itbbb.com/jsfunction/jsfunction.html"
+    height="300px"
+/>`}
+                </Demo>
+                <Section data={[
                     {name: "url", type: "string", required: true, des: "加载页面的地址"},
                     {name: "isLoading", type: "boolean", default: "true", des: '是否显示加载图标'},
-                    {name: "width", type: "string", default: "100%", des: 'Iframe容器的宽'},
-                    {name: "height", type: "string", default: "400px", des: 'Iframe容器的高'},
+                    {name: "width", type: "string", default: "100%", des: 'iframe 容器的宽'},
+                    {name: "height", type: "string", default: "400px", des: 'iframe 容器的高'},
                 ]}/>
-        </div>);
+            </div>);
     }
 }

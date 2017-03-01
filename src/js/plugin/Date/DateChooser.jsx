@@ -22,7 +22,7 @@ export const MODE = ["day", "week", "month", "range", "year"];
 export class DateChooser extends React.Component {
     constructor(props) {
         super(props);
-        console.log(moment(props.startTime));
+        //console.log(moment(props.startTime));
         this.state = {
             date: !props.empty ? (props.startTime ? moment(props.startTime) : moment()) : null,
             endDate: !props.empty ? (props.endTime ? moment(props.endTime) : moment()) : null,
@@ -127,14 +127,16 @@ export class DateChooser extends React.Component {
     render() {
         // console.log(this.props);
         // console.log(this.state);
-        const {mode, todayIsMaxDay, todayIsMinDay, datelimit, opens, format}=this.props;
+        const {mode, todayIsMaxDay, todayIsMinDay, datelimit, opens, format, placeholder}=this.props;
         const {date, endDate}=this.state;
         const now = moment();
-        let dateBtnL = (<a className={`dateBtn ${todayIsMinDay&&date<this.minDay?"disabled":""}`} onClick={this.onSubtract.bind(this)}><i className="iconfont icon-point-left"></i></a>),
-            dateBtnR = (<a className={`dateBtn ${todayIsMaxDay&&date>this.maxDay?"disabled":""}`} onClick={this.onAdd.bind(this)}><i className="iconfont icon-point-right"></i></a>);
+        let dateBtnL = (<a className={`re-date-btn ${todayIsMinDay&&date<this.minDay?"disabled":""}`}
+                           onClick={this.onSubtract.bind(this)}><i className="re-icon re-icon-point-left"></i></a>),
+            dateBtnR = (<a className={`re-date-btn ${todayIsMaxDay&&date>this.maxDay?"disabled":""}`}
+                           onClick={this.onAdd.bind(this)}><i className="re-icon re-icon-point-right"></i></a>);
         if (mode == "day") {
             this.text = (
-                <div className="dateChooser">
+                <div className="re-date-chooser">
                     {dateBtnL}
                     <DateRangePicker icon={false}
                                      todayIsMaxDay={todayIsMaxDay}
@@ -156,10 +158,10 @@ export class DateChooser extends React.Component {
             }
             let _date = $.date(date.format("YYYY-MM-DD")).currentWeek();
             this.text = (
-                <div className="dateChooser">
+                <div className="re-date-chooser">
                     {dateBtnL}
                     <div
-                        className="dateShow">{_date[0].format("MM月dd日")}-{_date[6].format("MM月dd日")}</div>
+                        className="re-date-show">{_date[0].format("MM月dd日")}-{_date[6].format("MM月dd日")}</div>
                     {dateBtnR}
                 </div>);
         } else if (mode == "month") {
@@ -170,60 +172,60 @@ export class DateChooser extends React.Component {
                 }
             }
             this.text = (
-                <div className="dateChooser">
+                <div className="re-date-chooser">
                     {dateBtnL}
-                    <div className="dateShow">{date.format("YYYY年MM月")}</div>
+                    <div className="re-date-show">{date.format("YYYY年MM月")}</div>
                     {dateBtnR}
                 </div>);
         } else if (mode == "range") {
             this.text = (
-                <div className="dateChooser">
+                <div className="re-date-chooser">
                     {
                         this.props.minDate && this.props.maxDate ? (
                             <DateRangePicker icon={false}
-                            singleDatePicker={false}
-                            todayIsMaxDay={todayIsMaxDay}
-                            todayIsMinDay={todayIsMinDay}
-                            range
-                            format={format}
-                            startTime={date}
-                            endTime={endDate}
-                             minDate={this.state.minDate}
-                             maxDate={this.state.maxDate}
-                            isButtonHide ={this.state.isButtonHide}
-                            opens={opens}
-                            onSelected={this.onDateChanged.bind(this)}
+                                             singleDatePicker={false}
+                                             todayIsMaxDay={todayIsMaxDay}
+                                             todayIsMinDay={todayIsMinDay}
+                                             range
+                                             format={format}
+                                             startTime={date}
+                                             endTime={endDate}
+                                             minDate={this.state.minDate}
+                                             maxDate={this.state.maxDate}
+                                             isButtonHide={this.state.isButtonHide}
+                                             opens={opens}
+                                             onSelected={this.onDateChanged.bind(this)}
+                                             placeholder={placeholder}
                             />
-                        ):(
+                        ) : (
                             <DateRangePicker icon={false}
-                            singleDatePicker={false}
-                            todayIsMaxDay={todayIsMaxDay}
-                            todayIsMinDay={todayIsMinDay}
-                            range
-                            format={format}
-                            startTime={date}
-                            endTime={endDate}
-                            isButtonHide ={this.state.isButtonHide}
-                            opens={opens}
-                            onSelected={this.onDateChanged.bind(this)}
+                                             singleDatePicker={false}
+                                             todayIsMaxDay={todayIsMaxDay}
+                                             todayIsMinDay={todayIsMinDay}
+                                             range
+                                             format={format}
+                                             startTime={date}
+                                             endTime={endDate}
+                                             isButtonHide={this.state.isButtonHide}
+                                             opens={opens}
+                                             onSelected={this.onDateChanged.bind(this)}
+                                             placeholder={placeholder}
                             />
                         )
                     }
                 </div>);
         } else if (mode == "year") {
             this.text = (
-                <div className="dateChooser">
+                <div className="re-date-chooser">
                     {dateBtnL}
-                    <div className="dateShow">{date.format("YYYY年")}</div>
+                    <div className="re-date-show">{date.format("YYYY年")}</div>
                     {dateBtnR}
                 </div>);
         }
         //console.log(moment().format());
 
         return (
-            <div className="dateChooserWrap">
-                {this.text}
-            </div>
+            <div className="re-date-chooser-wrapper">{this.text}</div>
         );
     }
 

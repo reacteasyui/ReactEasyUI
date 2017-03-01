@@ -35,14 +35,12 @@ export default class SwitchBtn extends React.Component {
             children, disabled, show, name, text, ...props
         } = this.props;
         return (
-            <div className="flowBtn">
-                <a href="javascript:;" className={this.state.active?"active":""} onClick={()=>this.onClick(1)}>
-                    <i className="iconfont icon-corner-checked"></i>
-                    {text[0]}
+            <div className="re-switch-btn">
+                <a href="javascript:;" className={this.state.active ? 'active' : ''} onClick={()=>this.onClick(1)}>
+                    <i className="re-icon re-icon-corner-checked"></i>{text[0]}
                 </a>
-                <a href="javascript:;" className={this.state.active?"":"active"} onClick={()=>this.onClick(0)}>
-                    <i className="iconfont icon-corner-checked"></i>
-                    {text[1]}
+                <a href="javascript:;" className={this.state.active ? '' : 'active'} onClick={()=>this.onClick(0)}>
+                    <i className="re-icon re-icon-corner-checked"></i>{text[1]}
                 </a>
                 <input type="hidden" name={name} value={this.state.vals[this.state.active]}/>
             </div>

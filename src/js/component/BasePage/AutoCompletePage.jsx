@@ -21,7 +21,7 @@ export default class AutoCompletePage extends React.Component {
             {id:6,name:'北京市朝阳区'},
         ],filterData=[];
         data.map((r,i)=>{
-            if(r.name.indexOf(value) != -1){
+            if(r.name.indexOf(value) != -1) {
                 filterData.push(r);
             }
         });
@@ -32,13 +32,13 @@ export default class AutoCompletePage extends React.Component {
 
     render() {
         return (
-            <div className="pie-page">
+            <div className="auto-complete-page">
                 <h1>AutoComplete</h1>
                 <p>根据用户输入值进行搜索和过滤，让用户快速找到并从预设值列表中选择。</p>
-                <Demo title="实例" component={<div className="searchCon"><AutoComplete
+                <Demo title="实例" component={<AutoComplete
                     searchData={this.state.searchData}
-                    onFilter={this.onSearch.bind(this)}/></div>
-                }>
+                    onFilter={this.onSearch.bind(this)}
+                />}>
                     {`<AutoComplete
     searchData={this.state.searchData}
     onFilter={this.onSearch.bind(this)}

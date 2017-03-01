@@ -270,7 +270,7 @@ export default class Line extends React.Component {
     }
     render() {
         let _this = this,{width,height,chartName} = _this.props,_data = _this.state.data;
-        return (<div className={`lineChartDiv ${chartName?chartName:''}`}>
+        return (<div className={`re-line-chart ${chartName?chartName:''}`}>
             <Chart
                 width={width}
                 height={height}

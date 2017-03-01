@@ -1,13 +1,10 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.compare {
-  padding: 10px;
-  font-size: 14px;
-  div {
-    padding: 0;
-  }
-  .progress {
+.re-compare {
+  font-size: 1.3rem;
+  padding: 15px;
+  .re-progress {
     height: 12px;
     padding: 0;
     margin: 12px 0 0 0;

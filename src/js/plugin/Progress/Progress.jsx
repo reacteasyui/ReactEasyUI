@@ -30,10 +30,12 @@ export default class Progress extends React.Component {
             width:width,
             height:height
         };
-        return(<div style={style}>
-            <span className="tip">{_this.state.title}</span>
-            <BS.ProgressBar active now={_this.state.now} />
-        </div>)
+        return (
+            <div style={style}>
+                <div className="re-progress-title">{_this.state.title}</div>
+                <BS.ProgressBar active now={_this.state.now} />
+            </div>
+        )
     }
 
     componentWillReceiveProps(props) {
@@ -45,5 +47,5 @@ export default class Progress extends React.Component {
             });
         }
     }
-    
+
 }

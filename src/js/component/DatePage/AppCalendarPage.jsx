@@ -13,7 +13,7 @@ export default class AppCalendarPage extends React.Component {
             <div className="app-calendar-page">
                 <h1>AppCalender</h1>
                 <p>用于移动端的日历组件</p>
-                <div id="app-calendar-demo"></div>
+                <div id="app-calendar-demo"></div>   // App 日历挂载点
                 <Demo title="实例" component={<AppCalendar
                     type="multiple"
                     format="MM月dd日"

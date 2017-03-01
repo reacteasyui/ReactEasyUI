@@ -1,4 +1,5 @@
 import React from 'react';
+
 /**
  * 带删除按钮的输入框
  @class DelIconInput
@@ -30,14 +31,15 @@ export default class DelIconInput extends React.Component {
         const {
             name,defaultValue,...props
         } = this.props;
-        return(<div className="delIconInput">
-            <input type="text" className="form-control _text _textFocus"
-                   {...props} name={name} id={this.clueID}
-                   defaultValue={defaultValue}
-                   onBlur={this.onBlur.bind(this)}
-                   onFocus={this.onFocus.bind(this)}
-            />
-            <div className={`delIcon ${this.state.delShow ? "": "hide"}`} onClick={this.delName.bind(this)}>×</div>
-        </div>)
+        return (
+            <div className="re-del-icon-input">
+                <input className="form-control" type="text"
+                       {...props} name={name} id={this.clueID}
+                       defaultValue={defaultValue}
+                       onBlur={this.onBlur.bind(this)}
+                       onFocus={this.onFocus.bind(this)}
+                />
+                <div className={`re-del-icon ${this.state.delShow ? "": "hide"}`} onClick={this.delName.bind(this)}>×</div>
+            </div>)
     }
 }

@@ -1,7 +1,7 @@
 'use strict';
 var fs = require("fs"),
     path = require("path"),
-    //_config = require('./config'),
+//_config = require('./config'),
     pagejs = "/js/page/";
 //var lib = ["react","react-dom"];
 var getEntry = function () {
@@ -29,20 +29,25 @@ var getEntry = function () {
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin");
 //var NoErrorsPlugin = require("webpack/lib/NoErrorsPlugin");
-var IgnorePlugin = require("webpack/lib/IgnorePlugin");
+//var IgnorePlugin = require("webpack/lib/IgnorePlugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
     //devtool: "source-map",
     entry: getEntry(),
     resolve: {
         alias: {},
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx', '.css', '.scss']
     },
     output: {
         path: path.join(__dirname, "dev" + pagejs), //文件输出目录
-        //publicPath: "build" + pagejs,
+        publicPath: "/",
         filename: "[name].js"
     },
+    plugins: [
+        //new IgnorePlugin(/\.(jquery.js|react.js|react-dom.js)$/i),
+        new ExtractTextPlugin('../../css/lib/RE.css')
+    ],
     //watch:true,
     //debug:true,
     module: {
@@ -56,7 +61,10 @@ var config = {
                 plugins: ["transform-es3-member-expression-literals", "transform-es3-property-literals"],
                 compact: false
             }
-        }]
+        },
+            {test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css")},
+            {test: /\.scss$/, loader: ExtractTextPlugin.extract("style", 'css!sass?includePaths[]=' + encodeURIComponent(require('bourbon').includePaths))}
+        ]
     }
 };
 var node_modules_dir = path.join(__dirname, 'node_modules');

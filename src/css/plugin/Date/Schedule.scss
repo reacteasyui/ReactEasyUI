@@ -1,160 +1,206 @@
-._sceduleDate{
-  font-size:12px;
-  font-family:"微软雅黑";
-  //height:398px;
-  overflow:hidden;
-  border:solid 1px #cfd4df;
-  .dateTitle{
-    height:38px;
-    line-height:38px;
-    background:#f3f7fa;
-    border-bottom:solid 1px #cfd4df;
-    text-align:center;
-    em{
-      width:140px;
-      display:inline-block;
-      font-style:normal;
-      font-size:14px;
-      color:#474f64;
+.re-scedule-date {
+  font-size: 12px;
+  overflow: hidden;
+  border: solid 1px #cfd4df;
+  .re-date-title {
+    height: 38px;
+    line-height: 38px;
+    background: #f3f7fa;
+    border-bottom: solid 1px #cfd4df;
+    text-align: center;
+    em {
+      width: 140px;
+      display: inline-block;
+      font-style: normal;
+      font-size: 14px;
+      color: #474f64;
     }
-    span{
-      display:inline-block;
-      cursor:pointer;
+    span {
+      display: inline-block;
+      cursor: pointer;
     }
-    .disabled{
-      cursor:default;
-      color:#cfd4df;
+    .disabled {
+      cursor: default;
+      color: #cfd4df;
     }
   }
-  .weekStr{
-    width:100%;
-    height:38px;
-    line-height:38px;
-    color:#b5bcce;
-    background:#f3f7fa;
-    border-bottom:solid 1px #cfd4df;
-    span{
-      display:inline-block;
-      width:14.28%;
-      font-weight:bold;
-      text-align:center;
+  .re-week-str {
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    color: #b5bcce;
+    background: #f3f7fa;
+    border-bottom: solid 1px #cfd4df;
+    span {
+      display: inline-block;
+      width: 14.28%;
+      font-weight: bold;
+      text-align: center;
     }
   }
-  .sbody{
-    width:100%;
-    position:relative;
-    ul{
-      width:100%;
-      list-style:none;
-      li{
-        float:left;
-        list-style:none;
+  .re-sbody {
+    width: 100%;
+    position: relative;
+    ul {
+      width: 100%;
+      list-style: none;
+      li {
+        float: left;
+        list-style: none;
         /* display:inline-block; */
-        font-family:Arial;
-        font-size:18px;
-        width:14.28%;
-        border-right:solid 1px #cfd4df;
-        height:64px;
-        text-align:center;
-        line-height:64px;
-        color:#474f64;
-        position:relative;
-        cursor:pointer;
-        span{
-          display:block;
-          /*margin-right:1px;*/
+        font-family: Arial;
+        font-size: 18px;
+        width: 14.28%;
+        /* border-right:solid 1px #cfd4df; */
+        height: 64px;
+        text-align: center;
+        line-height: 64px;
+        color: #474f64;
+        position: relative;
+        cursor: pointer;
+        span {
+          display: block;
+          margin-right: 1px;
           /*height:62px;*/
-          line-height:62px;
-          border:solid 1px #fff;
-          em{
-            width:16px;
-            height:16px;
-            font-size:12px;
-            text-align:center;
-            color:#fff;
-            line-height:16px;
-            background:#0099ff;
-            font-style:normal;
-            position:absolute;
-            left:50%;
-            top:50%;
-            margin:-8px 0 0 16px;
-            border-radius:8px;
+          line-height: 62px;
+          border: solid 1px #fff;
+          .anim {
+            //display: block;
+            width: 98%;
+            width:-moz-calc(100% - 2px);
+            width:-webkit-calc(100% - 2px);
+            width: calc(100% - 2px);
+            height: 62px;
+            z-index: 1;
+            //box-sizing: border-box;
+            position: absolute;
+            background: #c9eaff;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
           }
-
+          em {
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            text-align: center;
+            color: #fff;
+            line-height: 16px;
+            background: #0099ff;
+            font-style: normal;
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            margin: -8px 0 0 16px;
+            border-radius: 8px;
+            z-index: 2;
+          }
+          font {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+          }
+          box-sizing: border-box;
         }
-        &:hover span{
-            display:block;
-            border:solid 1px #0099ff;
+        .selected {
+
+          border: solid 1px #c9eaff;
+          .anim-zoomOut {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+          }
         }
-        .selected,&:hover .selected{
-          background:#c9eaff;
-          border:solid 1px #c9eaff;
-
+        &:hover span {
+          display: block;
+          border: solid 1px #0099ff;
         }
-
-        li
-
-        &:after{
-          content:'';
-          display:block;
-          width:1px;
-          height:64px;
-          background:#cfd4df;
-          position:absolute;
-          right:0px;
-          top:0;
+        &:hover .selected {
+          background: #c9eaff;
+          border: solid 1px #c9eaff;
+        }
+        &:after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 64px;
+          background: #cfd4df;
+          position: absolute;
+          right: 0px;
+          top: 0;
         }
       }
-
-      li.curClass span:after{
-        content:'.';
-        width:6px;
-        height:6px;
-        font-size:6px;
-        background:#0099ff;
-        display:block;
-        position:absolute;
-        left:50%;
-        bottom:12px;
-        margin-left:-3px;
-        border-radius:6px;
+      li.curClass > span:after {
+        content: '.';
+        width: 6px;
+        height: 6px;
+        font-size: 6px;
+        background: #0099ff;
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 12px;
+        z-index: 2;
+        margin-left: -3px;
+        border-radius: 6px;
       }
-      li.nobr:after,li:last-child:after{
-        content:'';
-        display:block;
-        width:1px;
-        height:64px;
-        background:none;
-        position:absolute;
-        right:0px;
-        top:0;
+      li.nobr:after, li:last-child:after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 64px;
+        background: none;
+        position: absolute;
+        right: 0px;
+        top: 0;
       }
-      li.disabled,li.empty{
-        color:#b5bcce;
-        cursor:default;
+      li.disabled, li.empty {
+        color: #b5bcce;
+        cursor: default;
+        &:hover span {
+          display: block;
+          border: solid 1px transparent;
+        }
       }
-      li.disabled:hover span,li.empty:hover span{
-        display:block;
-        border:solid 1px transparent;
-      }
-      li.disabled:before{
-        content:'';
-        width:24px;
-        height:1px;
-        background:#b5bcce;
-        position:absolute;
-        top:50%;
-        left:50%;
-        margin-left:-12px;
-      }
-      li.disabled .selected{
-        background:#f3f7fa;
-        border:solid 1px #f3f7fa;
-        em{
-          background:#cfd4df;
+      li.disabled {
+        &:before {
+          content: '';
+          width: 24px;
+          height: 1px;
+          background: #b5bcce;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -12px;
+        }
+        & .selected {
+          background: #f3f7fa;
+          border: solid 1px #f3f7fa;
+          em {
+            background: #cfd4df;
+          }
+        }
+        & .anim,&:hover .anim{
+          display: none;
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .re-scedule-date .re-sbody ul li span em {
+    margin: -26px 0 0 -8px;
   }
 }

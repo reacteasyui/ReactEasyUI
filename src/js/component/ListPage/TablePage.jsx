@@ -80,23 +80,24 @@ export default class TablePage extends React.Component {
     }
 
     render() {
-        let _this = this;
-        return (<div className="plugin-page">
-            <h1>Table</h1>
-            <p>自动渲染数据，并带有分页、排序、自定义列功能的表格</p>
-            <Demo component={<Table data={this.state.data}
-             cols={this.state.cols}
-             customCol
-             sortField={this.sortField}
-             pager={this.state.pager}
-             controls={this.state.controls}
-             tableLoading={false}
-             onSortChanged={this.onSortChanged.bind(this)}
-             format={this.formatData.bind(this)}
-             onPageChanged={this.onPageChanged.bind(this)}
-             onSaveCol={this.onSaveCol.bind(this)}
-             />}>
-                {`this.state = {
+        return (
+            <div className="table-page">
+                <h1>Table</h1>
+                <p>自动渲染数据，并带有分页、排序、自定义列功能的表格</p>
+                <Demo component={<Table
+                    data={this.state.data}
+                    cols={this.state.cols}
+                    customCol
+                    sortField={this.sortField}
+                    pager={this.state.pager}
+                    controls={this.state.controls}
+                    tableLoading={false}
+                    onSortChanged={this.onSortChanged.bind(this)}
+                    format={this.formatData.bind(this)}
+                    onPageChanged={this.onPageChanged.bind(this)}
+                    onSaveCol={this.onSaveCol.bind(this)}
+                />}>
+                    {`this.state = {
     cols: [
         {colname: "name", name: "姓名", checked: 2},
         {colname: "mobile", name: '电话', checked: 1},
@@ -182,9 +183,9 @@ onSaveCol(cols) {
     format={this.formatData.bind(this)}
     onPageChanged={this.onPageChanged.bind(this)}
     onSaveCol={this.onSaveCol.bind(this)}
-/>`}</Demo>
-
-            <Section title="参数" data={[
+/>`}
+                </Demo>
+                <Section title="参数" data={[
                     {name: "data", type: "array", des: '数据信息 如：[{"name": "北北","mobile": "13540321433",age:30},...]', required: true},
                     {name: "cols", type: "array", des: '列头信息 如：[{colname: "name", name: "客户姓名", checked: 1},{colname: "mobile", name: "电话", checked: 1},...]', required: true},
                     {name: "sortField", type: "object", des: '排序字段 如：{age: "desc"} 含义为按照age列倒序排列，其中value值默认为空，可选"asc"、"desc"'},
@@ -194,31 +195,31 @@ onSaveCol(cols) {
                     {name: "maxColNum", type: "number", default:"8", des: '最多显示多少列'},
                     {name: "tableLoading", type: "boolean", default:"false", des: '是否显示loading状态'},
                     {name: "exported", type: "boolean", default:"false",  des: '是否有导出按钮'}
-            ]}/>
-            <Section title="回调方法" method="formatData(col, data, i)"
-                     des="格式化列数据方法"
-                     data={[
-                    {name: 'col', type: 'object', des: '当前列对象'},
-                    {name: 'data', type: 'object', des: '当前数据对象'},
-                    {name: 'i', type: 'number', des: '数据列索引'},
                 ]}/>
-            <Section method="onPageChanged(pager)"
-                     des="分页回调方法(页码发生变化时触发)"
-                     data={[
-                    {name: 'pager', type: 'object', des: '当前分页对象'}
-                ]}/>
-            <Section method="onSortChanged(orderby, sort)"
-                     des="排序回调方法"
-                     data={[
-                    {name: 'orderby', type: 'string', des: '要排序的列名'},
-                    {name: 'sort', type: 'string', default:"服务器返回顺序",des: '要排序的方法，可选asc和desc'}
-                ]}/>
-            <Section method="onSaveCol(cols)"
-                     des="自定义列后回调方法"
-                     data={[
-                    {name: 'cols', type: 'object', des: '返回新的自定义列,其中checked值 0为隐藏、1为显示、2为不可被定义且始终显示'}
-                ]}/>
-        </div>)
+                <Section title="回调方法" method="formatData(col, data, i)"
+                         des="格式化列数据方法"
+                         data={[
+                             {name: 'col', type: 'object', des: '当前列对象'},
+                             {name: 'data', type: 'object', des: '当前数据对象'},
+                             {name: 'i', type: 'number', des: '数据列索引'},
+                         ]}/>
+                <Section method="onPageChanged(pager)"
+                         des="分页回调方法(页码发生变化时触发)"
+                         data={[
+                             {name: 'pager', type: 'object', des: '当前分页对象'}
+                         ]}/>
+                <Section method="onSortChanged(orderby, sort)"
+                         des="排序回调方法"
+                         data={[
+                             {name: 'orderby', type: 'string', des: '要排序的列名'},
+                             {name: 'sort', type: 'string', default:"服务器返回顺序",des: '要排序的方法，可选asc和desc'}
+                         ]}/>
+                <Section method="onSaveCol(cols)"
+                         des="自定义列后回调方法"
+                         data={[
+                             {name: 'cols', type: 'object', des: '返回新的自定义列,其中checked值 0为隐藏、1为显示、2为不可被定义且始终显示'}
+                         ]}/>
+            </div>)
             ;
     }
 }

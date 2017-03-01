@@ -28,22 +28,24 @@ export default class DateRangePicker extends React.Component {
             isButtonHide: props.isButtonHide || false,
             minDate: props.minDate || null,
             maxDate: props.maxDate || null,
-            val: props.startTime ? (!props.range ? this.formatAllKindOfDate(props.startTime) : this.formatAllKindOfDate(props.startTime) + "~" + this.formatAllKindOfDate(props.endTime)) : ""
+            val: props.startTime ? (!props.range ?
+                this.formatAllKindOfDate(props.startTime, props) :
+            this.formatAllKindOfDate(props.startTime, props) + "~" + this.formatAllKindOfDate(props.endTime, props)) : ""
         };
         this.$picker = null;
         this.del = false;
-        this.iconStyle = [(<i className={"glyphicon  glyphicon-calendar fa fa-calendar"}></i>),
-            (<i className={"iconfont  icon-triangle-down"}></i>)];
+        this.iconStyle = [(<i className={"re-icon re-icon-calendar"}></i>),
+            (<i className={"re-icon re-icon-triangle-down"}></i>)];
         this.pickerID = "datepicker_" + ~~(Math.random() * 100000);
         //console.log(props.startTime)
     }
 
     //很蛋疼的整合，应该只支持字符串，然后在组件内进行统一转换
-    formatAllKindOfDate(date) {
+    formatAllKindOfDate(date, props) {
         if (typeof date == "string") {
             return date;
         }
-        let format = this.props.format;
+        let format = props.format;
         if (!format)
             return "";
         if (typeof date == "object" && date instanceof Date) {
@@ -115,10 +117,10 @@ export default class DateRangePicker extends React.Component {
         //     _val = !range ? startTime.format(format) : startTime.format(format) + "~" + endTime.format(format);
         // }
         return (
-            <div className={this.props.className?this.props.className:"daterangepicker_dma"}>
+            <div className={this.props.className ? this.props.className : "re-date-range-picker-dma"}>
                 <input name={this.props.name}
                        id={this.pickerID}
-                       className="form-control _text _textFocus"
+                       className="form-control"
                        required={required}
                        type="text"
                        value={this.state.val}

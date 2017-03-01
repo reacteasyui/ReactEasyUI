@@ -15,6 +15,7 @@ export default class Header extends React.Component {
                 </button>
                 <nav className="nav" role="navigation">
                     <ul className="navlist">
+                        <li><Link to="getting-started" activeClassName="active">Docs</Link></li>
                         <li><a href="http://www.itbbb.com/jsfunction/jsfunction.html" target="_blank">JSFunction</a></li>
                         <li><a href="https://react-bootstrap.github.io/components.html" target="_blank">Bootstrap</a></li>
                         <li><a href="https://github.com/reacteasyui/ReactEasyUI" target="_blank">GitHub</a></li>

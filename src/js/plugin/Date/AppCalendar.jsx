@@ -93,14 +93,14 @@ export default class AppCalendar extends React.Component {
         let {startDate, endDate}=this.state;
         return (
             <div id={this.containerID}>
-                <div className="dateArea" onClick={this.showCalendar.bind(this)}>
-                    {this.props.description ? (<em className="pd-r">{this.props.description}</em>) : ''}
-                    <span className="startDate" rel={startDate.format("yyyy-MM-dd")}>
+                <div className="re-date-area" onClick={this.showCalendar.bind(this)}>
+                    {this.props.description ? (<em>{this.props.description}</em>) : ''}
+                    <span className="re-start-date" rel={startDate.format("yyyy-MM-dd")}>
                         {startDate.format(format)}
 					</span>
                     {
                         type == 'single' ? null : (
-                                <span className="endDate" rel={endDate?endDate.format("yyyy-MM-dd"):""}> - {endDate && endDate.format(format)}</span>)
+                                <span className="re-end-date" rel={endDate?endDate.format("yyyy-MM-dd"):""}> - {endDate && endDate.format(format)}</span>)
                     }
                 </div>
             </div>

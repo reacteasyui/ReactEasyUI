@@ -31,6 +31,7 @@ export PieChart from "./plugin/Progress/PieChart";
 export ProgressChart from "./plugin/Progress/ProgressChart";
 export Loading from "./plugin/Progress/Loading";
 export Progress from "./plugin/Progress/Progress";
+export Overlap from "./plugin/Progress/Overlap";
 
 export AudioPlay from "./plugin/Others/AudioPlay";
 export IframeLoad from "./plugin/Others/IframeLoad";

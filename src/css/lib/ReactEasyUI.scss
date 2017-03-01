@@ -1,10 +1,32 @@
 /*
- * ReactEasyUI v1.0
+ * ReactEasyUI v1.2
  */
+
+
+/* 组件图标
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Glyphicons Halflings */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.eot');
+  src: url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.woff2') format('woff2'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.woff') format('woff'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.ttf') format('truetype'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/* ReactEasyUI Icon */
+@import '../font/REIcon/iconfont.css';
+@font-face {
+  font-family: "re-icon";
+  src: url('../font/REIcon/iconfont.eot?t=1486351906681'); /* IE9*/
+  src: url('../font/REIcon/iconfont.eot?t=1486351906681#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/REIcon/iconfont.woff?t=1486351906681') format('woff'), /* chrome, firefox */
+  url('../font/REIcon/iconfont.ttf?t=1486351906681') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/REIcon/iconfont.svg?t=1486351906681#re-icon') format('svg'); /* iOS 4.1- */
+}
 
 
 /* 常用组件
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import "../plugin/Common/Icon.scss";
 @import "../plugin/Common/Alert.scss";
 @import "../plugin/Common/Input.scss";
 @import "../plugin/Common/DelIcon.scss";
@@ -46,6 +68,7 @@
 /* Schedule */
 @import "../plugin/Date/Schedule.scss";
 
+
 /* 列表组件
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Table */
@@ -75,6 +98,9 @@
 
 /* Venn */
 @import "../plugin/Progress/Venn.scss";
+
+/* Overlap */
+@import "../plugin/Progress/Overlap.scss";
 
 
 /* 其他组件

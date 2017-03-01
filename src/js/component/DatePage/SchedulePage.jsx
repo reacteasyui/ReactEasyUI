@@ -4,34 +4,50 @@ import Section from "../Section.jsx";
 import Schedule from "../../plugin/Date/Schedule.jsx";
 
 export default class SchedulePage extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    render(){
-        return(<div className="app-calendar-page">
-            <h1>Schedule</h1>
-            <p>日历组件</p>
-            <div id="app-calendar-demo"></div>
-            <Demo title="实例" component={<Schedule
+    handleCallBack(selectedDates,selectedValue) {
+        console.log('您选择了'+selectedValue);
+    }
+    handleTipsMsg() {
+        alert('每月最多可选择4个日期');
+    }
 
+    render() {
+        return (
+            <div className="schedule-page">
+                <h1>Schedule</h1>
+                <p>简单的日历组件</p>
+                <Demo title="实例" component={<Schedule
+                    minDate={$.date()}
+                    currentDate={$.date()}
+                    maxDate={$.date().addMonths(3)}
+                    fontFlag='休'
+                    selectedCount={4}
+                    selectedDates={['2017-01-06','2017-01-28']}
+                    callback={this.handleCallBack.bind(this)}
+                    tipsMsg = {this.handleTipsMsg.bind(this)}
                 />}>
-                {`<Schedule
-    type="multiple"
-    format="MM月dd日"
-    maxDate={$.date().format("yyyy-MM-dd")}
+                    {`<Schedule
+    minDate={$.date()}
+    currentDate={$.date()}
+    maxDate={$.date().addMonths(3)}
+    fontFlag='休'
+    selectedCount={4}
+    selectedDates={['2017-01-06','2017-01-28']}
+    callback={this.handleCallBack.bind(this)}
 />`}
-            </Demo>
-            <Section title="参数" data={[
-                    {name: 'type', type: 'string', des: '日历类型，单日期选择: single，日期范围选择：multiple'},
-                    {name: 'display', type: 'number', des: '首次加载月个数'},
-                    {name: 'currentDate', type: 'date', des: '当前日期'},
-                    {name: 'canBeSelected', type: 'string', des: '日期可使用范围，用~分隔'},
-                    {name: 'formate', type: 'string', des: '日期格式'},
-                    {name: 'maxDate', type: 'string', des: '最大可选日期'},
-                    {name: 'minDate', type: 'string', des: '最小可选日期'},
-                    {name: 'el', type: 'string', default: '<body>', des: '父元素 id，如 "#demo"，日历将插入到父元素结尾；如不指定，日历将插入到 </body> 前'},
+                </Demo>
+                <Section title="参数" data={[
+                    {name: 'minDate', type: 'date',default: '', des: '可查看的最小日期'},
+                    {name: 'currentDate', type: 'date',default: '当前日期', des: '当前日期'},
+                    {name: 'maxDate', type: 'date', des: '可查看的最大日期'},
+                    {name: 'fontFlag', type: 'string', des: '选中状态所显示的字符标识'},
+                    {name: 'selectedCount', type: 'number | string',default: '0', des: '每月最多可选择的日期天数，默认无限制'},
+                    {name: 'selectedDates', type: 'array',des: '默认选中的日期'},
                 ]}/>
-        </div>);
+            </div>);
     }
 }

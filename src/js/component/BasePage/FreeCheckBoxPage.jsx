@@ -10,7 +10,7 @@ export default class FreeCheckBoxPage extends React.Component {
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="free-check-box-page">
                 <h1>FreeCheckBox</h1>
                 <p>允许全不选的单选按钮组</p>
                 <Demo title="实例" component={<FreeCheckBox/>}>

@@ -6,14 +6,14 @@ export default class Checkbox extends React.Component {
         this.state = {
             checked: props.checked,
             value:props.value
-        }
+        };
         this.checkboxID = "checkbox_" + ~~(Math.random() * 100000);
     }
 
     static defaultProps = {
         disabled: false,
         checked: 0
-    }
+    };
 
     onChange(e) {
         this.setState({
@@ -27,20 +27,19 @@ export default class Checkbox extends React.Component {
 
     render() {
         const {
-            children, disabled, name, className,labelText, ...props
+            children, disabled, name, labelText, ...props
         } = this.props;
 
-        return (<label className={`_check ${className}`}>
-            <input type="checkbox" disabled={disabled} checked={this.state.checked}
-                   value={this.state.value} onChange={this.onChange.bind(this)}
-                   id={this.checkboxID}
-            />
-            <input type="hidden" name={name} value={this.state.checked}/>
-            <i className={`iconfont icon-unchecked ${this.state.checked ? '' : 'active'} ${disabled ? 'disabled' : ''}`}></i>
-            <i className={`iconfont icon-checked ${this.state.checked ? 'active' : ''} ${disabled ? 'disabled' : ''}`}></i>
-            <label htmlFor={this.checkboxID} className={`labelText ${this.props.labelText?"":"hide"}`}>{labelText}</label>
-            {children}
-        </label>)
+        return (
+            <label className="re-check-item">
+                <input type="checkbox" disabled={disabled} checked={this.state.checked} value={this.state.value} onChange={this.onChange.bind(this)} id={this.checkboxID}/>
+                <input type="hidden" name={name} value={this.state.checked}/>
+                <i className={`re-icon re-icon-unchecked ${this.state.checked ? '' : 'active'} ${disabled ? 'disabled' : ''}`}></i>
+                <i className={`re-icon re-icon-checked ${this.state.checked ? 'active' : ''} ${disabled ? 'disabled' : ''}`}></i>
+                <label htmlFor={this.checkboxID} className={`${this.props.labelText ? '' : 'hide'}`}>{labelText}</label>
+                {children}
+            </label>
+        )
     }
 
     componentWillReceiveProps(props) {
@@ -50,7 +49,6 @@ export default class Checkbox extends React.Component {
             value:props.value
         });
     }
-
 }
 
 

@@ -1,15 +1,11 @@
 /*
- * Base CSS
+ * Base Style for ReactEasyUI site
  */
 
-/* prism.scss */
-@import '../lib/prism.css';
 
-/* PluginPage.scss */
-@import '../component/PluginPage.scss';
-
-/* font */
-// Source Sans Pro
+/* 网站字体
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Source Sans Pro */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -22,7 +18,8 @@
   url('../font/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
   url('../font/SourceSansPro/SourceSansPro-Regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
 }
-// Roboto Mono
+
+/* Roboto Mono */
 @font-face {
   font-family: 'Roboto Mono';
   font-style: normal;
@@ -35,35 +32,22 @@
   url('../font/RobotoMono/RobotoMono-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
   url('../font/RobotoMono/RobotoMono-Regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
 }
-// iconfont
-@font-face {font-family: "iconfont";
-  src: url('../font/Iconfont/iconfont.eot?t=1484899637700'); /* IE9*/
-  src: url('../font/Iconfont/iconfont.eot?t=1484899637700#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../font/Iconfont/iconfont.woff?t=1484899637700') format('woff'), /* chrome, firefox */
-  url('../font/Iconfont/iconfont.ttf?t=1484899637700') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../font/Iconfont/iconfont.svg?t=1484899637700#iconfont') format('svg'); /* iOS 4.1- */
-}
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-pc:before { content: "\e63e"; }
-.icon-mobile:before { content: "\e737"; }
-.icon-search:before { content: "\e606"; }
-.icon-towards-up:before { content: "\e634"; }
-.icon-point-left:before { content: "\e62e"; }
-.icon-point-right:before { content: "\e61f"; }
-.icon-triangle-down:before { content: "\e616"; }
-.icon-checked:before { content: "\e641"; }
-.icon-triangle-up:before { content: "\e617"; }
-.icon-unchecked:before { content: "\e638"; }
-.icon-corner-checked:before { content: "\e632"; }
-// Glyphicons Halflings
+
+
+/* 网站图标
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import '../font/RESiteIcon/iconfont.css';
 @font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.eot');
-  src: url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.woff2') format('woff2'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.woff') format('woff'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.ttf') format('truetype'), url('../font/GlyphiconsHalflings/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  font-family: "re-site-icon";
+  src: url('../font/RESiteIcon/iconfont.eot?t=1486351964218'); /* IE9*/
+  src: url('../font/RESiteIcon/iconfont.eot?t=1486351964218#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/RESiteIcon/iconfont.woff?t=1486351964218') format('woff'), /* chrome, firefox */
+  url('../font/RESiteIcon/iconfont.ttf?t=1486351964218') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/RESiteIcon/iconfont.svg?t=1486351964218#re-site-icon') format('svg'); /* iOS 4.1- */
 }
+
+
+/* 网站引入样式
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import '../lib/prism.css'; // 代码高亮插件
+@import '../component/Component.scss';

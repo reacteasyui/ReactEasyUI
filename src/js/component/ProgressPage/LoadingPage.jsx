@@ -4,14 +4,13 @@ import Section from "../Section.jsx";
 import Loading from "../../plugin/Progress/Loading.jsx";
 
 export default class LoadingPage extends React.Component {
-
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="loading-page">
                 <h1>Loading</h1>
                 <p>加载动画</p>
                 <Demo title="实例" component={<Loading

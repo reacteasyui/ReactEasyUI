@@ -71,8 +71,8 @@ export default class Calendar extends React.Component {
             calendarArray.add({YMD: _date, hasData: _this.state.returnDayArr.contains(_date.format("YYYYMMDD"))});
         }
         return (
-            <div className="calendar">
-                <div className="month_select">
+            <div className="re-calendar">
+                <div className="re-month-select">
                     <DateChooser
                         todayIsMinDay
                         startTime={this.state.start}
@@ -80,7 +80,7 @@ export default class Calendar extends React.Component {
                         onDateChanged={this.onDateChanged.bind(this)}
                     />
                 </div>
-                <div className="chinese_week">
+                <div className="re-chinese-week">
                     <ul>
                         <li><span>一</span></li>
                         <li><span>二</span></li>
@@ -91,33 +91,26 @@ export default class Calendar extends React.Component {
                         <li><span>日</span></li>
                     </ul>
                 </div>
-                <div className="day_list">
+                <div className="re-day-list">
                     <ul>
                         {
                             calendarArray.map((r, i) => {
-                                let div1_style = "", div2_style = "", calCurrYMD = r.YMD;
+                                let style_day_gray = "", calCurrYMD = r.YMD;
                                 if (calCurrYMD && (sysCurrYMD.format("YYYYMMDD") > calCurrYMD.format("YYYYMMDD"))) {
-                                    div2_style = "day_grey";
+                                    style_day_gray = "re-day-gray";
                                 }
                                 if (calCurrYMD && (_this.state.selectDay == calCurrYMD.format("YYYYMMDD"))) {
-                                    //div3_style = "currentDay";
-                                    div1_style = "iconfont icon-yuan iconSize";
-                                    div2_style = "day_white";
+                                    style_day_gray = "re-day-white";
                                 }
-                                return (<li key={i}>
-                                    <div className="outDiv">
-                                        <div className="div1"><span className={div1_style}></span>
+                                return (
+                                    <li key={i}>
+                                        <div className="re-day-wrapper">
+                                            <a onClick={() => {r.hasData && style_day_gray != "re-day-gray" ? this.onDateClick(calCurrYMD.format('YYYYMMDD')) : $.noop()}}
+                                               className={`${r.hasData ? "re-day-red" : ""} ${style_day_gray}`}
+                                            >{calCurrYMD && calCurrYMD.format("D")}</a>
                                         </div>
-                                        <div className="div2">
-                                            <div>
-                                                <a onClick={()=> {r.hasData && div2_style != "day_grey" ? this.onDateClick(calCurrYMD.format('YYYYMMDD')) : $.noop()}}
-                                                   className={`spanClass ${r.hasData ? "day_red" : ""} ${div2_style}`}
-                                                >{calCurrYMD && calCurrYMD.format("D")}</a>
-                                            </div>
-                                        </div>
-                                        <div className={`div3 ${(r.hasData) ? "show" : "hide"}`}>.</div>
-                                    </div>
-                                </li>);
+                                    </li>
+                                );
                             })
                         }
                     </ul>

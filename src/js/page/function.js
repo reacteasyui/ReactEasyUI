@@ -1,20 +1,15 @@
 /**
  * Created by liyanfeng on 2017/1/4.
  */
-
-$(function() {
+(function($) {
     // FastClick
     FastClick.attach(document.body);
-
-    // Sider 滚动条
-    $('.sider').scrollbar();
 
     // 回到顶部
     (function() {
         let to_top = $('#to-top');
-        $(window).scroll(function(){
+        $(window).on('scroll', function(){
             if ($(this).scrollTop() > 100) {
-                //console.log($(this).scrollTop());
                 to_top.fadeIn(100);
             } else {
                 to_top.fadeOut(100);
@@ -28,24 +23,35 @@ $(function() {
         });
     })();
 
-    // 移动端 Sider 菜单切换
-    (function() {
-        let btn_menu = $('.btn-menu'),
-            toggle_menu = $('.nav, .sider'),
-            menu_link = $('.navlist > li > a, .btn-hide, .toggle-list a');
-        if (btn_menu.is(':hidden')) {
-            return;
-        }
-        btn_menu.on('click', function() {
-            toggle_menu.toggle();
-        });
-        menu_link.on('click', function() {
-            toggle_menu.hide();
-        });
-        $(document).on('click', function(e) {
-            if (! $( e.target ).closest('.btn-menu, .nav, .sider').length) {
-                toggle_menu.hide();
+    // 菜单切换
+    $.handleMenuToggle = function() {
+        function toggleMenu() {
+            let btn_menu = $('.btn-menu'),
+                menu = $('.nav, .sider'),
+                menu_link = $('.navlist > li > a, .btn-hide, .toggle-list a');
+            btn_menu.off('click');
+            menu_link.off('click');
+            $(document).off('click');
+            if (btn_menu.is(':hidden')) {
+                menu.show();
+                return;
             }
+            menu.hide();
+            btn_menu.on('click', function() {
+                menu.toggle();
+            });
+            menu_link.on('click', function() {
+                menu.hide();
+            });
+            $(document).on('click', function(e) {
+                if (! $(e.target).closest('.btn-menu, .nav, .sider').length) {
+                    menu.hide();
+                }
+            });
+        }
+        toggleMenu();
+        $(window).on('resize', function() {
+            toggleMenu();
         });
-    })();
-});
+    }
+})(jQuery);

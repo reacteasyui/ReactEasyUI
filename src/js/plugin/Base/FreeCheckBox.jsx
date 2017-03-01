@@ -21,7 +21,7 @@ export default class FreeCheckBox extends React.Component {
     }
 
     static defaultProps = {
-        className: "col-sm-4 col-xs-4 checkList",
+        className: "re-check-list",
         value: [0, 1, 2],
         text: ["是", "否"],
         selectValue: 0
@@ -49,21 +49,22 @@ export default class FreeCheckBox extends React.Component {
         let _this = this,
             {className, name} = _this.props,
             {boolArr, selectValue} = _this.state;
-        return (<div>
-            {
-                _this.text.map((r, i)=> {
-                    let valIndex = i + 1;
-                    return (<div className={className} key={i}>
-                        <label className="_check" onClick={()=>this.changeValue(valIndex,boolArr[i])}>
-                            <i className={`iconfont icon-unchecked ${boolArr[i] ? '' : 'active'}`}></i>
-                            <i className={`iconfont icon-checked ${boolArr[i] ? 'active' : ''}`}></i>
-                            {r}
-                        </label>
-                    </div>);
-                })
-            }
-            <input type="hidden" name={name} value={this.value[selectValue]}/>
-        </div>)
+        return (
+            <div className={className}>
+                {
+                    _this.text.map((r, i)=> {
+                        let valIndex = i + 1;
+                        return (
+                            <label className="re-check-item" onClick={()=>this.changeValue(valIndex,boolArr[i])} key={i}>
+                                <i className={`re-icon re-icon-unchecked ${boolArr[i] ? '' : 'active'}`}></i>
+                                <i className={`re-icon re-icon-checked ${boolArr[i] ? 'active' : ''}`}></i>
+                                {r}
+                            </label>
+                        );
+                    })
+                }
+                <input type="hidden" name={name} value={this.value[selectValue]}/>
+            </div>)
     }
 
     componentWillReceiveProps(props) {

@@ -46,25 +46,26 @@ export default class TextWithCount extends React.Component {
 
         if (mode == "text") {
             if(this.props.defaultValue && this.props.defaultValue.length){
-                this.text=(<span className="textCountWithValue"><input className="form-control _text _textFocus" type="text"
-                                     defaultValue={props.defaultValue} {...props} id={this.countId}
-                                     onKeyUp={this.onKeyUp.bind(this)}
-                                     onBlur={this.onKeyUp.bind(this)}/></span>)
+                this.text=(<input className="form-control" type="text"
+                                  defaultValue={props.defaultValue} {...props} id={this.countId}
+                                  onKeyUp={this.onKeyUp.bind(this)}
+                                  onBlur={this.onKeyUp.bind(this)}/>)
             }else{
-                this.text=(<input className="form-control _text _textFocus" type="text" {...props} id={this.countId}
-                                    onKeyUp={this.onKeyUp.bind(this)} onBlur={this.onKeyUp.bind(this)}/>);
+                this.text=(<input className="form-control" type="text" {...props} id={this.countId}
+                                  onKeyUp={this.onKeyUp.bind(this)} onBlur={this.onKeyUp.bind(this)}/>);
             }
         }
         else {
-            this.text = (<textarea className="form-control _textarea _textFocus" {...props} id={this.countId}
+            this.text = (<textarea className="form-control" {...props} id={this.countId}
                                    onKeyUp={this.onKeyUp.bind(this)} onBlur={this.onKeyUp.bind(this)}></textarea>);
         }
 
         return (
-            <div>
+            <div className="re-text-with-count">
                 {this.text}
-                <span className={mode=="text"?"inputCountor":"textareaCountor"}><span className="textCount">
-                    {this.state.textCount}</span>/{this.props.maxLength}</span>
+                <div className={mode=="text" ? "re-input-countor" : "re-text-area-countor"}>
+                    {this.state.textCount}/{this.props.maxLength}
+                </div>
             </div>
         );
     }

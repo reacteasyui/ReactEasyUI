@@ -4,7 +4,6 @@ import Section from "../Section.jsx";
 import PieWithLabel from "../../plugin/ECharts/PieWithLabel.jsx";
 
 export default class PieAndLineChartPage extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +13,7 @@ export default class PieAndLineChartPage extends React.Component {
 
     render() {
         return (
-            <div className="pie-page">
+            <div className="pie-with-label-page">
                 <h1>PieWithLabel</h1>
                 <p>带标签的饼图</p>
                 <Demo title="实例" component={<PieWithLabel
@@ -32,7 +31,7 @@ export default class PieAndLineChartPage extends React.Component {
                         }
                     ]}
                 />}>
-                {`<PieWithLabel
+                    {`<PieWithLabel
     name="金额（元）"
     data={[
         {

@@ -1,12 +1,12 @@
 @import "../../core/color.scss";
 
-.audio {
-  .buttonWrapper,
+.re-audio {
+  .re-button-wrapper,
   & > span {
     display: inline-block;
     vertical-align: middle;
   }
-  .buttonWrapper {
+  .re-button-wrapper {
     position: relative;
     border: 1px solid rgba($black,.6);
     border-radius: 50%;

@@ -10,7 +10,7 @@ export default class MultipleBarPage extends React.Component {
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="multiple-bar-page">
                 <h1>MultipleBar</h1>
                 <p>可以展示统计对象对应的数据以及对应比率两组柱形图的图表组件</p>
                 <Demo title="实例" component={<MultipleBar

@@ -4,7 +4,6 @@ import Section from "../Section.jsx";
 import PieChart from "../../plugin/Progress/PieChart.jsx";
 
 export default class PieChartPage extends React.Component {
-
     constructor(props) {
         super(props);
 
@@ -12,7 +11,7 @@ export default class PieChartPage extends React.Component {
 
     render() {
         return (
-            <div className="pie-page">
+            <div className="pie-chart-page">
                 <h1>PieChart</h1>
                 <p>简单的圆形占比图，依赖与echarts.js</p>
                 <Demo title="实例" component={<PieChart

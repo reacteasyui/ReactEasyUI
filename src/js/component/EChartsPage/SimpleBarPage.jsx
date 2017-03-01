@@ -10,7 +10,7 @@ export default class DateRangePickerPage extends React.Component {
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="simple-bar-page">
                 <h1>SimpleBar</h1>
                 <p>简单的横向柱状图</p>
                 <Demo title="实例" component={<SimpleBar

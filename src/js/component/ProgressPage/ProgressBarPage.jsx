@@ -4,14 +4,13 @@ import Section from "../Section.jsx";
 import ProgressBar from "../../plugin/Progress/ProgressBar.jsx";
 
 export default class ProgressBarPage extends React.Component {
-
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="progress-bar-page">
                 <h1>ProgressBar</h1>
                 <p>可以显示目标值、达到目标值时显示奖杯的进度条</p>
                 <Demo title="实例" component={<ProgressBar
@@ -27,7 +26,7 @@ export default class ProgressBarPage extends React.Component {
     rate={true}
 />`}
                 </Demo>
-                <Demo title="实例" component={<ProgressBar
+                <Demo component={<ProgressBar
                     num={110}
                     goalNum={60}
                     goalShow={false}

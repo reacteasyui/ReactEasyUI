@@ -19,7 +19,6 @@ export default class Loading extends React.Component {
         height: 300,
     }
 
-
     render() {
         const style = {
             paddingTop: (this.props.height-38)/2 +"px",
@@ -27,10 +26,12 @@ export default class Loading extends React.Component {
         },bounceStyle={
             background:this.props.color,
         };
-        return (<div className='spinner' style={style}>
-                <div className="bounce1" style={bounceStyle}></div>
-                <div className="bounce2" style={bounceStyle}></div>
-                <div className="bounce3" style={bounceStyle}></div>
-        </div>)
+        return (
+            <div className='re-spinner' style={style}>
+                <div className="re-bounce1" style={bounceStyle}></div>
+                <div className="re-bounce2" style={bounceStyle}></div>
+                <div className="re-bounce3" style={bounceStyle}></div>
+            </div>
+        )
     }
 }

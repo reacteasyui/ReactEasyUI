@@ -12,7 +12,7 @@ html {
   font-size: 10px;
 }
 body {
-  color: rgba($black,.8);
+  color: rgba($black, .8);
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   font-size: 1.5rem;
   line-height: 1.8;
@@ -39,13 +39,16 @@ a {
 
 /* Style
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.re-site-icon {
+  line-height: 1;
+}
 #to-top {
   display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: $white;
-  box-shadow: 0 0 0 1px rgba($black,.1), 0 2px 6px rgba($black,.2);
+  box-shadow: 0 0 0 1px rgba($black, .1), 0 2px 6px rgba($black, .2);
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
@@ -59,8 +62,8 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
-    color: rgba($black,.6);
-    font-family: 'iconfont';
+    color: rgba($black, .6);
+    font-family: 're-site-icon';
     font-size: 1.8rem;
   }
 }
@@ -74,7 +77,7 @@ a {
   left: 0;
   z-index: 10000;
   background: $white;
-  box-shadow: 0 1px 0 rgba($black,.05), 0 1px 3px rgba($black,.1);
+  box-shadow: 0 1px 0 rgba($black, .05), 0 1px 3px rgba($black, .1);
   width: 100%;
   a {
     display: block;
@@ -91,6 +94,7 @@ a {
   padding-left: 40px;
   &:hover {
     color: inherit;
+
   }
 }
 .btn-menu {
@@ -106,13 +110,13 @@ a {
   height: 50px;
   .menu-icon {
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     &,
     &:before,
     &:after {
       position: absolute;
       left: 50%;
-      background: rgba($black,.8);
+      background: rgba($black, .8);
       width: 20px;
       height: 2px;
     }
@@ -138,7 +142,7 @@ a {
       padding: 0 15px;
       &:hover,
       &.active {
-        color: rgba($black,.3);
+        color: rgba($black, .3);
       }
     }
   }
@@ -155,13 +159,13 @@ a {
     clear: left;
     display: none;
     background: $fa;
-    box-shadow: 0 -1px 0 rgba($black,.05);
+    box-shadow: 0 -1px 0 rgba($black, .05);
     padding-left: 20px;
     padding-right: 0;
     white-space: nowrap;
     overflow-x: auto;
   }
-  .navlist  {
+  .navlist {
     float: none;
     display: inline-block;
     > li {
@@ -186,6 +190,43 @@ a {
 .main {
   margin-top: 50px;
 }
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: calc(100vh - 100px);
+}
+.home-title {
+  font-size: 8rem;
+}
+.home-desc {
+  max-width: 580px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  a {
+    color: inherit;
+  }
+}
+.home-btns {
+  margin: -10px;
+  .btn {
+    border: 1px solid $blue;
+    border-radius: 100px;
+    font-size: 1.7rem;
+    line-height: 36px;
+    width: 160px;
+    margin: 10px;
+    &.btn-start {
+      background: $blue;
+      color: $white;
+    }
+    &.btn-github {
+      color: $blue;
+    }
+  }
+}
 .sider {
   position: fixed;
   bottom: 0;
@@ -194,10 +235,11 @@ a {
 .scroll-wrapper {
   &:hover > .scroll-element .scroll-bar,
   > .scroll-element.scroll-draggable .scroll-bar {
-    opacity: .1;
+    opacity: 1;
   }
   .scroll-bar {
-    background: $black;
+    background: rgba($black,.1);
+    box-shadow: 1px 0 0 0 rgba($black,.05);
     transition: opacity .1s linear;
     opacity: 0;
   }
@@ -224,19 +266,39 @@ a {
       bottom: 0;
       left: 0;
       width: 100%;
-      &.scroll-scrolly-visible .scroll-element_size { left: -11px; }
-      .scroll-bar { top: -5px; min-width: 10px; height: 5px; }
-      .scroll-element_outer { left: 1px; }
-      .scroll-element_size { left: -4px; }
+      &.scroll-scrolly-visible .scroll-element_size {
+        left: -11px;
+      }
+      .scroll-bar {
+        top: -5px;
+        min-width: 10px;
+        height: 5px;
+      }
+      .scroll-element_outer {
+        left: 1px;
+      }
+      .scroll-element_size {
+        left: -4px;
+      }
     }
     &.scroll-y {
       top: 0;
       right: 0;
       height: 100%;
-      &.scroll-scrollx-visible .scroll-element_size { top: -11px; }
-      .scroll-bar { left: -5px; min-height: 10px; width: 5px; }
-      .scroll-element_outer { top: 1px; }
-      .scroll-element_size { top: -4px; }
+      &.scroll-scrollx-visible .scroll-element_size {
+        top: -11px;
+      }
+      .scroll-bar {
+        left: -5px;
+        min-height: 10px;
+        width: 5px;
+      }
+      .scroll-element_outer {
+        top: 1px;
+      }
+      .scroll-element_size {
+        top: -4px;
+      }
     }
     div {
       position: absolute;
@@ -250,6 +312,9 @@ a {
   padding-bottom: 40px;
 }
 @media (min-width: 768px) {
+  .main {
+    margin-top: 50px;
+  }
   .scroll-wrapper {
     border-right: 1px solid rgba(0, 0, 0, .05);
     .scroll-content {
@@ -271,6 +336,19 @@ a {
   }
 }
 @media (max-width: 767px) {
+  .home-title {
+    font-size: 6rem;
+  }
+  .home-desc {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .home-btns {
+    .btn {
+      line-height: 34px;
+      width: 140px;
+    }
+  }
   .scroll-wrapper,
   .scroll-element {
     z-index: 9999;
@@ -282,13 +360,23 @@ a {
     width: 100%;
   }
 }
+@media (max-width: 320px) {
+  .home-title {
+    font-size: 5.5rem;
+  }
+  .home-btns {
+    .btn {
+      width: 130px;
+    }
+  }
+}
 
 /* Sider */
 .primary,
 .toggle-list a {
   position: relative;
   display: block;
-  color: rgba($black,.8) !important;
+  color: rgba($black, .8) !important;
   text-decoration: none !important;
   overflow: hidden;
   white-space: nowrap;
@@ -304,8 +392,8 @@ a {
     position: absolute;
     top: 50%;
     left: 18px;
-    color: rgba($black,.6);
-    font-family: 'iconfont';
+    color: rgba($black, .6);
+    font-family: 're-site-icon';
     font-size: 1.2rem;
     line-height: 1;
     transform: translateY(-50%);
@@ -332,7 +420,7 @@ a {
         color: $blue !important;
       }
     }
-    .iconfont {
+    .re-site-icon {
       color: inherit;
       font-size: 1.4rem;
       margin-left: 8px;
@@ -367,10 +455,10 @@ a {
   }
   .primary,
   .btn-toggle.active + .toggle-list {
-    box-shadow: 0 1px 0 rgba($black,.06);
+    box-shadow: 0 1px 0 rgba($black, .06);
   }
   .toggle-list a {
-    box-shadow: 0 1px 0 rgba($black,.03);
+    box-shadow: 0 1px 0 rgba($black, .03);
   }
   .btn-toggle.active + .toggle-list {
     background: $fa;
@@ -392,7 +480,7 @@ a {
     font-size: 2.5rem;
   }
   h3 {
-    color: rgba($black,.45);
+    color: rgba($black, .45);
     font-size: 2rem;
     margin-top: 25px;
   }
@@ -443,7 +531,7 @@ a {
         position: absolute;
         top: 10px;
         right: 12px;
-        color: rgba($black,.3);
+        color: rgba($black, .3);
         font-size: 1.2rem;
       }
     }

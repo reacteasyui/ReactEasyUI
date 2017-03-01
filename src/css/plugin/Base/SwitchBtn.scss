@@ -1,28 +1,28 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.flowBtn {
+.re-switch-btn {
   display: inline-block;
   a {
-    position: relative;
+    @include pos;
     display: inline-block;
     border: 1px solid $border;
+    border-radius: 2px;
     color: rgba($black,.45);
-    font-size: 14px;
     line-height: 32px;
     text-align: center;
     text-decoration: none;
-    width: 90px;
+    width: 100px;
     height: 34px;
     margin-right: 10px;
     &:hover {
       color: $blue;
       border-color: $blue;
     }
-    i {
+    .re-icon {
       display: none;
       &:before {
-        position: absolute;
+        @include pos(absolute);
         top: 0;
         right: 0;
         font-size: 18px;
@@ -34,7 +34,7 @@
     &.active {
       color: $blue;
       border-color: $blue;
-      i {
+      .re-icon {
         display: block;
       }
     }

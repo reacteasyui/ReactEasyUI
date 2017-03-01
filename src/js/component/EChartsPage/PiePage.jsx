@@ -4,7 +4,6 @@ import Section from "../Section.jsx";
 import Pie from "../../plugin/ECharts/Pie.jsx";
 
 export default class PiePage extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {

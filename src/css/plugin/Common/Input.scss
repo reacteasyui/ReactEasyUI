@@ -1,14 +1,17 @@
 @import "../../core/color.scss";
+@import "../../core/function.scss";
 
-input {
+.form-control {
   -webkit-appearance: none;
-  &[type='text'] {
-    border: 0;
-    outline: 0;
-    border-radius: 2px;
-    box-shadow: 0 0 0 1px $border;
-    &:focus {
-      box-shadow: 0 0 0 1px $border;
-    }
+  border: 1px solid $border;
+  border-radius: 2px;
+  box-shadow: none;
+  outline: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: 34px;
+  &:focus {
+    border-color: $border;
+    box-shadow: none;
   }
 }

@@ -290,7 +290,7 @@ export default class PieAndLineChart extends React.Component {
     render() {
         let _this = this;
         let {chartName,width,height }=_this.props;
-        return (<div className={`pieAndLineChart ${chartName?chartName:''}`}>
+        return (<div className={`re-pie-and-line-chart ${chartName?chartName:''}`}>
             <Chart
                 width={width}
                 height={height}

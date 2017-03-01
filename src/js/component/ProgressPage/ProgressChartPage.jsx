@@ -4,7 +4,6 @@ import Section from "../Section.jsx";
 import ProgressChart from "../../plugin/Progress/ProgressChart.jsx";
 
 export default class ProgressChartPage extends React.Component {
-
     constructor(props) {
         super(props);
 
@@ -12,7 +11,7 @@ export default class ProgressChartPage extends React.Component {
 
     render() {
         return (
-            <div className="progressChart-page">
+            <div className="progress-chart-page">
                 <h1>ProgressChart</h1>
                 <p>简单的环形进度条，依赖与echarts.js</p>
                 <Demo title="实例" component={<ProgressChart

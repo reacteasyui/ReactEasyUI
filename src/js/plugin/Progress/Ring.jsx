@@ -105,23 +105,25 @@ export default class Ring extends React.Component{
                 clip:'rect(0px'+' '+(diameter/2)+'px'+' '+(diameter)+'px 0px)'
             }
         }
-        return(<div className="appRing" style={styleRing}>
-            <div className="ring-hold ring-hold1" style={styleHold1}>
-                <div className="ring-pie ring-pie1" style={styleLeft}></div>
+        return (
+            <div className="re-app-ring" style={styleRing}>
+                <div className="re-ring-hold re-ring-hold1" style={styleHold1}>
+                    <div className="re-ring-pie re-ring-pie1" style={styleLeft}></div>
+                </div>
+                <div className="re-ring-hold re-ring-hold2" style={styleHold2}>
+                    <div className="re-ring-pie re-ring-pie2" style={styleRight}></div>
+                </div>
+                <div className="re-ring-bg" style={styleBg}> </div>
+                <div className="re-ring-cover" style={styleCover}>
+                    {
+                        _this.state.topWord?(<div className="re-top-word">{_this.state.topWord}</div>):null
+                    }
+                    {
+                        _this.state.bottomWord?(<div className="re-bottom-word">{_this.state.bottomWord}</div>):null
+                    }
+                </div>
             </div>
-            <div className="ring-hold ring-hold2" style={styleHold2}>
-                <div className="ring-pie ring-pie2" style={styleRight}></div>
-            </div>
-            <div className="ring-bg" style={styleBg}> </div>
-            <div className="ring-cover" style={styleCover}>
-                {
-                    _this.state.topWord?(<div className="topWord">{_this.state.topWord}</div>):null
-                }
-                {
-                    _this.state.bottomWord?(<div className="bottomWord">{_this.state.bottomWord}</div>):null
-                }
-            </div>
-        </div>);
+        );
     }
 
     componentWillReceiveProps(props) {
@@ -138,7 +140,7 @@ export default class Ring extends React.Component{
     }
     componentDidMount(){
         let _this = this;
-       _this.setState({
+        _this.setState({
             goalNum:_this.state.transferNum
         })
     }

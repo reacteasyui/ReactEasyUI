@@ -36,7 +36,7 @@ export default class LineAndPopupChart extends React.Component {
                 },
                 legend: {
                     /*left: 'left',
-                    data: ['2的指数', '3的指数']*/
+                     data: ['2的指数', '3的指数']*/
                 },
                 xAxis: {
                     type: 'category',
@@ -144,24 +144,24 @@ export default class LineAndPopupChart extends React.Component {
         if(_data){
             _option.xAxis.data = _data.timeData;
             /*_data.timeData &&  _data.timeData.map((r,i)=>{
-                if(i == 0){
-                    _option.xAxis.data[i] = {
-                        value : r,
-                        textStyle:{
-                            align:'left'
-                        }
-                    }
-                }else if(i==(_data.timeData.length-1) && _data.timeData.length>=2){
-                    _option.xAxis.data[i] = {
-                        value : r,
-                        textStyle:{
-                            align:'right'
-                        }
-                    }
-                }else{
-                    _option.xAxis.data[i] = r
-                }
-            });*/
+             if(i == 0){
+             _option.xAxis.data[i] = {
+             value : r,
+             textStyle:{
+             align:'left'
+             }
+             }
+             }else if(i==(_data.timeData.length-1) && _data.timeData.length>=2){
+             _option.xAxis.data[i] = {
+             value : r,
+             textStyle:{
+             align:'right'
+             }
+             }
+             }else{
+             _option.xAxis.data[i] = r
+             }
+             });*/
             _option.series[0].data = _data.data;
             _option.color = _this.lineColor[_this.state.colorIndex];
             _this.setState({
@@ -194,25 +194,27 @@ export default class LineAndPopupChart extends React.Component {
 
     render() {
         let _this = this, {width,height,data} = _this.props;
-        return (<div className="linePopWrapper">
-            <div className={`popWrapper ${_this.state.pop?'':'hide'}`}>
-                <div className="popTitle">
-                    <span>项目名称</span>
-                    <i onClick={_this.closePop.bind(this)}>×
-                    </i>
+        return (
+            <div className="re-line-pop-wrapper">
+                <div className={`re-pop-wrapper ${_this.state.pop ? '' : 'hide'}`}>
+                    <div className="re-pop-title">
+                        <span>项目名称</span>
+                        <i onClick={_this.closePop.bind(this)}>×
+                        </i>
+                    </div>
+                    <div className="re-pop-content re-scroll-bar">
+                        {this.props.format()}
+                    </div>
                 </div>
-                <div className="popContent scroll">
-                    {this.props.format()}
-                </div>
+                <Chart
+                    width={width}
+                    height={height}
+                    option={_this.state.option}
+                    clickCallback={_this.clickCallback.bind(this)}
+                    getChart={_this.getChart.bind(this)}
+                />
             </div>
-            <Chart
-                width={width}
-                height={height}
-                option={_this.state.option}
-                clickCallback={_this.clickCallback.bind(this)}
-                getChart={_this.getChart.bind(this)}
-            />
-        </div>);
+        );
     }
 
     componentWillMount(props) {

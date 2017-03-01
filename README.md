@@ -1,7 +1,7 @@
 ReactEasyUI
 ===============
 
-ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由 [易车前端团队] 打造。
+ReactEasyUI 是一个基于 React 的常用组件库，封装了日期、列表、图表等常见使用场景，由 [易车前端团队] 倾力打造。
 
 官方网站：[https://reacteasyui.github.io]
 

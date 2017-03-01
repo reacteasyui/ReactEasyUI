@@ -1,18 +1,17 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-/* ProgressBar */
-.progressBar {
-  margin: 14px 0;
-  width: 100%;
+.re-progress-bar {
   @include pos;
-  .allProgress {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  .re-all-progress {
     width: 80%;
     height: 12px;
     border-radius: 10px;
     background: $fa;
   }
-  .doneProgress {
+  .re-done-progress {
     @include pos(absolute);
     left: 0;
     top: 1px;
@@ -21,13 +20,13 @@
     width: 0;
     @include transi(width);
   }
-  .showNum {
+  .re-show-num {
     @include pos(absolute);
     white-space: nowrap;
     left: 82%;
     top: -7px;
     font-size: 16px;
-    i {
+    .re-icon {
       margin-right: 6px;
       color: $ccc;
     }
@@ -35,21 +34,21 @@
       font-style: inherit;
     }
   }
-  .goalNum {
+  .re-goal-num {
     @include pos(absolute);
     left: 45%;
     top: -36px;
     color: $green;
     text-align: center;
-    i {
+    .re-icon {
       display: block;
       margin-top: -8px;
     }
   }
-  .nomalBg {
+  .re-nomal-bg {
     background: $green!important;
   }
-  .goalBg {
+  .re-goal-bg {
     background: $yellow!important;
   }
 }

@@ -4,14 +4,13 @@ import Section from "../Section.jsx";
 import Compare from "../../plugin/Progress/Compare.jsx";
 
 export default class ComparePage extends React.Component {
-
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="compare-page">
                 <h1>Compare</h1>
                 <p>用于两组数据对比</p>
                 <Demo title="实例" component={<Compare

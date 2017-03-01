@@ -6,7 +6,6 @@ export default class Radiobox extends React.Component {
         this.state = {
             checked: props.checked
         }
-        //console.log(props.checked);
     }
 
     static defaultProps = {
@@ -38,8 +37,8 @@ export default class Radiobox extends React.Component {
             <label className="_radio">
                 <input type="radio" {...props}  disabled={disabled} name={name}
                        onChange={this.onChange.bind(this)}/>
-                <i className={`iconfont icon-iconfontdanxuankuangweixuanzhong ${name}No_radio ${this.state.checked?"":"active"} ${disabled?"disabled":""}`}></i>
-                <i className={`iconfont icon-btndanxuankuangxuanzhong ${name}Yes_radio ${this.state.checked?"active":""} ${disabled?"disabled":""}`}></i>
+                <i className={`re-icon re-icon-unchecked ${name}No_radio ${this.state.checked?"":"active"} ${disabled?"disabled":""}`}></i>
+                <i className={`re-icon re-icon-checked ${name}Yes_radio ${this.state.checked?"active":""} ${disabled?"disabled":""}`}></i>
                 {children}
             </label>
         )

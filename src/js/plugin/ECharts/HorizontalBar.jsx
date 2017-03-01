@@ -182,7 +182,7 @@ export default class HorizontalBar extends React.Component {
                     height={height}
                     option={_this.state.option}
                     getChart={_this.getChart.bind(this)}
-                /> : <div className='noResult'>暂无数据</div>
+                /> : <div className='re-no-result'>暂无数据</div>
             }
         </div>);
     }

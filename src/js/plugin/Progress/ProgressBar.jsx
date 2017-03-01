@@ -28,7 +28,7 @@ export default class ProgressBar extends React.Component {
     static defaultProps = {
         rate: true,
         goalShow: false
-    }
+    };
 
     setGoal() {
         let num = this.state.num, goalNum = this.state.goalNum;
@@ -54,16 +54,17 @@ export default class ProgressBar extends React.Component {
                 };
         }
         return (
-            <div className="progressBar">
-                <div className={`allProgress ${this.props.singleBar?"hide":""}`}></div>
-                <span className="showNum">
-                    <i className={`iconfont icon-jiangbeikuai ${this.state.goal && !this.props.singleBar?"":"hide"}`}></i>
-                    <span className={this.props.singleBar ? "nomalColor" : (this.state.goal ? "goalColor" : (this.state.num==0?"zeroColor":"nomalColor"))}><em className="none">当前完成</em>{showNum}<em className="none"></em></span>
+            <div className="re-progress-bar">
+                <div className={`re-all-progress ${this.props.singleBar ? 'hide' : ''}`}></div>
+                <span className="re-show-num">
+                    <i className={`re-icon re-icon-cup ${this.state.goal && !this.props.singleBar ? '' : 'hide'}`}></i>
+                    <span className={this.props.singleBar ? "re-nomal-color" : (this.state.goal ? "re-goal-color" : (this.state.num==0 ? "re-zero-color" : "re-nomal-color"))}><em className="none">当前完成</em>{showNum}<em className="none"></em></span>
                 </span>
-                <div className={`doneProgress ${this.props.singleBar ? "nomalBg" : (this.state.goal ? "goalBg" : "nomalBg")}`} style={styles}></div>
+                <div className={`re-done-progress ${this.props.singleBar ? "re-nomal-bg" : (this.state.goal ? "re-goal-bg" : "re-nomal-bg")}`} style={styles}></div>
 
-                <div className={`goalNum ${this.props.goalShow?"":"hide"}`}>目标值{goalNum}<i
-                    className="iconfont icon-triangle-down"></i></div>
+                <div className={`re-goal-num ${this.props.goalShow ? '' : 'hide'}`}>
+                    目标值{goalNum}<i className="re-icon re-icon-triangle-down"></i>
+                </div>
             </div>
         )
     }

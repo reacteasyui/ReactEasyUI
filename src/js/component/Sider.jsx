@@ -8,7 +8,7 @@ export default class Sider extends React.Component {
             {
                 name: "快速开始",
                 class: "btn-hide",
-                url: "/welcome"
+                url: "/getting-started"
             },
             {
                 name: "基础组件",
@@ -18,7 +18,7 @@ export default class Sider extends React.Component {
                     {name: "FreeCheckBox", url: "/free-check-box"},
                     {name: "TextWithCount", url: "/text-with-count"},
                     {name: "DelIconInput", url: "/del-icon-input"},
-                    {name: "SwitchBtn", url: "/switch-btn"},
+                    {name: "SwitchBtn", url: "/switch-btn"}
                 ]
             },
             {
@@ -28,7 +28,8 @@ export default class Sider extends React.Component {
                     {name: "DateRangePicker", url: "/date-range-picker", icon: "pc"},
                     {name: "DateChooser", url: "/date-chooser", icon: "pc"},
                     {name: "Calender", url: "/calender"},
-                    {name: "AppCalender", url: "/app-calender", icon: "mobile"}
+                    {name: "AppCalender", url: "/app-calender", icon: "mobile"},
+                    {name: "Schedule", url: "/schedule"}
                 ]
             },
             {
@@ -68,8 +69,8 @@ export default class Sider extends React.Component {
                     {name: "PieChart", url: "/pie-chart"},
                     {name: "Loading", url: "/loading"},
                     {name: "Progress", url: "/progress"},
-                    //{name: "Venn", url: "/venn"},
-
+                    {name: "Venn", url: "/venn"},
+                    {name: "Overlap", url: "/overlap"}
                 ]
             },
             {
@@ -77,7 +78,8 @@ export default class Sider extends React.Component {
                 url: "/others",
                 son: [
                     {name: "AudioPlay", url: "/audio-play"},
-                    {name: "IframeLoad", url: "/iframe-load"}
+                    {name: "IframeLoad", url: "/iframe-load"},
+                    {name: "Timer", url: "/timer"}
                 ]
             },
         ];
@@ -100,7 +102,7 @@ export default class Sider extends React.Component {
                                             return (
                                                 <Link key={j} to={item.url+r.url} activeClassName="active">
                                                     {r.name}
-                                                    {r.icon ? <i className={`iconfont icon-${r.icon}`}></i> : ''}
+                                                    {r.icon ? <i className={`re-site-icon re-site-icon-${r.icon}`}></i> : ''}
                                                 </Link>);
                                         })
                                     }

@@ -176,7 +176,7 @@ export default class DoubleYLineChart extends React.Component {
 
     render() {
         let _this = this, {width, height, chartName} = _this.props;
-        return (<div className={`TwoYLineChart ${chartName?chartName:''}`}>
+        return (<div className={`re-two-y-line-chart ${chartName?chartName:''}`}>
             <Chart
                 width={width}
                 height={height}

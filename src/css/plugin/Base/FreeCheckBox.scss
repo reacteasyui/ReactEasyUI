@@ -1,24 +1,24 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.checkList {
-  padding-left: 0;
-  padding-right: 0;
+.re-check-list {
+  .re-check-item {
+    width: 50%;
+    margin-bottom: 0;
+  }
 }
-._radio, ._check {
+.re-check-item {
   @include pos;
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin-bottom: 0;
-  padding-left: 30px;
+  font-weight: 400;
   cursor: pointer;
-  i {
+  .re-icon, span {
+    vertical-align: middle;
+  }
+  .re-icon {
     display: none;
-    @include pos(absolute);
-    top: -5px;
-    left: 0;
+    margin-right: 10px;
     &.active {
-      display: block;
+      display: inline;
     }
     &.disabled {
       color: $eee;

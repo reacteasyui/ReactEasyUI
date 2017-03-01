@@ -266,7 +266,9 @@ gulp.task("site",function () {
     // font
     gulp.src([
         build.font + "**/*.*",
-        "!" + build.font + "**/*.css*",
+        "!" + build.font + sourcemap,
+        "!" + build.font + "**/*.css",
+        "!" + build.font + "**/*.html"
     ]).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/font/"));
     // images
     gulp.src(build.img + "*.*").pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/images/"));
@@ -274,8 +276,10 @@ gulp.task("site",function () {
     gulp.src([
         build.assets + "*.*",
         "!" + build.assets + "favicon.ico",
+        "!" + build.assets + "apple-touch-icon.png",
     ]).pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/assets/"));
     gulp.src(build.assets + "favicon.ico").pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/"));
+    gulp.src(build.assets + "apple-touch-icon.png").pipe(gulp.dest(build.githubRoot + "reacteasyui.github.io/"));
     // css
     gulp.src([
         build.css + "lib/bootstrap/3.3.5/bootstrap.min.css",

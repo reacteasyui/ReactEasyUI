@@ -18,14 +18,14 @@ export default class Alert extends React.Component {
     static defaultProps = {
         show: false,
         bsStyle: "info" //"success", "warning", "danger", "info"
-    }
+    };
 
     handleAlertDismiss() {
         if(this.props.onClose){
             this.props.onClose();
         }
     }
-    
+
     //onDismiss={this.handleAlertDismiss.bind(this)}
 
     render() {
@@ -34,11 +34,11 @@ export default class Alert extends React.Component {
         } = this.props;
 
         if (show) {
-            return (<div>
+            return (
                 <BS.Alert {...props}>
                     {children}
                 </BS.Alert>
-            </div>);
+            );
         }
         return null;
     }

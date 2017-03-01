@@ -1,15 +1,15 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.iconfont {
-  &.icon-unchecked,
-  &.icon-checked {
+.re-icon {
+  &.re-icon-unchecked,
+  &.re-icon-checked {
     font-size: 2rem;
   }
-  &.icon-unchecked {
+  &.re-icon-unchecked {
     color: $bbb;
   }
-  &.icon-checked {
+  &.re-icon-checked {
     color: $blue;
   }
 }

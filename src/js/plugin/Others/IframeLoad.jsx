@@ -8,7 +8,6 @@ import Loading from "../Progress/Loading.jsx";
  @return {Component} 返回IframeLoad组件
  */
 export default class IframeLoad extends React.Component {
-    //构造函数
     constructor(props) {
         super(props);
         this.state = {
@@ -41,15 +40,17 @@ export default class IframeLoad extends React.Component {
             height:'100%',
             top:'0'
         };
-        return (<div className="iframeWrapper" style={iframeStyle}>
-            {
-                _this.state.isLoading&&(<div style={loadingStyle}><Loading /></div>)
-            }
-            <iframe src={_this.state.url}
-                    width="100%"
-                    height="100%"
-                    onLoad={_this.onLoad.bind(this)}
-            ></iframe>
-        </div>);
+        return (
+            <div className="re-iframe-wrapper" style={iframeStyle}>
+                {
+                    _this.state.isLoading&&(<div style={loadingStyle}><Loading /></div>)
+                }
+                <iframe src={_this.state.url}
+                        width="100%"
+                        height="100%"
+                        onLoad={_this.onLoad.bind(this)}
+                ></iframe>
+            </div>
+        );
     }
 }

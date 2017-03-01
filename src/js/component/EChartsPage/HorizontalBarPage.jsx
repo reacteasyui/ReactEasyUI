@@ -10,7 +10,7 @@ export default class VerticalBarPage extends React.Component {
 
     render() {
         return (
-            <div className="plugin-page">
+            <div className="horizontal-bar-page">
                 <h1>HorizontalBar</h1>
                 <p>可以展示统计对象名称和对应数据的横向柱状图</p>
                 <Demo title="实例" component={<HorizontalBar

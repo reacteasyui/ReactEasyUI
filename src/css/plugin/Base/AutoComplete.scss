@@ -1,53 +1,49 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.searchCon {
+.re-search-wrapper {
   @include pos;
-  ._search {
-    @include pos;
-    input {
-      line-height: 30px;
-      width: 100%;
-      padding: 3px 36px;
-      &:focus {
-        box-shadow: 0 0 0 1px $border, 0 2px 10px rgba($black,.15);
-      }
-    }
-    .search-btn {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      i {
-        display: inline-block;
-        font-size: 16px;
-        color: $ccc;
-        transform: translate(11px,5px);
-      }
+  .form-control {
+    padding-left: 34px;
+    padding-right: 34px;
+    &:focus {
+      box-shadow: 0 2px 8px rgba($black,.1);
     }
   }
-  .searchDate {
-    position: absolute;
-    top: 34px;
-    left: 0;
-    right: 0;
-    background: $white;
-    box-shadow: 0 0 0 1px $border, 0 2px 10px rgba($black,.15);
-    max-height: 200px;
-    overflow: hidden;
-    overflow-y: auto;
-    z-index: 5;
-    span {
-      display: block;
-      font-size: 1.3rem;
-      line-height: 30px;
-      padding: 0 20px;
-      cursor: pointer;
-      &:hover {
-        background: $f2;
-      }
+}
+.re-search-btn {
+  @include pos(absolute);
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  .re-icon {
+    display: inline-block;
+    color: $ccc;
+    transform: translate(10px,4px);
+  }
+}
+.re-search-list {
+  @include pos(absolute);
+  top: 33px;
+  left: 0;
+  right: 0;
+  background: $white;
+  border: 1px solid $border;
+  box-shadow: 0 2px 8px rgba($black,.1);
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 10;
+  span {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 30px;
+    padding: 0 20px;
+    cursor: pointer;
+    &:hover {
+      background: $f2;
     }
   }
 }

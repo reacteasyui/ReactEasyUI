@@ -393,7 +393,7 @@ $daterangepicker-ranges-active-border-radius: $daterangepicker-border-radius !de
   .daterangepicker_input {
     position: relative;
 
-    i {
+    .re-icon {
       position: absolute;
 
       // NOTE: These appear to be eyeballed to me...

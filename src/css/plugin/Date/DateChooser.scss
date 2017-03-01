@@ -1,43 +1,35 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.daterangepicker_dma {
-  > .form-control {
-    display: inline-block;
-    width: auto;
-    padding-top: 5px;
-    padding-bottom: 6px;
+.re-date-btn,
+.re-date-show,
+.re-date-range-picker-dma {
+  display: inline-block;
+}
+.re-date-btn,
+.re-date-show {
+  line-height: 34px;
+}
+.re-date-btn {
+  color: rgba($black,.8) !important;
+  text-align: center;
+  text-decoration: none !important;
+  width: 34px;
+  cursor: pointer;
+  .re-icon {
+    position: relative;
+    top: 1px;
   }
-  > i {
-    top: 2px;
-    margin-left: -22px;
+}
+.re-date-range-picker-dma {
+  @include pos;
+  > .form-control {
+    text-align: center;
+  }
+  > .re-icon {
+    @include pos(absolute);
+    top: 9px;
+    left: 9px;
     opacity: .8;
   }
-}
-
-.dateChooser {
-  .dateBtn,
-  > div {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .dateBtn {
-    color: rgba($black,.8);
-    text-align: center;
-    text-decoration: none;
-    width: 30px;
-    cursor: pointer;
-  }
-  .dateShow,
-  > div input {
-
-  }
-  > div input {
-    text-align: center;
-  }
-}
-
-.progressBar {
-  top: 35px;
-  padding-bottom: 55px;
 }

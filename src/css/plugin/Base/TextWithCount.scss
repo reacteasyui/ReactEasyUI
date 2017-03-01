@@ -1,13 +1,16 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.form-control {
-  display: inline-block;
-  width: 90%;
-}
-.inputCountor {
-  margin-left: 15px;
-  .textCount {
-    color: $red;
+.re-text-with-count {
+  @include pos;
+  .form-control {
+    padding-right: 50px;
+  }
+  .re-input-countor {
+    @include pos(absolute);
+    top: 0;
+    right: 10px;
+    color: rgba($black,.45);
+    line-height: 34px;
   }
 }

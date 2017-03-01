@@ -74,28 +74,24 @@ export default class AutoComplete extends React.Component{
     render(){
         return (
             <div>
-                <div className="search_div _search _search-focus">
-                    <input type="text" id={this.inputID} value={this.state.filter.searech}
+                <div className="re-search-wrapper">
+                    <input className="form-control" type="text" id={this.inputID} value={this.state.filter.searech}
                            onChange={this.handleChangeValue.bind(this)}
                            onKeyUp={this.onSearch.bind(this)}
                            onBlur={this.hideSearch.bind(this)}
                     />
-                    <div className={`${this.state.filter.search.length>0 ?"":"hide"} delIcon`}
-                         onClick={this.onDel.bind(this)}>×
+                    <div className={`${this.state.filter.search.length>0 ?"":"hide"} re-del-icon`} onClick={this.onDel.bind(this)}>×</div>
+                    <div className="re-search-btn" onClick={this.getDataFn.bind(this)}><i className="re-icon re-icon-search"></i></div>
+                    <div className={`re-search-list ${this.state.searchData && this.state.searchData.length && this.state.searchShow ? '':'hide'}`}>
+                        {
+                            this.state.searchData && this.state.searchData.map((r,i)=>{
+                                let name = r.plan_name || r.media_name || r.name;
+                                return (
+                                    <span key={i} onClick={()=>{this.selectedFn(name)}}>{name}</span>
+                                );
+                            })
+                        }
                     </div>
-                    <div className="search-btn" onClick={this.getDataFn.bind(this)}>
-                        <i className="iconfont icon-search"></i>
-                    </div>
-                </div>
-                <div className={`searchDate ${this.state.searchData && this.state.searchData.length && this.state.searchShow ? '':'hide'}`}>
-                    {
-                        this.state.searchData && this.state.searchData.map((r,i)=>{
-                            let name = r.plan_name || r.media_name || r.name;
-                            return (
-                                <span key={i} onClick={()=>{this.selectedFn(name)}}>{name}</span>
-                            );
-                        })
-                    }
                 </div>
             </div>
         );

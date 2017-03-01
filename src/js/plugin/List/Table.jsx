@@ -40,7 +40,7 @@ export default class Table extends React.Component {
     static defaultProps = {
         customCol: false,
         maxColNum: 0
-    }
+    };
 
     /**
      @method orderBy
@@ -48,10 +48,12 @@ export default class Table extends React.Component {
      @return {Component} 返回排序图标组件
      */
     orderBy(sort) {
-        return (<span className="sortIcon">
-            <i className={`iconfont icon-triangle-up ${sort&&sort == 'asc' ? 'active' : ''}`}></i>
-            <i className={`iconfont icon-triangle-down ${sort&&sort == 'desc' ? 'active' : ''}`}></i>
-        </span>);
+        return (
+            <span className="re-sort-icon">
+                <i className={`re-icon re-icon-triangle-up ${sort&&sort == 'asc' ? 'active' : ''}`}></i>
+                <i className={`re-icon re-icon-triangle-down ${sort&&sort == 'desc' ? 'active' : ''}`}></i>
+            </span>
+        );
     }
 
     onVisibleChange(visible) {
@@ -176,28 +178,28 @@ export default class Table extends React.Component {
         let _ToolTip = null, Popover = null, PagePanel = null, Pager = null;
         //是否有自定义列
         if (customCol) {
-            Popover = (<div className="popWrap">
-                <div className="scroll">
-                    <ul className="popList" ref="cols_ul">
-                        {
-                            this.state.cols && this.state.cols.map((r, i)=> {
-                                let checked = +r.checked;
-                                if (checked > 1)
-                                    return null;
-                                return (
-                                    <li key={i} className={`col_${r.colname}`}>
-                                        <Checkbox checked={checked} value={r.colname}>{r.name}</Checkbox>
-                                    </li>);
-                            })
-                        }
-                    </ul>
+            Popover = (
+                <div>
+                    <div className="re-table-scroll">
+                        <ul className="re-pop-list" ref="cols_ul">
+                            {
+                                this.state.cols && this.state.cols.map((r, i)=> {
+                                    let checked = +r.checked;
+                                    if (checked > 1)
+                                        return null;
+                                    return (
+                                        <li key={i} className={`col-${r.colname}`}>
+                                            <Checkbox checked={checked} value={r.colname}>{r.name}</Checkbox>
+                                        </li>);
+                                })
+                            }
+                        </ul>
+                    </div>
+                    <div className="re-pop-btn">
+                        <input type="submit" onClick={this.saveCol.bind(this)} defaultValue="保存"/>
+                    </div>
                 </div>
-                <div className="popBtn">
-                    <input type="submit" className="_optionBtn _optionBtn-check _btnMr"
-                           onClick={this.saveCol.bind(this)}
-                           defaultValue="保存"/>
-                </div>
-            </div>);
+            );
             //console.log(this.state);
             _ToolTip = (<ToolTip
                 visible={this.state.visible}
@@ -207,10 +209,7 @@ export default class Table extends React.Component {
                 trigger="click"
                 placement="bottom"
                 overlay={Popover}>
-                <a href="javascript:;"
-                   className="_optionBtn _optionBtn-check _optionBtn-smh tableTip">
-                    自定义列表
-                </a>
+                <a href="javascript:;">自定义列表</a>
             </ToolTip>);
         }
         //是否显示分页
@@ -218,8 +217,8 @@ export default class Table extends React.Component {
             let pageCount = +(this.state.pager.page_count % this.state.pager.page_size) == 0 ? 0 : 1,
                 maxPage = ~~(this.state.pager.page_count / this.state.pager.page_size) + pageCount;
             if (maxPage > 1) {
-                PagePanel = (<div className="page-fl-r">
-                    <div className="pageMain">
+                PagePanel = (
+                    <div className="re-page-panel">
                         <BS.Pagination
                             prev
                             next
@@ -228,23 +227,18 @@ export default class Table extends React.Component {
                             items={maxPage}
                             maxButtons={5}
                             activePage={+this.state.pager.page_index}
-                            onSelect={this.onPageSelected.bind(this)}/>
-                    </div>
-                    <div className="goTopage">
-                        <div>
-                            <span>去第 </span>
-                            <input type="text" className="_text turnPage"
-                                   ref="pageInput"/><span>页</span>
-                            <button className="_optionBtn-check _ensureBtn"
-                                    onClick={this.onGotoPage.bind(this)}>确定
-                            </button>
+                            onSelect={this.onPageSelected.bind(this)}
+                        />
+                        <div className="re-go-to-page">
+                            去第<input type="text" ref="pageInput"/>页
+                            <button onClick={this.onGotoPage.bind(this)}>确定</button>
                         </div>
                     </div>
-                </div>);
+                );
             }
-            Pager = (<div className="page">
-                <div className="itemsPer">
-                    <div>
+            Pager = (
+                <div className="re-table-footer-nav">
+                    <div className="re-items-per-page">
                         每页显示
                         <select defaultValue={this.state.pager.page_size}
                                 onChange={this.onPageSizeChange.bind(this)}
@@ -253,11 +247,12 @@ export default class Table extends React.Component {
                             <option value="20">20</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
-                        </select>条
+                        </select>
+                        条
                     </div>
+                    {PagePanel}
                 </div>
-                {PagePanel}
-            </div>);
+            );
         }
         let _data = this.state.data, _currData = [];
         if (subItem && _data && _data.length) {
@@ -276,78 +271,81 @@ export default class Table extends React.Component {
         else
             _currData = _data;
 
-        return (<div className="tableWrapper">
-                <Alert show={this.state.alertShow} onDismiss={()=>this.setState({alertShow:false})}
-                       dismissAfter={2000}>{this.state.alertMsg}</Alert>
-                <table
-                    className={`table ${this.state.cols&&this.state.cols.count((item, index)=>item.checked > 0)>9?"moreCols":""}`}>
-                    <thead>
-                    <tr className="active">
-                        {
-                            this.state.cols && this.state.cols.map((r, i)=> {
-                                let hasOrderBy = this.state.sortField[r.colname] != undefined;
-                                return (
-                                    <th key={i} onClick={()=>hasOrderBy?this.onSortChanged(r):null}
-                                        className={`${+r.checked>0?"":"hide"} colid_${r.colname}`}>
-                                        {r.name}{hasOrderBy ? this.orderBy(this.state.sortField[r.colname]) : ""}</th>)
-                            })
-                        }
-                        {this.state.controls ? (<th className="oprate">操作</th>) : null}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        _currData && _currData.length ? _currData.map((r, i)=> {
-                            let _td = null, _tr = null;
-                            if (this.state.controls) {
-                                _td = (<td key={i} className="oprate">
-                                    {
-                                        this.state.controls.map((i, index)=> {
-                                            let item = i.name(r);
-                                            if (!item)
-                                                return;
-                                            return (
-                                                <a key={index} href="javascript:;"
-                                                   onClick={()=>i.fun(r)}>{item}</a>
-                                            )
-                                        })
-                                    }
-                                </td>);
-                            }
-                            return (
-                                <tr key={i} className={`${r.sub?"subitem hide subitem_"+r.subIndex:"first_step_tr"}`}>
-                                    {
-                                        this.state.cols && this.state.cols.map((t, n)=> {
-                                            return (<td key={n}
-                                                        className={`${+t.checked > 0 ? "" : "hide"} colid_${t.colname}`}
-                                            >
-                                                {this.props.format(t, r, i) }
-                                            </td>);
-                                        })
-                                    }
-                                    {_td}
-                                </tr>)
-                        }) : (<tr>
-                            <td colSpan={this.state.cols&&this.state.cols.count((item,index)=>item.checked)+(this.state.controls?1:0)}>
-                                数据不在服务区
-                            </td>
-                        </tr>)
-                    }
-                    </tbody>
-                    <tbody className={`table-loading table-loading-bg ${this.state.tableLoading?"":"hide"}`}>
-                    </tbody>
-                    <tbody className={`table-loading ${this.state.tableLoading?"":"hide"}`}>
-                    <tr className="center">
-                        <td>正在加载数据</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div className="table-bar">
+        return (
+            <div>
+                <div className="re-custom-btn">
                     {customCol ? _ToolTip : null}
                     {customCol && exported ? " | " : null}
                     {exported ? <a href={exported}>导出</a> : null}
                 </div>
-                {Pager}
+                <div className="re-table-wrapper">
+                    <Alert show={this.state.alertShow} onDismiss={()=>this.setState({alertShow:false})} dismissAfter={2000}>{this.state.alertMsg}</Alert>
+                    <table className={`table ${this.state.cols&&this.state.cols.count((item, index)=>item.checked > 0)>9 ? 're-more-cols' : ''}`}>
+                        <thead>
+                        <tr>
+                            {
+                                this.state.cols && this.state.cols.map((r, i)=> {
+                                    let hasOrderBy = this.state.sortField[r.colname] != undefined;
+                                    return (
+                                        <th key={i} onClick={()=>hasOrderBy?this.onSortChanged(r):null}
+                                            className={`re-col-${r.colname} ${+r.checked > 0 ? '' : 'hide'}`}>
+                                            {r.name}{hasOrderBy ? this.orderBy(this.state.sortField[r.colname]) : ''}
+                                        </th>
+                                    )
+                                })
+                            }
+                            {this.state.controls ? (<th className="re-col-operate">操作</th>) : null}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            _currData && _currData.length ? _currData.map((r, i)=> {
+                                    let _td = null, _tr = null;
+                                    if (this.state.controls) {
+                                        _td = (
+                                            <td key={i} className="re-col-operate">
+                                                {
+                                                    this.state.controls.map((i, index)=> {
+                                                        let item = i.name(r);
+                                                        if (!item) return;
+                                                        return (
+                                                            <a key={index} href="javascript:;" onClick={()=>i.fun(r)}>{item}</a>
+                                                        )
+                                                    })
+                                                }
+                                            </td>
+                                        );
+                                    }
+                                    return (
+                                        <tr key={i} className={`${r.sub ? 're-subitem hide' + r.subIndex : ''}`}>
+                                            {
+                                                this.state.cols && this.state.cols.map((t, n)=> {
+                                                    return (
+                                                        <td key={n} className={`re-col-${t.colname} ${+t.checked > 0 ? '' : 'hide'}`}>
+                                                            {this.props.format(t, r, i) }
+                                                        </td>
+                                                    );
+                                                })
+                                            }
+                                            {_td}
+                                        </tr>)
+                                }) : (<tr>
+                                    <td colSpan={this.state.cols&&this.state.cols.count((item,index)=>item.checked)+(this.state.controls?1:0)}>
+                                        数据不在服务区
+                                    </td>
+                                </tr>)
+                        }
+                        </tbody>
+                        <tbody className={`re-table-loading re-table-loading-bg ${this.state.tableLoading? '' : 'hide'}`}>
+                        </tbody>
+                        <tbody className={`re-table-loading ${this.state.tableLoading? '' : 'hide'}`}>
+                        <tr>
+                            <td>正在加载数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    {Pager}
+                </div>
             </div>
         );
     }

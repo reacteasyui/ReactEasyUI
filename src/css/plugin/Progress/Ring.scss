@@ -1,12 +1,12 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.appRing{
+.re-app-ring{
   width:100px;
   height:100px;
   position:relative;
 }
-.ring-pie {
+.re-ring-pie {
   position:absolute;
   width:100%;
   height:100%;
@@ -14,28 +14,28 @@
   background-color:$eee;
   border-radius:50%;
 }
-.ring-pie1 {
+.re-ring-pie1 {
   clip:rect(0px 100px 100px 50px);
   transition-property:transform;
   transition-duration:0.3s;
   transition-timing-function:linear;
 }
-.ring-pie2 {
+.re-ring-pie2 {
   clip:rect(0px 50px 100px 0px);
   transition-property:transform;
   transition-delay:0.3s;
   transition-duration:0.3s;
   transition-timing-function:linear;
 }
-.ring-hold {
+.re-ring-hold {
   position:absolute;
   width:100%;
   height:100%;
   z-index:1;
 }
-.ring-hold1 { clip:rect(0px 100px 100px 50px); }
-.ring-hold2 { clip:rect(0px 50px 100px 0px); }
-.ring-bg {
+.re-ring-hold1 { clip:rect(0px 100px 100px 50px); }
+.re-ring-hold2 { clip:rect(0px 50px 100px 0px); }
+.re-ring-bg {
   width:100%;
   height:100%;
   box-sizing:border-box;
@@ -44,7 +44,7 @@
   border-radius:50%;
   position:absolute;
 }
-.ring-cover{
+.re-ring-cover{
   position:relative;
   width:80px;
   height:80px;
@@ -55,7 +55,7 @@
   z-index:10;
   text-align:center;
   color:#4D5874;
-  .topWord{
+  .re-top-word{
     padding-top:20%;
   }
 }

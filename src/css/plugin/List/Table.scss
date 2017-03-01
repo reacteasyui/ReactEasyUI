@@ -2,15 +2,63 @@
 @import "../../core/color.scss";
 @import "../../core/function.scss";
 
-.tableWrapper {
-  padding-top: 40px;
-  @include pos;
-  z-index: 0;
-  .table {
+.re-custom-btn {
+  margin-bottom: 10px;
+  text-align: right;
+  a {
+    display: inline-block;
+    background: $blue;
+    border-radius: 2px;
+    color: $white !important;
+    font-size: 1.5rem;
     text-align: center;
-    position: relative;
-    border-bottom: 1px solid $border;
-    &.moreCols {
+    line-height: 30px;
+    text-decoration: none !important;
+    width: 100px;
+  }
+}
+.re-table-scroll {
+  max-height: 140px;
+  margin: 20px 20px 10px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $blue;
+    border-radius: 6px;
+  }
+}
+.re-pop-list {
+  list-style: none;
+  .re-check-item {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
+.re-pop-btn {
+  input {
+    display: block;
+    background: $blue;
+    border: 0;
+    border-radius: 2px;
+    outline: 0;
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 30px;
+    width: 60px;
+    margin: auto;
+    padding: 0;
+  }
+}
+.re-table-wrapper {
+  .table {
+    &.re-more-cols {
       overflow-x: auto;
       display: block;
       thead {
@@ -32,116 +80,19 @@
       scrollbar-track-color: $fa;
       scrollbar-base-color: $blue;
     }
-    .customCols {
-      @include fl(right);
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      color: $blue;
-    }
-    thead {
-      border: 1px solid $f2;
-      th {
-        text-align: center;
-        border-bottom: 0;
-        font-weight: 400;
-        padding-top: 9px;
-        padding-bottom: 9px;
-        background: $fa;
-        span {
-          font-size: 14px;
-        }
-        //排序
-        .sortIcon {
-          @include position(relative);
-          left: 5px;
-          top: -3px;
-          margin-right: 15px;
-          .icon-triangle-down, .icon-triangle-up {
-            font-size: 12px;
-            @include position(absolute);
-            //color: #768099;
-            cursor: pointer;
-            &.active {
-              color: $blue;
-            }
-          }
-          .icon-triangle-up {
-            top: -1px;
-            left: 0;
-          }
-          .icon-triangle-down {
-            top: 7px;
-            left: 0;
-          }
-        }
-      }
-      .colid_follow_times {
-        border-right: 0;
-      }
-    }
-    tbody {
-      border: 1px solid $f2;
-      tr {
-        text-align: center;
-        td {
-          font-size: 14px;
-          border-top: 1px solid $f2;
-          padding: 12px 8px;
-        }
-        .colid_follow_times {
-          border-right: 0;
-        }
-        //定制需求不要写在组件内
-        //.colid_product_name{
-        //  color: $blue;
-        //}
-        .colid_names {
-          a {
-            &:hover {
-              span {
-                text-decoration: underline;
-              }
-            }
-          }
-        }
-      }
-      .subitem {
-        td {
-          background: lighten($fa, 2%);
-          span {
-            color: $blue;
-          }
-        }
-      }
-      .first_step_tr {
-        @include transi;
-        &:hover {
-          background-color: $fa;
-        }
-      }
-    }
-    .table-loading, .loadingImg {
-      @include position(absolute);
+    .re-table-loading {
+      @include pos(absolute);
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
       tr {
-        @include position(absolute);
+        @include pos(absolute);
         text-align: center;
         width: 114px;
         height: 30px;
+        top: 50%;
         left: 50%;
-        &.top {
-          top: 20%;
-        }
-        &.center {
-          top: 50%;
-        }
-        &.bottom {
-          bottom: 20%;
-        }
         margin-left: -57px;
         margin-top: -15px;
         img {
@@ -158,15 +109,80 @@
         }
       }
     }
-    .table-loading-bg {
+    .re-table-loading-bg {
       background: $fa;
       opacity: 0.3;
       filter: Alpha(Opacity=30);
     }
+    thead {
+      border: 1px solid $f2;
+      th {
+        text-align: center;
+        border-bottom: 0;
+        font-weight: 400;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        background: $fa;
+        .re-sort-icon {
+          @include pos;
+          margin-left: 5px;
+          .re-icon-triangle-down,
+          .re-icon-triangle-up {
+            @include pos(absolute);
+            font-size: 1.4rem;
+            cursor: pointer;
+            &.active {
+              color: $blue;
+            }
+          }
+          .re-icon-triangle-up {
+            top: -1px;
+            left: 0;
+          }
+          .re-icon-triangle-down {
+            top: 6px;
+            left: 0;
+          }
+        }
+      }
+    }
+    tbody {
+      border: 1px solid $f2;
+      tr {
+        text-align: center;
+        td {
+          border-top: 1px solid $f2;
+          padding: 12px 8px;
+        }
+        .re-col-names {
+          a {
+            &:hover {
+              span {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      .re-subitem {
+        td {
+          background: lighten($fa, 2%);
+          span {
+            color: $blue;
+          }
+        }
+      }
+      tr {
+        @include transi;
+        &:hover {
+          background-color: $fa;
+        }
+      }
+    }
   }
   @media (min-width: 1400px) {
     .table {
-      &.moreCols {
+      &.re-more-cols {
         overflow-x: auto;
         display: table;
         thead {
@@ -177,128 +193,76 @@
       }
     }
   }
-  .table-bar {
-    @include position(absolute);
-    right: 0;
-    top: 0;
-    a {
-      display: inline-block;
-      background: $blue;
-      color: $white;
-      font-size: 13px;
-      text-decoration: none !important;
-      padding: 3px 12px;
-    }
-    span {
-      margin: 0 22px;
-    }
-  }
-  .page {
-    width: 100%;
-    margin-top: 28px;
-    min-height: 35px;
-    @include position(relative);
-    .itemsPer {
-      @include position(absolute);
-      left: 0;
+  .re-table-footer-nav {
+    @include pos;
+    .re-items-per-page {
+      @include pos(absolute);
       top: 0;
+      left: 0;
       z-index: 10;
       select {
-        width: 50px;
-        height: 30px;
         border-radius: 2px;
+        outline: 0;
+        height: 30px;
         margin: 0 5px;
+        padding: 0 5px;
         cursor: pointer;
-        border: 1px solid $blue;
-        color: $blue;
-      }
-      span {
-        position: relative;
-        top: 2px;
       }
     }
-    .page-fl-r {
+    .re-page-panel {
       width: 100%;
       text-align: center;
       min-height: 35px;
-      @include position(relative);
-      .pageMain {
-        height: 40px;
-        .pagination {
-          margin: 0;
-          li {
-            display: inline-block;
-            line-height: 34px;
-            text-align: center;
-            margin: 0 8px;
-            &.disabled a,&.disabled a:hover{
-              color: $border;
-              border: 1px solid $border;
-            }
-            a {
-              display: block;
-              padding: 0;
-              width: 34px;
-              height: 34px;
-              line-height: 34px;
-              border: 1px solid $border;
-              border-radius: 2px;
-              color: $blue;
-              span {
-                font-size: 24px;
-              }
-              span[aria-label="Previous"] {
-                position: relative;
-                top: -2px;
-              }
-              span[aria-label="Next"] {
-                position: relative;
-                top: -2px;
-              }
-              span[aria-label="More"] {
-                position: relative;
-                top: -7px;
-              }
-            }
-            a:hover {
-              color: $blue;
-              border: 1px solid $blue;
-              background: $white;
-            }
+      @include pos;
+      .pagination {
+        margin: 0;
+        li {
+          display: inline-block;
+          line-height: 30px;
+          text-align: center;
+          margin: 0 8px;
+          &.disabled a,&.disabled a:hover{
+            color: $border;
+            border: 1px solid $border;
           }
-          @media screen and (max-width: 768px) {
-            li {
-              display: none;
-              &:first-child, &:last-child {
-                display: inline-block;
-              }
-            }
-          }
-          .active a {
+          a {
             display: block;
-            background: $blue;
-            line-height: 34px;
-            width: 34px;
-            height: 34px;
-            color: $white;
-            border: 0;
+            background: transparent;
+            border: 1px solid $border;
             border-radius: 2px;
-            cursor: pointer;
-          }
-          .active a:hover {
-            color: $white;
-            border: 0;
-            background: $blue;
+            color: inherit;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            &:hover {
+              border-color: $blue;
+              color: $blue;
+            }
           }
         }
-
+        @media screen and (max-width: 768px) {
+          li {
+            display: none;
+            &:first-child, &:last-child {
+              display: inline-block;
+            }
+          }
+        }
+        .active a {
+          background: $blue;
+          border: 0;
+          color: $white !important;
+        }
       }
-      .goTopage {
-        @include position(absolute, 0 0 null null);
+      .re-go-to-page {
+        @include pos(absolute);
+        right: 0;
+        top: 0;
         span {
           display: block;
           float: left;
-          position: relative;
+          @include pos;
           top: 5px;
         }
         input {
@@ -323,158 +287,10 @@
       }
     }
     @media screen and (max-width: 768px) {
-      .itemsPer, .goTopage, .ensure {
+      .re-items-per-page,
+      .re-go-to-page {
         display: none;
       }
-    }
-  }
-}
-
-.filterBox {
-  margin-top: 15px;
-  width: 100%;
-  min-height: 32px;
-  _height: 32px;
-  margin-bottom: 10px;
-  padding-left: 30px;
-  z-index: 10;
-  .btn-toolbar {
-    float: left;
-    margin-right: 10px;
-    .filterSel {
-      display: block;
-      border: 0;
-      cursor: pointer;
-      .dropdown-btn {
-        height: 32px;
-        color: $blue;
-        font-size: 14px;
-        border: 1px solid $blue;
-        border-radius: 2px;
-      }
-      .dropdown-menu {
-        border: 1px solid $blue;
-        li {
-          line-height: 28px;
-          a {
-            color: $blue;
-          }
-        }
-      }
-    }
-  }
-
-  .filterSearch {
-    float: left;
-    .searchInput1 {
-      display: block;
-      float: left;
-      width: 180px;
-      height: 32px;
-      text-indent: 10px;
-      font-size: 14px;
-      color: $blue;
-      border-radius: 2px;
-      border: 1px solid $border;
-      border-right: 0;
-    }
-    .searchInput1:focus {
-      border: 1px solid $blue;
-      color: $blue;
-    }
-    .searchInput1:focus + .searchInput2 {
-      background: $blue;
-      border: 1px solid $blue;
-      color: $white;
-    }
-    .searchInput2 {
-      display: block;
-      float: left;
-      width: 58px;
-      height: 32px;
-      background: $fa;
-      text-align: center;
-      font-size: 14px;
-      color: $blue;
-      border-radius: 2px;
-      border: 1px solid $border;
-      margin-left: -2px;
-    }
-  }
-}
-
-/*定制滚动条*/
-.scroll {
-  overflow: auto;
-  margin: 20px 16px;
-  max-height: 140px;
-  &::-webkit-scrollbar-track {
-    background: $fa;
-  }
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $blue;
-    border-radius: 4px;
-  }
-  scrollbar-track-color: $fa;
-  scrollbar-base-color: $blue;
-}
-
-.popList {
-  padding: 0 10px;
-  font-size: 14px;
-  color: $blue;
-  li {
-    line-height: 30px;
-    label {
-      max-width: 100%;
-      margin-bottom: 5px;
-      padding-left: 30px;
-      font-weight: 400;
-      text-align: left;
-      @include position(relative);
-      input[type="checkbox"] {
-        left: 0;
-        top: 4px;
-        width: 18px;
-        height: 18px;
-        z-index: 999;
-        opacity: 0;
-        @include position(absolute);
-      }
-      i {
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: none;
-        color: $blue;
-      }
-      .active {
-        display: block;
-      }
-      span {
-        font-size: 14px;
-        color: rgba($black,.8);
-      }
-    }
-  }
-}
-
-.popBtn {
-  input {
-    display: block;
-    width: 70px;
-    border: 0;
-    color: $white;
-    line-height: 30px;
-    font-size: 14px;
-    background: $blue;
-    margin: 10px auto 0;
-    &:hover {
-      background: $blue;
     }
   }
 }

@@ -78,7 +78,7 @@ export default class MapChart extends React.Component {
         let _this = this, {width, height, data}=_this.props;
         const divStyle = {width: width, height: height};
         return (<div>
-            {data ? <div id={this.chartID} style={divStyle}></div> : <div className='noResult'>暂无数据</div>}
+            {data ? <div id={this.chartID} style={divStyle}></div> : <div className='re-no-result'>暂无数据</div>}
         </div>);
     }
 

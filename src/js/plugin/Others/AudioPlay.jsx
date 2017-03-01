@@ -22,7 +22,7 @@ export default class AudioPlay extends React.Component {
 
     static defaultProps = {
         size:1
-    }
+    };
 
     switchState(){
         let _this = this;
@@ -34,8 +34,9 @@ export default class AudioPlay extends React.Component {
     }
 
     playOrPause(){
-        let _this = this,_id = '#'+_this.audioID;
-        let audioDom = document.querySelector(_id);
+        let _this = this,
+            _id = '#'+_this.audioID,
+            audioDom = document.querySelector(_id);
         if(_this.state.isPlay){
             audioDom.play();
             if(_this.props.clickCallback){
@@ -51,9 +52,10 @@ export default class AudioPlay extends React.Component {
         }
     }
     countTime(){
-        let _this = this,_id = '#'+_this.audioID;
-        let audioDom = document.querySelector(_id);
-        let len = parseInt(audioDom.duration);
+        let _this = this,
+            _id = '#'+_this.audioID,
+            audioDom = document.querySelector(_id),
+            len = parseInt(audioDom.duration);
         if(len){
             _this.setState({
                 secNum:len
@@ -62,19 +64,23 @@ export default class AudioPlay extends React.Component {
     }
 
     render() {
-        let _this = this,_state = _this.state.isPlay,{size}=_this.props;
+        let _this = this,
+            _state = _this.state.isPlay,
+            {size}=_this.props;
         const style={
             transform:'scale('+size+','+size+')',
-            WebkitTransform:'scale('+size+','+size+')',
+            webkitTransform:'scale('+size+','+size+')',
         };
-        return(<div className="audio">
-            <div className="buttonWrapper" style={style} onClick={_this.switchState.bind(this)}>
-                <div className={`${_state?'play':'pause'}`}></div>
+        return (
+            <div className="re-audio">
+                <div className="re-button-wrapper" style={style} onClick={_this.switchState.bind(this)}>
+                    <div className={`${_state ? 'play' : 'pause'}`}></div>
+                </div>
+                <span>{_this.state.secNum}"</span>
+                <audio src={_this.state.url} id={_this.audioID}>
+                </audio>
             </div>
-            <span>{_this.state.secNum}"</span>
-            <audio src={_this.state.url} id={_this.audioID}>
-            </audio>
-        </div>)
+        )
     }
     componentDidMount(){
         let _this = this;

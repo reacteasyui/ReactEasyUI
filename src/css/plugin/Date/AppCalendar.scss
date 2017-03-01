@@ -3,11 +3,10 @@ $blue-skin: #171D2D;
 $font-black: #333;
 $week-bg: #F7F7F7;
 
-.dateArea {
+.re-date-area {
   display: inline-block;
   cursor: pointer;
 }
-
 .app-calendar {
   display: none;
   position: absolute;
@@ -18,8 +17,6 @@ $week-bg: #F7F7F7;
   width: 100%;
   em {
     font-style: normal;
-  }
-  .pd-r{
     padding-right:4px;
   }
   .header-box.fixed {
@@ -31,7 +28,7 @@ $week-bg: #F7F7F7;
     border-bottom: #d4d4d4 0 solid;
     background: #22ca92;
     color: $font-black;
-    i {
+    .re-icon {
       color: #fff !important;
     }
   }
@@ -247,25 +244,20 @@ $week-bg: #F7F7F7;
         margin: 0;
         padding: 0;
       }
-      i {
+      .re-icon {
         position: fixed;
-        top: 0px;
-        left: 10px;
-      }
-      .icon-point-left {
-        position: absolute;
-        left: 0;
         top: 0;
-        width: 44px;
-        font-size: 1.8rem;
+        left: 0;
+      }
+      .re-icon-point-left {
         text-align: center;
-        height: 44px;
+        line-height: 44px;
+        width: 44px;
         cursor: pointer;
       }
     }
   }
 }
-
 .calendar-depTips, .calendar-arrTips {
   position: fixed;
   font-size: 18px;

@@ -50,14 +50,14 @@ export default class PieChart extends React.Component {
 
     render() {
         const divStyle = {
-            /*width: this.props.width,
-            height: this.props.height*/
             width: '100%',
             height:'100%'
         };
-        return (<div className={`${this.props.className} pr`}>
-            <div id={this.chartID} style={divStyle}></div>
-        </div>);
+        return (
+            <div className={`${this.props.className}`}>
+                <div id={this.chartID} style={divStyle}></div>
+            </div>
+        );
     }
 
     componentDidMount() {
