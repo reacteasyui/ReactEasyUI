@@ -19,6 +19,7 @@ import DateChooserPage from "../component/DatePage/DateChooserPage";
 import CalenderPage from "../component/DatePage/CalendarPage";
 import AppCalenderPage from "../component/DatePage/AppCalendarPage";
 import SchedulePage from "../component/DatePage/SchedulePage";
+import TimerPage from "../component/DatePage/TimerPage";
 
 import TablePage from "../component/ListPage/TablePage";
 
@@ -48,7 +49,6 @@ import OverlapPage from "../component/ProgressPage/OverlapPage.jsx";
 
 import AudioPlayPage from "../component/OthersPage/AudioPlayPage";
 import IframeLoadPage from "../component/OthersPage/IframeLoadPage";
-import TimerPage from "../component/OthersPage/TimerPage";
 
 class Home extends React.Component {
     componentDidMount() {
@@ -125,6 +125,7 @@ ReactDOM.render(
                 <Route path="calender" component={CalenderPage}/>
                 <Route path="app-calender" component={AppCalenderPage}/>
                 <Route path="schedule" component={SchedulePage}/>
+                <Route path="timer" component={TimerPage}/>
             </Route>
             <Route path="list">
                 <IndexRedirect to={"table"}/>
@@ -162,7 +163,6 @@ ReactDOM.render(
                 <IndexRedirect to={"audio-play"}/>
                 <Route path="audio-play" component={AudioPlayPage}/>
                 <Route path="iframe-load" component={IframeLoadPage}/>
-                <Route path="timer" component={TimerPage}/>
             </Route>
         </Route>
     </Router>,

@@ -22,14 +22,15 @@ export default class Sider extends React.Component {
                 ]
             },
             {
-                name: "日期组件",
+                name: "日期与时间组件",
                 url: "/date",
                 son: [
                     {name: "DateRangePicker", url: "/date-range-picker", icon: "pc"},
                     {name: "DateChooser", url: "/date-chooser", icon: "pc"},
                     {name: "Calender", url: "/calender"},
                     {name: "AppCalender", url: "/app-calender", icon: "mobile"},
-                    {name: "Schedule", url: "/schedule"}
+                    {name: "Schedule", url: "/schedule"},
+                    {name: "Timer", url: "/timer"}
                 ]
             },
             {
@@ -78,8 +79,7 @@ export default class Sider extends React.Component {
                 url: "/others",
                 son: [
                     {name: "AudioPlay", url: "/audio-play"},
-                    {name: "IframeLoad", url: "/iframe-load"},
-                    {name: "Timer", url: "/timer"}
+                    {name: "IframeLoad", url: "/iframe-load"}
                 ]
             },
         ];

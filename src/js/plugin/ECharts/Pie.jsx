@@ -122,9 +122,12 @@ export default class Pie extends React.Component {
             }
         });
         _option.series[0].data = _data;
-        _this.setState({
+        /*_this.setState({
             option:_option
-        })
+        })*/
+        _this.chart.setOption({
+            series: _option.series
+        });
     }
     render() {
         let _this = this, {width, height, data}=_this.props;
@@ -155,9 +158,12 @@ export default class Pie extends React.Component {
     componentDidMount(){
         let _this = this,index = 0,length = _this.state.data.length;
         _this.changeSlected(0);
-        setInterval(()=>{
+        _this.timer = setInterval(()=>{
             index++;
             _this.changeSlected(index%length);
         },2000)
+    }
+    componentWillUnmount(){
+        clearInterval(this.timer);
     }
 }

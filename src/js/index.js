@@ -8,6 +8,7 @@ export DateRangePicker from "./plugin/Date/DateRangePicker";
 export {DateChooser, MODE} from "./plugin/Date/DateChooser";
 export Calender from "./plugin/Date/Calendar";
 export AppCalender from "./plugin/Date/AppCalendar";
+export Timer from "./plugin/Date/Timer";
 
 export Table from "./plugin/List/Table";
 
