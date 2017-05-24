@@ -3,6 +3,7 @@ export FreeCheckBox from "./plugin/Base/FreeCheckBox"
 export TextWithCount from "./plugin/Base/TextWithCount"
 export DelIconInput from "./plugin/Base/DelIconInput";
 export SwitchBtn from "./plugin/Base/SwitchBtn";
+export Counter from "./plugin/Base/Counter";
 
 export DateRangePicker from "./plugin/Date/DateRangePicker";
 export {DateChooser, MODE} from "./plugin/Date/DateChooser";

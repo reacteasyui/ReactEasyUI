@@ -104,31 +104,7 @@ export default class Pie extends React.Component {
             }]
         });
     }
-    changeSlected(x){
-        let _this =this,_data = _this.state.data,_option = _this.state.option;
-        _data.map((r,i)=>{
-            if(i == x){
-                _data[i].itemStyle={
-                    normal:{
-                        opacity:0.6/**/
-                    }
-                }
-            }else{
-                _data[i].itemStyle={
-                    normal:{
-                        opacity:1
-                    }
-                }
-            }
-        });
-        _option.series[0].data = _data;
-        /*_this.setState({
-            option:_option
-        })*/
-        _this.chart.setOption({
-            series: _option.series
-        });
-    }
+    
     render() {
         let _this = this, {width, height, data}=_this.props;
         return (<div>
@@ -154,16 +130,5 @@ export default class Pie extends React.Component {
                 series: [{data: props.data}]
             });
         }
-    }
-    componentDidMount(){
-        let _this = this,index = 0,length = _this.state.data.length;
-        _this.changeSlected(0);
-        _this.timer = setInterval(()=>{
-            index++;
-            _this.changeSlected(index%length);
-        },2000)
-    }
-    componentWillUnmount(){
-        clearInterval(this.timer);
     }
 }

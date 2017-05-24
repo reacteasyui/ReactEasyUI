@@ -1,0 +1,50 @@
+$input-border:#edeef0;
+$input-color:#494f65;
+$btn-bg:#0198ff;
+$white:#fff;
+$disabled-bg:#e6e6e6;
+$disabled-color:#c0c0c0;
+$input-error:#f00;
+.counter{
+	height:32px;
+	overflow:hidden;
+	input{
+		width:48px;
+		height:32px;
+		border:solid 1px $input-border;
+		text-align:center;
+		display:block;
+		float:left;
+		margin:0 6px;
+		color:$input-color;
+		outline: none;
+		-webkit-appearance: none;
+		 -moz-appearance: none; 
+		 -o-appearance: none;
+		 appearance: none;
+
+		&:focus{
+			border:solid 1px $input-border;
+		}
+	}
+	input.err{
+		border:solid 1px $input-error;
+	}
+	span{
+		display:inline-block;
+		width:32px;
+		height:32px;
+		line-height:30px;
+		text-align:center;
+		background:$btn-bg;
+		color:$white;
+		cursor:pointer;
+		font-size:20px;
+		float:left;
+	}
+	span.disabled{
+		background:$disabled-bg;
+		color:$disabled-color;
+		cursor:default;
+	}
+}

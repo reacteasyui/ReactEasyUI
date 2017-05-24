@@ -13,6 +13,7 @@ import FreeCheckBoxPage from "../component/BasePage/FreeCheckBoxPage"
 import TextWithCountPage from "../component/BasePage/TextWithCountPage"
 import DelIconInputPage from "../component/BasePage/DelIconInputPage";
 import SwitchBtnPage from "../component/BasePage/SwitchBtnPage";
+import CounterPage from "../component/BasePage/CounterPage";
 
 import DateRangePickerPage from "../component/DatePage/DateRangePickerPage";
 import DateChooserPage from "../component/DatePage/DateChooserPage";
@@ -117,6 +118,7 @@ ReactDOM.render(
                 <Route path="text-with-count" component={TextWithCountPage}/>
                 <Route path="del-icon-input" component={DelIconInputPage}/>
                 <Route path="switch-btn" component={SwitchBtnPage}/>
+                <Route path="counter" component={CounterPage}/>
             </Route>
             <Route path="date">
                 <IndexRedirect to={"date-range-picker"}/>

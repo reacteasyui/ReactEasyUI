@@ -18,7 +18,8 @@ export default class Sider extends React.Component {
                     {name: "FreeCheckBox", url: "/free-check-box"},
                     {name: "TextWithCount", url: "/text-with-count"},
                     {name: "DelIconInput", url: "/del-icon-input"},
-                    {name: "SwitchBtn", url: "/switch-btn"}
+                    {name: "SwitchBtn", url: "/switch-btn"},
+                    {name: "Counter", url: "/counter"}
                 ]
             },
             {
