@@ -22,7 +22,7 @@ export default class CounterPage extends React.Component {
                     {name: "max", type: "number", default: null,  des: '最大值', required: true},
                     {name: "value", type: "number", default: null,  des: 'input值', required: true},
                     {name: "step", type: "number", default: '1',  des: '步长'},
-                    {name: "name", type: "number", default: null,  des: 'name属性值', required: true}
+                    {name: "name", type: "string", default: null,  des: 'name属性值', required: true}
                 ]}/>
             </div>
         );
