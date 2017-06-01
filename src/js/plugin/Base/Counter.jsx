@@ -41,14 +41,15 @@ export default class Counter extends React.Component{
         });
     }
     change(event){
-        let code  = event.target.value.charCodeAt(event.target.value.length-1);
-        this.code = String.fromCharCode(code);
-        let val = event.target.value;
-        if(!(/[0-9]/g.test(this.code)) || !(this.code >= 0 && this.code <= 9) ){
-            val = val.replace(this.code,'');
-        }
+        let val = event.target.value.split(''),arr = [],_str;
+        val.map((value)=>{
+            if(value >= 0 && value <= 9){
+                arr.push(value);
+            }
+        })
+        _str = arr.join('');
         this.setState({
-            value:val
+            value:_str
         });
     }
     
@@ -56,7 +57,7 @@ export default class Counter extends React.Component{
         return (
             <div className="counter" id={this.counterID}>
                 <span className={`desc ${this.state.value <= this.state.min || this.state.value == '' ? 'disabled' : ''}`} onClick={()=>this.changeValue(-1)}>-</span>
-                <input type="text" onChange={this.change.bind(this)} className={`num ${this.state.value > this.state.max || this.state.value < this.state.min ? 'err' : ''}`} name={this.state.name} value={this.state.value} onKeyUp={this.change.bind(this)}/>
+                <input type="text" onChange={this.change.bind(this)} className={`num ${this.state.value > this.state.max || this.state.value < this.state.min ? 'err' : ''}`} name={this.state.name} value={this.state.value}/>
                 <span className={`add ${this.state.value >= this.state.max || this.state.value == ''  ? 'disabled' : ''}`} onClick={()=>this.changeValue(1)}>+</span>
             </div>
         );

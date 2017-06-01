@@ -19,7 +19,8 @@ export default class Sider extends React.Component {
                     {name: "TextWithCount", url: "/text-with-count"},
                     {name: "DelIconInput", url: "/del-icon-input"},
                     {name: "SwitchBtn", url: "/switch-btn"},
-                    {name: "Counter", url: "/counter"}
+                    {name: "Counter", url: "/counter"},
+                    {name: "Element", url: "/element"}
                 ]
             },
             {

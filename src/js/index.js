@@ -4,6 +4,7 @@ export TextWithCount from "./plugin/Base/TextWithCount"
 export DelIconInput from "./plugin/Base/DelIconInput";
 export SwitchBtn from "./plugin/Base/SwitchBtn";
 export Counter from "./plugin/Base/Counter";
+export ShadowButton from "./plugin/Base/Button";
 
 export DateRangePicker from "./plugin/Date/DateRangePicker";
 export {DateChooser, MODE} from "./plugin/Date/DateChooser";

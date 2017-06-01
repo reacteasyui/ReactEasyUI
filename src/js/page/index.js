@@ -14,6 +14,7 @@ import TextWithCountPage from "../component/BasePage/TextWithCountPage"
 import DelIconInputPage from "../component/BasePage/DelIconInputPage";
 import SwitchBtnPage from "../component/BasePage/SwitchBtnPage";
 import CounterPage from "../component/BasePage/CounterPage";
+import Element from "../component/BasePage/Element";
 
 import DateRangePickerPage from "../component/DatePage/DateRangePickerPage";
 import DateChooserPage from "../component/DatePage/DateChooserPage";
@@ -51,8 +52,10 @@ import OverlapPage from "../component/ProgressPage/OverlapPage.jsx";
 import AudioPlayPage from "../component/OthersPage/AudioPlayPage";
 import IframeLoadPage from "../component/OthersPage/IframeLoadPage";
 
+import '../plugin/Base/Button.js';
 class Home extends React.Component {
     componentDidMount() {
+
         $.handleMenuToggle();
     }
 
@@ -77,6 +80,7 @@ class App extends React.Component {
     componentDidMount() {
         $('.sider').scrollbar();
         $.handleMenuToggle();
+         console.log(12)
     }
 
     componentDidUpdate() {
@@ -119,6 +123,7 @@ ReactDOM.render(
                 <Route path="del-icon-input" component={DelIconInputPage}/>
                 <Route path="switch-btn" component={SwitchBtnPage}/>
                 <Route path="counter" component={CounterPage}/>
+                <Route path="element" component={Element}/>
             </Route>
             <Route path="date">
                 <IndexRedirect to={"date-range-picker"}/>

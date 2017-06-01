@@ -1,0 +1,320 @@
+$q-red-primary:#D6001C;
+$white:#fff;
+$shape-circle:#D6001C;
+/*  Ripple */
+a{display:inline-block;margin:0;padding:0;}
+a:hover{text-decoration:none;}
+button:focus{outline:0;}
+.ripple {
+  width: 0;
+  height: 0;
+  z-index:-1;
+  border-radius: 50%;
+  transform: scale(0);
+  position: absolute;
+  shape-outside: circle(250px at 50% 50%) padding-box;
+  z-index:-1!important;
+  pointer-events:none;
+}
+
+.rippleEffect {
+  -webkit-animation: rippleDrop .5s ease-out;
+  animation: rippleDrop .5s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.rippleClickEffect {
+  -webkit-animation: rippleClickDrop 1.2s ease-out;
+  animation: rippleClickDrop 1.2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rippleClickDrop {
+  100% {
+    -webkit-transform: scale(4);
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes rippleDrop {
+  100% {
+    -webkit-transform: scale(4);
+    transform: scale(4);
+    opacity: 1;
+  }
+}
+
+.rippleRemove {
+    -webkit-animation: rippleOut .4s ease-out;
+    animation: rippleOut .4s ease-out;
+    animation-fill-mode: forwards;
+    transform: scale(3);
+}
+
+@keyframes rippleOut {
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: .2;
+  }
+}
+
+.hover-btn,.click-btn{
+    display: inline-block;
+    font-weight: 400;
+    margin-right:10px;
+    text-align: center;
+    text-decoration:none;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: none;
+    white-space: nowrap;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  font-size:16px;
+  padding:0 20px;
+  line-height:44px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  position:relative;
+  overflow:hidden;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  &:before{
+    content:'';
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    width:auto;
+    height:auto;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  &:last-of-type{
+    margin-right:0px;
+  }
+  z-index:15;
+  span{
+    color:#ffffff;
+  }
+  &:link,&:hover{
+    text-decoration:none;
+    span{
+      color:#ffffff;
+      text-decoration:none;
+    }
+  }
+}
+.hover-btn,.click-btn{
+  -webkit-transition:border 180ms ease;
+  transition:border 180ms ease;
+  color:#fff!important;
+  text-decoration:none;
+  span{
+    z-index:2;
+    color:#fff!important;
+    text-decoration:none;
+    pointer-events:none;
+  }
+}
+
+/* new Button css*/
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes rotate-animation{
+  100% {
+    -webkit-transform : rotate(360deg);
+  }
+}
+@keyframes rotate-animation{
+    100% {
+    transform : rotate(360deg);
+  }
+}
+.shape-circle {
+    margin:0 10px;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    border-radius:30px;
+    text-align:center;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background:$shape-circle;
+    cursor:pointer;
+    color:$white;
+    &:hover{
+      color:$white;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      border: $shape-circle solid 6px;
+      border-radius:50%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+    }
+}
+.shape-circle-hover:hover:before,.shape-circle-click-effect:before{
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+}
+
+.shape-circle-border{
+  position:relative;
+  width:30px;
+  height:30px;
+  text-align:center;
+  line-height:26px;
+  vertical-align:middle;
+  border:solid 2px $q-red-primary;
+  border-radius:50%;
+  cursor:pointer;
+  &:hover{
+    border-style:dashed;
+  }
+}
+.shape-circle-border-rotate{
+  width:30px;
+  height:30px;
+  position:relative;
+  text-align:center;
+  line-height:30px;
+  vertical-align:middle;
+  border-radius:50%;
+  cursor:pointer;
+  color:$q-red-primary;
+  &:before{
+    content:'';
+    border:solid 2px $q-red-primary;
+    position: absolute;
+    border-radius:50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &:hover{
+   color:$q-red-primary;
+  }
+  &:hover:before{
+    border-style:dashed;
+    -webkit-animation:rotate-animation 2s linear infinite;
+    animation:rotate-animation 2s linear infinite;
+  }
+}
+
+@keyframes warn {  
+    10% {  
+        -webkit-transform: scale(0.1);  
+        opacity: 0.6;  
+    } 
+    100% {  
+        -webkit-transform: scale(1);  
+         
+    }  
+}  
+@-webkit-keyframes warn {  
+    10% {  
+        -webkit-transform: scale(0.1);  
+        opacity: 0.6;  
+    }  
+    100% {  
+        -webkit-transform: scale(1);  
+    }  
+} 
+.pulse {  
+    position: absolute;   
+    -webkit-border-radius: 50%;  
+    -moz-border-radius: 50%;  
+    border-radius: 50%;  
+    left:0;
+    top:0;
+    z-index: 1;  
+    opacity: 0; 
+    -webkit-transform: scale(0);  
+    transform: scale(0);
+    -webkit-animation: warn 800ms ease-out;  
+    -moz-animation: warn 800ms ease-out;  
+    animation: warn 800ms ease-out; 
+    animation-fill-mode: forwards;   
+}  
+.shape-square{
+  width:48px;
+  height:48px;
+  line-height:48px;
+  vertical-align:middle;
+  margin:0 10px;
+  position:relative;
+  cursor:pointer;
+  text-align:center;
+  span{
+  color:#000;
+  position:relative;
+  z-index:2;
+  font-size:25px;
+
+  }
+
+}
+
+
+
+$green:#2d9c28;
+$blue:#355cdb;
+$gray:#ccc;
+.q-btn-green{
+  background:$green;
+}
+.q-btn-blue{
+  background:$blue;
+}
+.q-btn-red{
+  background:$q-red-primary;
+}
+.q-btn-gray{
+  background:$gray;
+}
