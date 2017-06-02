@@ -52,7 +52,6 @@ import OverlapPage from "../component/ProgressPage/OverlapPage.jsx";
 import AudioPlayPage from "../component/OthersPage/AudioPlayPage";
 import IframeLoadPage from "../component/OthersPage/IframeLoadPage";
 
-import '../plugin/Base/Button.js';
 class Home extends React.Component {
     componentDidMount() {
 

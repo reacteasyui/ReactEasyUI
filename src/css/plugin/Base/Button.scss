@@ -61,28 +61,6 @@ button:focus{outline:0;}
 }
 
 .hover-btn,.click-btn{
-    display: inline-block;
-    font-weight: 400;
-    margin-right:10px;
-    text-align: center;
-    text-decoration:none;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: none;
-    white-space: nowrap;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  font-size:16px;
-  padding:0 20px;
-  line-height:44px;
-  -moz-border-radius:4px;
-  -webkit-border-radius:4px;
-  border-radius:4px;
   position:relative;
   overflow:hidden;
     -webkit-box-sizing: border-box;
@@ -109,13 +87,9 @@ button:focus{outline:0;}
     margin-right:0px;
   }
   z-index:15;
-  span{
-    color:#ffffff;
-  }
   &:link,&:hover{
     text-decoration:none;
     span{
-      color:#ffffff;
       text-decoration:none;
     }
   }
@@ -123,11 +97,9 @@ button:focus{outline:0;}
 .hover-btn,.click-btn{
   -webkit-transition:border 180ms ease;
   transition:border 180ms ease;
-  color:#fff!important;
   text-decoration:none;
   span{
     z-index:2;
-    color:#fff!important;
     text-decoration:none;
     pointer-events:none;
   }
@@ -306,6 +278,34 @@ button:focus{outline:0;}
 $green:#2d9c28;
 $blue:#355cdb;
 $gray:#ccc;
+.q-btn-blue,.q-btn-red,.q-btn-green,.q-btn-gray{
+  display: inline-block;
+  font-weight: 400;
+  margin-right:10px;
+  text-align: center;
+  text-decoration:none;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: none;
+  white-space: nowrap;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding:0 20px;
+  line-height:44px;
+  display: inline-block;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  color:#fff;
+  span{
+    color:#fff;
+  }
+}
 .q-btn-green{
   background:$green;
 }

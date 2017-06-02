@@ -1,6 +1,6 @@
 import React from 'react';
 import Demo from "../Demo.jsx";
-import Section from "../Section.jsx";
+import '../../plugin/Base/Button.js';
 
 export default class CounterPage extends React.Component {
     constructor(props) {
@@ -15,16 +15,16 @@ export default class CounterPage extends React.Component {
                 <p>1. 引入Button.js;<br/>
                 2. 引入Button.scss;</p>
                 <Demo title="按钮-动画效果-hover-实例" component={<div>
-                    <a href="javascript:;" className="hover-btn q-btn-green" data-shadecolor="#29e320">
+                    <a href="javascript:;" className="hover-btn q-btn-green" >
                         <span>+</span>
                     </a>
                     &nbsp;&nbsp;
-                    <div className="hover-btn q-btn-gray" data-shadecolor="#bababa">
+                    <div className="hover-btn q-btn-gray">
                         <span>gray</span>
                     </div>
                     &nbsp;
                     &nbsp;
-                    <button className="hover-btn q-btn-red" data-shadecolor="#f00">
+                    <button className="hover-btn q-btn-red" >
                         <span>get Started</span>
                     </button>
                     </div>
