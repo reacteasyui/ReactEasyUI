@@ -8,7 +8,7 @@ button:focus{outline:0;}
 .ripple {
   width: 0;
   height: 0;
-  z-index:-1;
+  z-index:1;
   border-radius: 50%;
   transform: scale(0);
   position: absolute;
@@ -66,7 +66,7 @@ button:focus{outline:0;}
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-  &:before{
+  /*&:before{
     content:'';
     display:block;
     position:absolute;
@@ -82,7 +82,7 @@ button:focus{outline:0;}
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-  }
+  }*/
   &:last-of-type{
     margin-right:0px;
   }
@@ -255,22 +255,26 @@ button:focus{outline:0;}
     animation-fill-mode: forwards;   
 }  
 .shape-square{
-  width:48px;
-  height:48px;
-  line-height:48px;
   vertical-align:middle;
-  margin:0 10px;
   position:relative;
   cursor:pointer;
   text-align:center;
   span{
-  color:#000;
   position:relative;
   z-index:2;
-  font-size:25px;
 
   }
 
+}
+.btn-close{
+  width:48px;
+  height:48px;
+  line-height:48px;
+  margin:0 10px;
+  span{
+    color:#000;
+    font-size:25px;
+  }
 }
 
 

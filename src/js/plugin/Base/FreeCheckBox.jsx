@@ -49,6 +49,7 @@ export default class FreeCheckBox extends React.Component {
         let _this = this,
             {className, name} = _this.props,
             {boolArr, selectValue} = _this.state;
+        console.log(boolArr);
         return (
             <div className={className}>
                 {
@@ -56,8 +57,8 @@ export default class FreeCheckBox extends React.Component {
                         let valIndex = i + 1;
                         return (
                             <label className="re-check-item" onClick={()=>this.changeValue(valIndex,boolArr[i])} key={i}>
-                                <i className={`re-icon re-icon-unchecked ${boolArr[i] ? '' : 'active'}`}></i>
-                                <i className={`re-icon re-icon-checked ${boolArr[i] ? 'active' : ''}`}></i>
+                                <span className="shape-square" data-shadecolor={`${boolArr[i] ? '#000':'#3388FF'}`}><i className={`re-icon re-icon-unchecked ${boolArr[i] ? '' : 'active'}`}></i>
+                                <i className={`re-icon re-icon-checked ${boolArr[i] ? 'active' : ''}`}></i></span>
                                 {r}
                             </label>
                         );

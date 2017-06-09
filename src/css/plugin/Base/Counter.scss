@@ -41,6 +41,10 @@ $input-error:#f00;
 		cursor:pointer;
 		font-size:20px;
 		float:left;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
 	span.disabled{
 		background:$disabled-bg;
