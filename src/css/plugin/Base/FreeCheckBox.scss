@@ -33,6 +33,8 @@
     display:inline-block;
     .re-icon{
       margin-right:0;
+      position:relative;
+      z-index:2;
     }
   }
 }

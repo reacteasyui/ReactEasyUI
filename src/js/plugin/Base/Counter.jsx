@@ -38,6 +38,10 @@ export default class Counter extends React.Component{
         }
         this.setState({
             value:parseInt(this.state.value)+n*this.state.step
+        },()=>{
+            //console.log('change');
+            //$("#"+this.counterID).find('input').val('23');
+            //console.log($("#"+this.counterID).find('input').val())
         });
     }
     change(event){
@@ -50,10 +54,13 @@ export default class Counter extends React.Component{
         _str = arr.join('');
         this.setState({
             value:_str
+        },()=>{
+            $("#"+this.counterID).find('input').val(this.state.value);
         });
     }
     
     render(){
+        console.log(this.state.value);
         return (
             <div className="counter" id={this.counterID}>
                 <span className={`desc ${this.state.value <= this.state.min || this.state.value == '' ? 'disabled' : ''}`} onClick={()=>this.changeValue(-1)}>-</span>
@@ -63,7 +70,7 @@ export default class Counter extends React.Component{
         );
     }
 
-    componentWillReceiveProps(props){
+    /*componentWillReceiveProps(props){
         this.setState({
             min: props.min,
             max:props.max,
@@ -71,5 +78,5 @@ export default class Counter extends React.Component{
             step:props.step || 1,
             name:props.name
         });
-    }
+    }*/
 }

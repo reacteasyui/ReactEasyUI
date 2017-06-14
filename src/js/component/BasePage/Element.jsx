@@ -102,8 +102,8 @@ $(".click-btn").addAnimate({
                     {`
 <a className="shape-circle shape-circle-click" >×</a>
 调用方法：
-$(".hover-btn").addAnimate({
-    type:'hover',//鼠标事件 hover| click
+$(".shape-circle").addAnimate({
+    type:'click',//鼠标事件 hover| click
     animate:'circle-border',//动画种类 square | circle | circle-border
 });
 <a className="shape-square btn-close" data-shadecolor="#000">
@@ -111,7 +111,7 @@ $(".hover-btn").addAnimate({
 </a>
 调用方法：
 $(".shape-square").addAnimate({
-    type:'hover',//鼠标事件 hover| click
+    type:'click',//鼠标事件 hover| click
     animate:'circle',//动画种类 square | circle | circle-border
     shadeColor:'#000'//遮罩颜色
 });

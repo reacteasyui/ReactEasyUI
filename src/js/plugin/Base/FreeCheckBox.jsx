@@ -28,6 +28,7 @@ export default class FreeCheckBox extends React.Component {
     }
 
     changeValue(valIndex, currValue) {
+        console.log('exec');
         let _this = this,
             selectValue = _this.state.selectValue,
             boolArr = _this.state.boolArr;
@@ -74,5 +75,12 @@ export default class FreeCheckBox extends React.Component {
             selectValue: props.selectValue,
             boolArr: _this.initValue(props.selectValue)
         }
+    }
+    componentDidMount(){
+        $(".shape-square").addAnimate({
+            type:'click',
+            animate:'circle',
+            //shadeColor:'#3f4254',
+        })
     }
 }
