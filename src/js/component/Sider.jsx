@@ -48,6 +48,7 @@ export default class Sider extends React.Component {
                 class: "btn-hide",
                 son: [
                     {name: "Pie", url: "/pie"},
+                    {name: "Gauge", url: "/gauge"},
                     {name: "PieAndLineChart", url: "/pie-and-line-chart"},
                     {name: "PieWithLabel", url: "/pie-with-label"},
                     {name: "Scatter", url: "/scatter"},

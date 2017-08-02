@@ -27,6 +27,7 @@ import TablePage from "../component/ListPage/TablePage";
 
 import WelcomeToEcharts from "../component/EChartsPage/WelcomeToEcharts";
 import PiePage from "../component/EChartsPage/PiePage";
+import GaugePage from "../component/EChartsPage/GaugePage";
 import PieAndLineChartPage from "../component/EChartsPage/PieAndLineChartPage";
 import PieWithLabelPage from "../component/EChartsPage/PieWithLabelPage";
 import ScatterPage from "../component/EChartsPage/ScatterPage";
@@ -141,6 +142,7 @@ ReactDOM.render(
                 <IndexRedirect to={"welcome"}/>
                 <Route path="welcome" component={WelcomeToEcharts}/>
                 <Route path="pie" component={PiePage}/>
+                <Route path="gauge" component={GaugePage}/>
                 <Route path="pie-and-line-chart" component={PieAndLineChartPage}/>
                 <Route path="pie-with-label" component={PieWithLabelPage}/>
                 <Route path="scatter" component={ScatterPage}/>
